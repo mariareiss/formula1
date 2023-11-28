@@ -26,73 +26,96 @@
 <h1>Formula 1 Race Simulation</h1>
 
 <div>
-  <p>Select a pilot:</p>
+  <p>Select pilots:</p>
   <ul id="pilots">
     <li onclick="selectPilot('red')">Lewis Hamilton</li>
     <li onclick="selectPilot('blue')">Max Verstappen</li>
-    <li onclick="selectPilot('green')">Valtteri Bottas</li>
-    <li onclick="selectPilot('orange')">Charles Leclerc</li>
     <!-- Add more pilots here -->
   </ul>
+</div>
+
+<div>
+  <p>Set speed for each pilot:</p>
+  <input type="range" id="speedRed" min="1" max="50" value="25" onchange="setSpeed('red', this.value)">
+  <label for="speedRed">Lewis Hamilton</label>
+  <br>
+  <input type="range" id="speedBlue" min="1" max="50" value="25" onchange="setSpeed('blue', this.value)">
+  <label for="speedBlue">Max Verstappen</label>
+  <!-- Add more speed controls for other pilots here -->
 </div>
 
 <div class="track" id="raceTrack"></div>
 
 <script>
-  let selectedPilot = ''; // Variable to store the selected pilot color
+  let pilots = {
+    'red': {
+      'name': 'Lewis Hamilton',
+      'speed': 25,
+      'intervalId': null
+    },
+    'blue': {
+      'name': 'Max Verstappen',
+      'speed': 25,
+      'intervalId': null
+    }
+    // Add more pilots here
+  };
 
-  // Function to select a pilot/color
   function selectPilot(color) {
     selectedPilot = color;
   }
 
-  // Function to start the race
+  function setSpeed(color, value) {
+    pilots[color].speed = value;
+  }
+
   function startRace() {
     if (!selectedPilot) {
       alert('Please select a pilot before starting the race!');
       return;
     }
 
-    const racers = [
-      { name: 'Lewis Hamilton', color: 'red' },
-      { name: 'Max Verstappen', color: 'blue' },
-      { name: 'Valtteri Bottas', color: 'green' },
-      { name: 'Charles Leclerc', color: 'orange' },
-      // Add more racers here with different colors
-    ];
-
     const raceTrack = document.getElementById('raceTrack');
     raceTrack.innerHTML = '';
 
-    racers.forEach((racer, index) => {
-      if (racer.color === selectedPilot) {
+    Object.keys(pilots).forEach(color => {
+      if (color === selectedPilot) {
         const car = document.createElement('div');
         car.className = 'car';
         car.style.left = '0px'; // Start at the beginning of the track
-        car.style.backgroundColor = racer.color;
-        car.innerHTML = racer.name;
+        car.style.backgroundColor = color;
+        car.innerHTML = pilots[color].name;
         raceTrack.appendChild(car);
 
         const distance = 500; // Total distance of the race
-        const speed = Math.random() * 20 + 5; // Random speed
         const moveInterval = setInterval(() => {
           const currentPosition = parseInt(car.style.left, 10) || 0;
-          const newPosition = currentPosition + speed;
+          const newPosition = currentPosition + pilots[color].speed / 2; // Divide by 2 to adjust speed for visualization
 
           if (newPosition >= distance) {
             clearInterval(moveInterval);
             car.style.left = `${distance}px`; // Move the car to the finish line
-            car.innerHTML = `${racer.name} finished!`;
+            car.innerHTML = `${pilots[color].name} finished!`;
           } else {
             car.style.left = `${newPosition}px`;
           }
         }, 100);
+
+        pilots[color].intervalId = moveInterval;
       }
+    });
+  }
+
+  function stopRace() {
+    Object.keys(pilots).forEach(color => {
+      clearInterval(pilots[color].intervalId);
     });
   }
 </script>
 
 <button onclick="startRace()">Start Race</button>
+<button onclick="stopRace()">Stop Race</button>
 
 </body>
 </html>
+
