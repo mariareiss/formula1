@@ -177,6 +177,17 @@
         blueCar.style.left = `${newPositionBlue}px`;
       }
     }, 100);
+     const moveIntervalGreen = setInterval(() => {
+      const currentPositionGreen = parseInt(greenCar.style.left, 10) || 0;
+      const newPositionGreen = currentPositionGreen + pilots['green'].speed / 2;
+
+      if (newPositionGreen >= distance) {
+        clearInterval(moveIntervalGreen);
+        greenCar.style.left = `${distance}px`;
+      } else {
+        greenCar.style.left = `${newPositionGreen}px`;
+      }
+    }, 100);
 
     pilots['red'].intervalId = moveIntervalRed;
     pilots['blue'].intervalId = moveIntervalBlue;
