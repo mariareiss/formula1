@@ -50,33 +50,29 @@
 </div>
 
 <div>
-  <p>Control the cars:</p>
-  <button onclick="moveCar('red', 'left')">Move Left (Lewis Hamilton)</button>
-  <button onclick="moveCar('red', 'right')">Move Right (Lewis Hamilton)</button>
-  <br>
-  <button onclick="moveCar('blue', 'left')">Move Left (Max Verstappen)</button>
-  <button onclick="moveCar('blue', 'right')">Move Right (Max Verstappen)</button>
-  <!-- Add more controls for other pilots here -->
+  <button onclick="startRace()">Start Race</button>
+  <button onclick="stopRace()">Stop Race</button>
+  <button onclick="restartRace()">Restart Race</button>
 </div>
 
 <script>
   let selectedPilot = '';
   let currentPositionRed = 0;
   let currentPositionBlue = 0;
+  let speedRed = 25;
+  let speedBlue = 25;
 
   function selectPilot(color) {
     selectedPilot = color;
   }
 
   function setSpeed(color, value) {
-    pilots[color].speed = value;
+    if (color === 'red') {
+      speedRed = value;
+    } else if (color === 'blue') {
+      speedBlue = value;
+    }
   }
-
-  let pilots = {
-    'red': { 'name': 'Lewis Hamilton', 'speed': 25, 'intervalId': null },
-    'blue': { 'name': 'Max Verstappen', 'speed': 25, 'intervalId': null }
-    // Add more pilots here
-  };
 
   function startRace() {
     if (!selectedPilot) {
@@ -89,50 +85,52 @@
     const blueCar = document.getElementById('blueCar');
 
     redCar.style.backgroundColor = 'red';
-    redCar.innerHTML = pilots['red'].name;
+    redCar.innerHTML = 'Lewis Hamilton';
     blueCar.style.backgroundColor = 'blue';
-    blueCar.innerHTML = pilots['blue'].name;
+    blueCar.innerHTML = 'Max Verstappen';
 
     const distance = 500;
 
     const moveIntervalRed = setInterval(() => {
-      const currentPositionRed = parseInt(redCar.style.left, 10) || 0;
-      const newPositionRed = currentPositionRed + pilots['red'].speed / 2;
+      const newPositionRed = currentPositionRed + speedRed / 2;
 
       if (newPositionRed >= distance) {
         clearInterval(moveIntervalRed);
         redCar.style.left = `${distance}px`;
-        redCar.innerHTML = `${pilots['red'].name} finished!`;
+        redCar.innerHTML = 'Lewis Hamilton finished!';
       } else {
         redCar.style.left = `${newPositionRed}px`;
+        currentPositionRed = newPositionRed;
       }
     }, 100);
 
     const moveIntervalBlue = setInterval(() => {
-      const currentPositionBlue = parseInt(blueCar.style.left, 10) || 0;
-      const newPositionBlue = currentPositionBlue + pilots['blue'].speed / 2;
+      const newPositionBlue = currentPositionBlue + speedBlue / 2;
 
       if (newPositionBlue >= distance) {
         clearInterval(moveIntervalBlue);
         blueCar.style.left = `${distance}px`;
-        blueCar.innerHTML = `${pilots['blue'].name} finished!`;
+        blueCar.innerHTML = 'Max Verstappen finished!';
       } else {
         blueCar.style.left = `${newPositionBlue}px`;
+        currentPositionBlue = newPositionBlue;
       }
     }, 100);
-
-    pilots['red'].intervalId = moveIntervalRed;
-    pilots['blue'].intervalId = moveIntervalBlue;
   }
 
   function stopRace() {
-    clearInterval(pilots['red'].intervalId);
-    clearInterval(pilots['blue'].intervalId);
+    clearInterval(moveIntervalRed);
+    clearInterval(moveIntervalBlue);
   }
 
-  function moveCar(color, direction) {
-    if (selectedPilot === color) {
-      const distance = 500;
-      const car = document.getElementById(`${color}Car`);
-      
-      if (direction === 'left' && currentPositionRed > 0 && currentPositionBlue
+  function restartRace() {
+    stopRace();
+    currentPositionRed = 0;
+    currentPositionBlue = 0;
+    redCar.style.left = '0px';
+    blueCar.style.left = '0px';
+  }
+</script>
+
+</body>
+</html>
