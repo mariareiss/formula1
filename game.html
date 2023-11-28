@@ -191,19 +191,23 @@
 
     pilots['red'].intervalId = moveIntervalRed;
     pilots['blue'].intervalId = moveIntervalBlue;
+    pilots['green'].intervalId = moveIntervalGreen;
   }
 
   function stopRace() {
     clearInterval(pilots['red'].intervalId);
     clearInterval(pilots['blue'].intervalId);
+    clearInterval(pilots['green'].intervalId);
   }
 
   function restartRace() {
     stopRace();
     const redCar = document.getElementById('redCar');
     const blueCar = document.getElementById('blueCar');
+    const greenCar = document.getElementById('greenCar');
     redCar.style.left = '0px';
     blueCar.style.left = '0px';
+    greenCar.style.left = '0px';
   }
 
   let isDragging = false;
