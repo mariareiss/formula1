@@ -35,13 +35,13 @@
 </div>
 
 <div>
-  <p>Set speed for each pilot:</p>
-  <input type="range" id="speedRed" min="1" max="50" value="25" onchange="setSpeed('red', this.value)">
-  <label for="speedRed">Lewis Hamilton</label>
+  <p>Control the cars:</p>
+  <button onclick="moveCar('red', 'left')">Move Left (Lewis Hamilton)</button>
+  <button onclick="moveCar('red', 'right')">Move Right (Lewis Hamilton)</button>
   <br>
-  <input type="range" id="speedBlue" min="1" max="50" value="25" onchange="setSpeed('blue', this.value)">
-  <label for="speedBlue">Max Verstappen</label>
-  <!-- Add more speed controls for other pilots here -->
+  <button onclick="moveCar('blue', 'left')">Move Left (Max Verstappen)</button>
+  <button onclick="moveCar('blue', 'right')">Move Right (Max Verstappen)</button>
+  <!-- Add more controls for other pilots here -->
 </div>
 
 <div class="track" id="raceTrack">
@@ -51,87 +51,30 @@
 
 <script>
   let selectedPilot = '';
+  let currentPositionRed = 0;
+  let currentPositionBlue = 0;
 
   function selectPilot(color) {
     selectedPilot = color;
   }
 
-  function setSpeed(color, value) {
-    pilots[color].speed = value;
-  }
+  function moveCar(color, direction) {
+    if (selectedPilot === color) {
+      const distance = 500;
+      const car = document.getElementById(`${color}Car`);
+      
+      if (direction === 'left' && currentPositionRed > 0 && currentPositionBlue > 0) {
+        currentPositionRed -= 10;
+        currentPositionBlue -= 10;
+      } else if (direction === 'right' && currentPositionRed < distance && currentPositionBlue < distance) {
+        currentPositionRed += 10;
+        currentPositionBlue += 10;
+      }
 
-  let pilots = {
-    'red': { 'name': 'Lewis Hamilton', 'speed': 25, 'intervalId': null },
-    'blue': { 'name': 'Max Verstappen', 'speed': 25, 'intervalId': null }
-    // Add more pilots here
-  };
-
-  function startRace() {
-    if (!selectedPilot) {
-      alert('Please select a pilot before starting the race!');
-      return;
+      car.style.left = `${color === 'red' ? currentPositionRed : currentPositionBlue}px`;
     }
-
-    const raceTrack = document.getElementById('raceTrack');
-    const redCar = document.getElementById('redCar');
-    const blueCar = document.getElementById('blueCar');
-
-    redCar.style.backgroundColor = 'red';
-    redCar.innerHTML = pilots['red'].name;
-    blueCar.style.backgroundColor = 'blue';
-    blueCar.innerHTML = pilots['blue'].name;
-
-    const distance = 500;
-
-    const moveIntervalRed = setInterval(() => {
-      const currentPositionRed = parseInt(redCar.style.left, 10) || 0;
-      const newPositionRed = currentPositionRed + pilots['red'].speed / 2;
-
-      if (newPositionRed >= distance) {
-        clearInterval(moveIntervalRed);
-        redCar.style.left = `${distance}px`;
-        redCar.innerHTML = `${pilots['red'].name} finished!`;
-      } else {
-        redCar.style.left = `${newPositionRed}px`;
-      }
-    }, 100);
-
-    const moveIntervalBlue = setInterval(() => {
-      const currentPositionBlue = parseInt(blueCar.style.left, 10) || 0;
-      const newPositionBlue = currentPositionBlue + pilots['blue'].speed / 2;
-
-      if (newPositionBlue >= distance) {
-        clearInterval(moveIntervalBlue);
-        blueCar.style.left = `${distance}px`;
-        blueCar.innerHTML = `${pilots['blue'].name} finished!`;
-      } else {
-        blueCar.style.left = `${newPositionBlue}px`;
-      }
-    }, 100);
-
-    pilots['red'].intervalId = moveIntervalRed;
-    pilots['blue'].intervalId = moveIntervalBlue;
-  }
-
-  function stopRace() {
-    clearInterval(pilots['red'].intervalId);
-    clearInterval(pilots['blue'].intervalId);
-  }
-
-  function restartRace() {
-    stopRace();
-    const redCar = document.getElementById('redCar');
-    const blueCar = document.getElementById('blueCar');
-    redCar.style.left = '0px';
-    blueCar.style.left = '0px';
-    redCar.innerHTML = '';
-    blueCar.innerHTML = '';
   }
 </script>
-
-<button onclick="startRace()">Start Race</button>
-<button onclick="stopRace()">Stop Race</button>
-<button onclick="restartRace()">Restart Race</button>
 
 </body>
 </html>
