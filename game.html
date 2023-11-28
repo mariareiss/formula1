@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Formula 1 Race Simulation</title>
+  <style>
+    .track {
+      width: 400px;
+      height: 50px;
+      border: 1px solid #000;
+      position: relative;
+      margin-bottom: 20px;
+    }
+    .car {
+      width: 20px;
+      height: 10px;
+      background-color: red;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+  </style>
+</head>
+<body>
+
+<h1>Formula 1 Race Simulation</h1>
+
+<div class="track" id="raceTrack"></div>
+
+<button onclick="startRace()">Start Race</button>
+
+<script>
+  function startRace() {
+    const racers = [
+      'Lewis Hamilton',
+      'Max Verstappen',
+      'Valtteri Bottas',
+      'Charles Leclerc',
+      'Daniel Ricciardo',
+      'Lando Norris',
+      'Sebastian Vettel',
+      'Pierre Gasly',
+      'Fernando Alonso',
+      'Esteban Ocon'
+    ];
+
+    const raceTrack = document.getElementById('raceTrack');
+
+    racers.forEach((racer, index) => {
+      const car = document.createElement('div');
+      car.className = 'car';
+      car.style.left = '0px'; // Start at the beginning of the track
+      car.innerHTML = racer;
+      raceTrack.appendChild(car);
+
+      setTimeout(() => {
+        const distance = 300; // Total distance of the race
+        const speed = Math.random() * 20 + 5; // Random speed
+        const moveInterval = setInterval(() => {
+          const currentPosition = parseInt(car.style.left, 10) || 0;
+          const newPosition = currentPosition + speed;
+
+          if (newPosition >= distance) {
+            clearInterval(moveInterval);
+            car.style.left = `${distance}px`; // Move the car to the finish line
+            car.innerHTML = `${racer} finished!`;
+          } else {
+            car.style.left = `${newPosition}px`;
+          }
+        }, 100);
+      }, index * 500); // Start each racer at different times
+    });
+  }
+</script>
+
+</body>
+</html>
