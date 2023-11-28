@@ -10,7 +10,7 @@
   background-image: url('f1-image.avif'); /* Replace 'path/to/your/image.jpg' with your image path */
   background-size: cover; /* Adjust the background size as needed */
   background-repeat: no-repeat; /* Prevent the image from repeating */
-  opacity: 0.8; /* Adjust the opacity to make the background slightly transparent */
+  opacity: 0.4; /* Adjust the opacity to make the background slightly transparent */
 }
 
     </style>
