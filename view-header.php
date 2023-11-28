@@ -6,34 +6,13 @@
     <title><?=$pageTitle?></title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <style>
-        body {
-            background-color: #FF6961; 
-        }
-    <style>
-        ul {
-            list-style-type: none;
-            margin: 0;
-            padding: 0;
-        }
-        li {
-            display: inline;
-            margin-right: 20px;
-        }
-        a {
-            text-decoration: none;
-            color: #333;
-        }
-        .search-container {
-            margin-top: 20px;
-        }
-        .search-container input[type=text] {
-            padding: 8px;
-            margin-right: 10px;
-            width: 200px;
-        }
-        .search-container button {
-            padding: 8px;
-        }
+     body {
+  background-image: url('f1-image.avif'); /* Replace 'path/to/your/image.jpg' with your image path */
+  background-size: cover; /* Adjust the background size as needed */
+  background-repeat: no-repeat; /* Prevent the image from repeating */
+  opacity: 0.8; /* Adjust the opacity to make the background slightly transparent */
+}
+
     </style>
 </head>
 <body>
