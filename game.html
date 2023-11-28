@@ -44,7 +44,10 @@
   <!-- Add more speed controls for other pilots here -->
 </div>
 
-<div class="track" id="raceTrack"></div>
+<div class="track" id="raceTrack">
+  <div class="car" id="redCar"></div>
+  <div class="car" id="blueCar"></div>
+</div>
 
 <script>
   let selectedPilot = '';
@@ -70,44 +73,47 @@
     }
 
     const raceTrack = document.getElementById('raceTrack');
-    raceTrack.innerHTML = '';
+    const redCar = document.getElementById('redCar');
+    const blueCar = document.getElementById('blueCar');
 
-    Object.keys(pilots).forEach(color => {
-      if (color === selectedPilot) {
-        const car = document.createElement('div');
-        car.className = 'car';
-        car.style.left = '0px';
-        car.style.backgroundColor = color;
-        car.innerHTML = pilots[color].name;
-        raceTrack.appendChild(car);
+    redCar.style.backgroundColor = 'red';
+    redCar.innerHTML = pilots['red'].name;
+    blueCar.style.backgroundColor = 'blue';
+    blueCar.innerHTML = pilots['blue'].name;
 
-        const distance = 500;
-        const moveInterval = setInterval(() => {
-          const currentPosition = parseInt(car.style.left, 10) || 0;
-          const newPosition = currentPosition + pilots[color].speed / 2;
+    const distance = 500;
 
-          if (newPosition >= distance) {
-            clearInterval(moveInterval);
-            car.style.left = `${distance}px`;
-            car.innerHTML = `${pilots[color].name} finished!`;
-          } else {
-            car.style.left = `${newPosition}px`;
-          }
-        }, 100);
+    const moveIntervalRed = setInterval(() => {
+      const currentPositionRed = parseInt(redCar.style.left, 10) || 0;
+      const newPositionRed = currentPositionRed + pilots['red'].speed / 2;
 
-        pilots[color].intervalId = moveInterval;
+      if (newPositionRed >= distance) {
+        clearInterval(moveIntervalRed);
+        redCar.style.left = `${distance}px`;
+        redCar.innerHTML = `${pilots['red'].name} finished!`;
+      } else {
+        redCar.style.left = `${newPositionRed}px`;
       }
-    });
+    }, 100);
+
+    const moveIntervalBlue = setInterval(() => {
+      const currentPositionBlue = parseInt(blueCar.style.left, 10) || 0;
+      const newPositionBlue = currentPositionBlue + pilots['blue'].speed / 2;
+
+      if (newPositionBlue >= distance) {
+        clearInterval(moveIntervalBlue);
+        blueCar.style.left = `${distance}px`;
+        blueCar.innerHTML = `${pilots['blue'].name} finished!`;
+      } else {
+        blueCar.style.left = `${newPositionBlue}px`;
+      }
+    }, 100);
   }
 
   function stopRace() {
-    Object.keys(pilots).forEach(color => {
-      clearInterval(pilots[color].intervalId);
-    });
+    clearInterval(pilots['red'].intervalId);
+    clearInterval(pilots['blue'].intervalId);
   }
-
-  // Start the race on page load
-  startRace();
 </script>
 
 <button onclick="startRace()">Start Race</button>
