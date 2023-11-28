@@ -108,16 +108,30 @@
         blueCar.style.left = `${newPositionBlue}px`;
       }
     }, 100);
+
+    pilots['red'].intervalId = moveIntervalRed;
+    pilots['blue'].intervalId = moveIntervalBlue;
   }
 
   function stopRace() {
     clearInterval(pilots['red'].intervalId);
     clearInterval(pilots['blue'].intervalId);
   }
+
+  function restartRace() {
+    stopRace();
+    const redCar = document.getElementById('redCar');
+    const blueCar = document.getElementById('blueCar');
+    redCar.style.left = '0px';
+    blueCar.style.left = '0px';
+    redCar.innerHTML = '';
+    blueCar.innerHTML = '';
+  }
 </script>
 
 <button onclick="startRace()">Start Race</button>
 <button onclick="stopRace()">Stop Race</button>
+<button onclick="restartRace()">Restart Race</button>
 
 </body>
 </html>
