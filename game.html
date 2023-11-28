@@ -45,34 +45,26 @@
 </div>
 
 <div class="track" id="raceTrack">
-  <div class="car" id="redCar"></div>
-  <div class="car" id="blueCar"></div>
-</div>
-
-<div>
-  <button onclick="startRace()">Start Race</button>
-  <button onclick="stopRace()">Stop Race</button>
-  <button onclick="restartRace()">Restart Race</button>
+  <div class="car" id="redCar" onmousedown="startDrag(event, 'red')"></div>
+  <div class="car" id="blueCar" onmousedown="startDrag(event, 'blue')"></div>
 </div>
 
 <script>
   let selectedPilot = '';
-  let currentPositionRed = 0;
-  let currentPositionBlue = 0;
-  let speedRed = 25;
-  let speedBlue = 25;
 
   function selectPilot(color) {
     selectedPilot = color;
   }
 
   function setSpeed(color, value) {
-    if (color === 'red') {
-      speedRed = value;
-    } else if (color === 'blue') {
-      speedBlue = value;
-    }
+    pilots[color].speed = value;
   }
+
+  let pilots = {
+    'red': { 'name': 'Lewis Hamilton', 'speed': 25, 'intervalId': null },
+    'blue': { 'name': 'Max Verstappen', 'speed': 25, 'intervalId': null }
+    // Add more pilots here
+  };
 
   function startRace() {
     if (!selectedPilot) {
@@ -85,52 +77,84 @@
     const blueCar = document.getElementById('blueCar');
 
     redCar.style.backgroundColor = 'red';
-    redCar.innerHTML = 'Lewis Hamilton';
+    redCar.innerHTML = pilots['red'].name;
     blueCar.style.backgroundColor = 'blue';
-    blueCar.innerHTML = 'Max Verstappen';
+    blueCar.innerHTML = pilots['blue'].name;
 
     const distance = 500;
 
     const moveIntervalRed = setInterval(() => {
-      const newPositionRed = currentPositionRed + speedRed / 2;
+      const currentPositionRed = parseInt(redCar.style.left, 10) || 0;
+      const newPositionRed = currentPositionRed + pilots['red'].speed / 2;
 
       if (newPositionRed >= distance) {
         clearInterval(moveIntervalRed);
         redCar.style.left = `${distance}px`;
-        redCar.innerHTML = 'Lewis Hamilton finished!';
+        redCar.innerHTML = `${pilots['red'].name} finished!`;
       } else {
         redCar.style.left = `${newPositionRed}px`;
-        currentPositionRed = newPositionRed;
       }
     }, 100);
 
     const moveIntervalBlue = setInterval(() => {
-      const newPositionBlue = currentPositionBlue + speedBlue / 2;
+      const currentPositionBlue = parseInt(blueCar.style.left, 10) || 0;
+      const newPositionBlue = currentPositionBlue + pilots['blue'].speed / 2;
 
       if (newPositionBlue >= distance) {
         clearInterval(moveIntervalBlue);
         blueCar.style.left = `${distance}px`;
-        blueCar.innerHTML = 'Max Verstappen finished!';
+        blueCar.innerHTML = `${pilots['blue'].name} finished!`;
       } else {
         blueCar.style.left = `${newPositionBlue}px`;
-        currentPositionBlue = newPositionBlue;
       }
     }, 100);
+
+    pilots['red'].intervalId = moveIntervalRed;
+    pilots['blue'].intervalId = moveIntervalBlue;
   }
 
   function stopRace() {
-    clearInterval(moveIntervalRed);
-    clearInterval(moveIntervalBlue);
+    clearInterval(pilots['red'].intervalId);
+    clearInterval(pilots['blue'].intervalId);
   }
 
   function restartRace() {
     stopRace();
-    currentPositionRed = 0;
-    currentPositionBlue = 0;
+    const redCar = document.getElementById('redCar');
+    const blueCar = document.getElementById('blueCar');
     redCar.style.left = '0px';
     blueCar.style.left = '0px';
+    redCar.innerHTML = '';
+    blueCar.innerHTML = '';
+  }
+
+  let isDragging = false;
+  let offsetX = 0;
+
+  function startDrag(event, color) {
+    isDragging = true;
+    offsetX = event.clientX - parseInt(document.getElementById(color + 'Car').style.left || 0);
+    document.addEventListener('mousemove', e => moveCar(e, color));
+    document.addEventListener('mouseup', stopDrag);
+  }
+
+  function moveCar(event, color) {
+    if (isDragging) {
+      const car = document.getElementById(color + 'Car');
+      car.style.left = `${event.clientX - offsetX}px`;
+    }
+  }
+
+  function stopDrag() {
+    isDragging = false;
+    document.removeEventListener('mousemove', moveCar);
+    document.removeEventListener('mouseup', stopDrag);
   }
 </script>
+
+<button onclick="startRace()">Start Race</button>
+<button onclick="stopRace()">Stop Race</button>
+<button onclick="restartRace()">Restart Race</button>
 
 </body>
 </html>
