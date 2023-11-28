@@ -5,19 +5,19 @@
   <title>Formula 1 Race Simulation</title>
   <style>
     .track {
-      width: 800px;
+      width: 600px;
       height: 400px;
       border: 1px solid #000;
       position: relative;
       margin-bottom: 20px;
     }
     .car {
-      width: 20px;
-      height: 10px;
-      background-color: red;
+      width: 40px;
+      height: 20px;
       position: absolute;
       top: 50%;
       transform: translateY(-50%);
+      cursor: pointer;
     }
   </style>
 </head>
@@ -25,35 +25,54 @@
 
 <h1>Formula 1 Race Simulation</h1>
 
+<div>
+  <p>Select a pilot:</p>
+  <ul id="pilots">
+    <li onclick="selectPilot('red')">Lewis Hamilton</li>
+    <li onclick="selectPilot('blue')">Max Verstappen</li>
+    <li onclick="selectPilot('green')">Valtteri Bottas</li>
+    <li onclick="selectPilot('orange')">Charles Leclerc</li>
+    <!-- Add more pilots here -->
+  </ul>
+</div>
+
 <div class="track" id="raceTrack"></div>
 
-<button onclick="startRace()">Start Race</button>
-
 <script>
+  let selectedPilot = ''; // Variable to store the selected pilot color
+
+  // Function to select a pilot/color
+  function selectPilot(color) {
+    selectedPilot = color;
+  }
+
+  // Function to start the race
   function startRace() {
+    if (!selectedPilot) {
+      alert('Please select a pilot before starting the race!');
+      return;
+    }
+
     const racers = [
-      'Lewis Hamilton',
-      'Max Verstappen',
-      'Valtteri Bottas',
-      'Charles Leclerc',
-      'Daniel Ricciardo',
-      'Lando Norris',
-      'Sebastian Vettel',
-      'Pierre Gasly',
-      'Fernando Alonso',
-      'Esteban Ocon'
+      { name: 'Lewis Hamilton', color: 'red' },
+      { name: 'Max Verstappen', color: 'blue' },
+      { name: 'Valtteri Bottas', color: 'green' },
+      { name: 'Charles Leclerc', color: 'orange' },
+      // Add more racers here with different colors
     ];
 
     const raceTrack = document.getElementById('raceTrack');
+    raceTrack.innerHTML = '';
 
     racers.forEach((racer, index) => {
-      const car = document.createElement('div');
-      car.className = 'car';
-      car.style.left = '0px'; // Start at the beginning of the track
-      car.innerHTML = racer;
-      raceTrack.appendChild(car);
+      if (racer.color === selectedPilot) {
+        const car = document.createElement('div');
+        car.className = 'car';
+        car.style.left = '0px'; // Start at the beginning of the track
+        car.style.backgroundColor = racer.color;
+        car.innerHTML = racer.name;
+        raceTrack.appendChild(car);
 
-      setTimeout(() => {
         const distance = 300; // Total distance of the race
         const speed = Math.random() * 20 + 5; // Random speed
         const moveInterval = setInterval(() => {
@@ -63,15 +82,17 @@
           if (newPosition >= distance) {
             clearInterval(moveInterval);
             car.style.left = `${distance}px`; // Move the car to the finish line
-            car.innerHTML = `${racer} finished!`;
+            car.innerHTML = `${racer.name} finished!`;
           } else {
             car.style.left = `${newPosition}px`;
           }
         }, 100);
-      }, index * 500); // Start each racer at different times
+      }
     });
   }
 </script>
+
+<button onclick="startRace()">Start Race</button>
 
 </body>
 </html>
