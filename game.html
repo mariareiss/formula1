@@ -49,8 +49,20 @@
   <div class="car" id="blueCar"></div>
 </div>
 
+<div>
+  <p>Control the cars:</p>
+  <button onclick="moveCar('red', 'left')">Move Left (Lewis Hamilton)</button>
+  <button onclick="moveCar('red', 'right')">Move Right (Lewis Hamilton)</button>
+  <br>
+  <button onclick="moveCar('blue', 'left')">Move Left (Max Verstappen)</button>
+  <button onclick="moveCar('blue', 'right')">Move Right (Max Verstappen)</button>
+  <!-- Add more controls for other pilots here -->
+</div>
+
 <script>
   let selectedPilot = '';
+  let currentPositionRed = 0;
+  let currentPositionBlue = 0;
 
   function selectPilot(color) {
     selectedPilot = color;
@@ -118,20 +130,9 @@
     clearInterval(pilots['blue'].intervalId);
   }
 
-  function restartRace() {
-    stopRace();
-    const redCar = document.getElementById('redCar');
-    const blueCar = document.getElementById('blueCar');
-    redCar.style.left = '0px';
-    blueCar.style.left = '0px';
-    redCar.innerHTML = '';
-    blueCar.innerHTML = '';
-  }
-</script>
-
-<button onclick="startRace()">Start Race</button>
-<button onclick="stopRace()">Stop Race</button>
-<button onclick="restartRace()">Restart Race</button>
-
-</body>
-</html>
+  function moveCar(color, direction) {
+    if (selectedPilot === color) {
+      const distance = 500;
+      const car = document.getElementById(`${color}Car`);
+      
+      if (direction === 'left' && currentPositionRed > 0 && currentPositionBlue
