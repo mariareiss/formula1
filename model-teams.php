@@ -2,7 +2,10 @@
 function selectTeams() {
     try {
         $conn = get_db_connection();
-        $stmt = $conn->prepare("SELECT team_id, team_name, team_principal  FROM `Teams`");
+        $stmt = $conn->prepare("SELECT Drivers.driver_name, Teams.team_name
+FROM Drivers
+JOIN Teams ON Drivers.team_id = Teams.team_id
+WHERE Drivers.driver_id = ?; ");
         $stmt->execute();
         $result = $stmt->get_result();
         $conn->close();
