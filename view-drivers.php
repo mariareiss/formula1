@@ -17,7 +17,7 @@
         <td><?php echo $driver['driver_name']; ?></td>
         <td><?php echo $driver['driver_nationality']; ?></td>
         <td><?php echo $driver['driver_age']; ?></td>
-        <td><a href="team-of-driver.php?id=<?php echo $driver['driver_id']; ?>">Driver Team</a></td>
+        <td><a href="teams.php?id=<?php echo $driver['driver_id']; ?>">Driver Team</a></td>
       </tr>
     <?php
   }
