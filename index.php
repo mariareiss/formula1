@@ -9,11 +9,14 @@ $pageTitle = "Home";
     <style>
         body {
             text-align: center;
+            justify-content:center;
         }
 
         h1 {
-            margin: 0 auto; /* Centering the h1 horizontally */
-            padding: 50px; /* Optional: Add padding for better visual appearance */
+            width: 1200px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
     </style>
 </head>
