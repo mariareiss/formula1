@@ -8,6 +8,7 @@
       font-family: 'Arial', sans-serif;
       margin: 0;
       padding: 0;
+      background-color: #f8f8f8;
     }
 
     header {
@@ -17,81 +18,76 @@
       padding: 10px;
     }
 
-    #tabs {
-      display: flex;
-      justify-content: space-around;
-      background-color: #ddd;
-      padding: 10px;
-    }
-
-    #news-list {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-around;
+    #team-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 20px;
       padding: 20px;
+      justify-content: center;
     }
 
-    .tab {
+    .team-logo {
+      width: 100%;
+      max-width: 150px;
+      height: auto;
       cursor: pointer;
-      padding: 10px;
-      background-color: #666;
-      color: #fff;
+      transition: transform 0.2s ease-in-out;
+      border: 5px solid #fff;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     }
 
-    .article {
-      width: 300px;
-      margin: 10px;
-      border: 1px solid #ddd;
-      padding: 10px;
-      box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    .team-logo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
     }
 
-    .article h2 {
-      color: #333;
-    }
-
-    .article p {
-      color: #666;
+    .team-logo:hover {
+      transform: scale(1.1);
     }
   </style>
-  <title>Formula One News</title>
+  <title>Formula One Teams</title>
 </head>
 <body>
   <header>
-    <h1>Formula One News</h1>
+    <h1 style="color: #ff9900;">Formula One Teams</h1>
   </header>
-  <div id="tabs">
-    <div class="tab">Link 1</div>
-    <div class="tab">Link 2</div>
-    <div class="tab">Link 3</div>
-    <!-- Add more tabs as needed -->
-  </div>
-  <section id="news-list">
-    <!-- News articles will be dynamically added here -->
+  <section id="team-grid">
+    <!-- Team logos with links will be dynamically added here -->
+    <div class="team-logo" onclick="redirectToTeam('team1')"><img src="team1_logo.png" alt="Team 1 Logo"></div>
+    <div class="team-logo" onclick="redirectToTeam('team2')"><img src="team2_logo.png" alt="Team 2 Logo"></div>
+    <div class="team-logo" onclick="redirectToTeam('team3')"><img src="team3_logo.png" alt="Team 3 Logo"></div>
+    <div class="team-logo" onclick="redirectToTeam('team4')"><img src="team4_logo.png" alt="Team 4 Logo"></div>
+    <div class="team-logo" onclick="redirectToTeam('team5')"><img src="team5_logo.png" alt="Team 5 Logo"></div>
+    <div class="team-logo" onclick="redirectToTeam('team6')"><img src="team6_logo.png" alt="Team 6 Logo"></div>
+    <div class="team-logo" onclick="redirectToTeam('team7')"><img src="team7_logo.png" alt="Team 7 Logo"></div>
+    <div class="team-logo" onclick="redirectToTeam('team8')"><img src="team8_logo.png" alt="Team 8 Logo"></div>
+    <div class="team-logo" onclick="redirectToTeam('team9')"><img src="team9_logo.png" alt="Team 9 Logo"></div>
+    <div class="team-logo" onclick="redirectToTeam('team10')"><img src="team10_logo.png" alt="Team 10 Logo"></div>
   </section>
   <script>
-    document.addEventListener('DOMContentLoaded', function () {
-      // Dummy data for demonstration
-      const newsData = [
-        { title: 'Exciting Race in Monza', content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.' },
-        { title: 'Team Changes for Next Season', content: 'Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.' },
-        { title: 'New Circuit Unveiled for Grand Prix', content: 'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.' }
-        // Add more dummy data as needed
-      ];
+    function redirectToTeam(teamName) {
+      // Replace the URLs with the actual team websites
+      const teamWebsites = {
+        team1: 'https://www.team1.com',
+        team2: 'https://www.team2.com',
+        team3: 'https://www.team3.com',
+        team4: 'https://www.team4.com',
+        team5: 'https://www.team5.com',
+        team6: 'https://www.team6.com',
+        team7: 'https://www.team7.com',
+        team8: 'https://www.team8.com',
+        team9: 'https://www.team9.com',
+        team10: 'https://www.team10.com',
+      };
 
-      const newsList = document.getElementById('news-list');
-
-      // Populate news articles
-      newsData.forEach(article => {
-        const articleElement = document.createElement('div');
-        articleElement.classList.add('article');
-        articleElement.innerHTML = `
-          <h2>${article.title}</h2>
-          <p>${article.content}</p>
-        `;
-        newsList.appendChild(articleElement);
-      });
-    });
+      const teamWebsite = teamWebsites[teamName];
+      if (teamWebsite) {
+        window.location.href = teamWebsite;
+      }
+    }
   </script>
 </body>
 </html>
