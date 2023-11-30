@@ -1,5 +1,6 @@
 <?php
 $pageTitle = "Home";
+include "view-header.php";
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -25,7 +26,6 @@ $pageTitle = "Home";
         <h1>Welcome to your Formula 1 Portal</h1>
     </div>
     <?php
-    include "view-header.php";
     include "view-footer.php";
     ?>
 </body>
