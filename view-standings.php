@@ -3,6 +3,7 @@
   <table class="table">
     <thead>
       <tr>
+      <th>Driver</th>
       <th>Season</th>
       <th>Points</th>
       <th>Wins</th>
@@ -15,6 +16,7 @@
 while ($standing = $standings->fetch_assoc()) {
 ?>
   <tr>
+    <td><?php echo $driver['driver_name']; ?></td>
     <td><?php echo $standing['season']; ?></td>
     <td><?php echo $standing['points']; ?></td>
     <td><?php echo $standing['wins']; ?></td>
