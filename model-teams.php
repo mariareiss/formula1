@@ -1,5 +1,5 @@
 <?php
-function selectTeams() {
+function selectTeams($did) {
     try {
         $conn = get_db_connection();
         $stmt = $conn->prepare
@@ -7,7 +7,7 @@ function selectTeams() {
 FROM Drivers
 JOIN Teams ON Drivers.team_id = Teams.team_id
 WHERE Drivers.driver_id = ?"); 
-        $stmt->bind_param("i", $driver);
+        $stmt->bind_param("i", $did);
         $stmt->execute();
         $result = $stmt->get_result();
         $conn->close();
