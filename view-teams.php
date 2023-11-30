@@ -11,12 +11,13 @@
     </thead>
     <tbody>
 <?php
-while ($team = $teams-> fetch_assoc()) {
+$teams = selectTeams($driver_id=?); // Replace $driver_id with the actual driver ID
+while ($team = $teams->fetch_assoc()) {
 ?>
   <tr>
-    <td><?php echo $teams['team_id']; ?></td>
-    <td><?php echo $teams['team_name']; ?></td>
-    <td><?php echo $teams['team_principal']; ?></td>
+    <td><?php echo $team['team_id']; ?></td>
+    <td><?php echo $team['team_name']; ?></td>
+    <td><?php echo $team['team_principal']; ?></td>
   </tr>
 <?php
 }
