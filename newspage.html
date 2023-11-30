@@ -30,6 +30,7 @@
     .grid-container {
       display: grid;
       gap: 20px;
+      grid-template-columns: repeat(5, 1fr);
       justify-content: center;
     }
 
@@ -62,11 +63,12 @@
   <header>
     <h1>Formula One Hub</h1>
   </header>
+  
   <section id="byTeam">
     <h2>By Team</h2>
     <div class="grid-container">
       <!-- Team grid with team names -->
-      <div class="grid-item" onclick="redirectToTeam('team1')">
+      <div class="grid-item" onclick="redirectToWebsite('https://www.team1.com')">
         <div class="team-logo"><img src="team1_logo.png" alt="Team 1 Logo"></div>
         <p>Team 1</p>
       </div>
@@ -80,7 +82,7 @@
     <h2>By Driver</h2>
     <div class="grid-container">
       <!-- Driver grid with driver names -->
-      <div class="grid-item" onclick="redirectToDriver('driver1')">
+      <div class="grid-item" onclick="redirectToWebsite('https://www.driver1.com')">
         <div class="driver-photo"><img src="driver1_photo.png" alt="Driver 1 Photo"></div>
         <p>Driver 1</p>
       </div>
@@ -91,30 +93,8 @@
   </section>
 
   <script>
-    function redirectToTeam(teamName) {
-      // Replace the URLs with the actual team websites
-      const teamWebsites = {
-        team1: 'https://www.team1.com',
-        // Add URLs for other teams
-      };
-
-      const teamWebsite = teamWebsites[teamName];
-      if (teamWebsite) {
-        window.location.href = teamWebsite;
-      }
-    }
-
-    function redirectToDriver(driverName) {
-      // Replace the URLs with the actual driver profiles
-      const driverProfiles = {
-        driver1: 'https://www.driver1.com',
-        // Add URLs for other drivers
-      };
-
-      const driverProfile = driverProfiles[driverName];
-      if (driverProfile) {
-        window.location.href = driverProfile;
-      }
+    function redirectToWebsite(url) {
+      window.location.href = url;
     }
   </script>
 </body>
