@@ -6,7 +6,7 @@ function selectTeams($driver) {
 ("SELECT Drivers.driver_name, Teams.team_name, Teams.team_id, Teams.team_principal
 FROM Drivers
 JOIN Teams ON Drivers.team_id = Teams.team_id
-WHERE Drivers.driver_id = ?; -- Replace 1 with the actual driver_id you are looking for");
+WHERE Drivers.driver_id = ?"); 
         $stmt->bind_param("d", $driver);
         $stmt->execute();
         $result = $stmt->get_result();
