@@ -4,7 +4,7 @@ require_once("model-results.php");
 
 $pageTitle = "Race Results";
 include "view-header.php";
-$results = selectResultss();
+$results = selectResults();
 include "view-results.php";
 include "view-footer.php";
 ?>
