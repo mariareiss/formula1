@@ -16,7 +16,7 @@
 while ($standing = $standings->fetch_assoc()) {
 ?>
   <tr>
-    <td><?php echo $driver['driver_name']; ?></td>
+    <td><?php echo $standing['driver_name']; ?></td>
     <td><?php echo $standing['season']; ?></td>
     <td><?php echo $standing['points']; ?></td>
     <td><?php echo $standing['wins']; ?></td>
