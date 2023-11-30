@@ -1,5 +1,5 @@
 <?php
-function selectTeams($did) {
+function selectTeams($driver) {
     try {
         $conn = get_db_connection();
         $stmt = $conn->prepare
