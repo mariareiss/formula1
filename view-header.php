@@ -28,16 +28,16 @@
                             <a class="nav-link active" aria-current="page" href="#"/>Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="profile.php">Driver</a>
+                            <a class="nav-link" href="drivers.php">Driver</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="trips.php">Team</a>
+                            <a class="nav-link" href="teams.php">Team</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="destinations.php">Race</a>
+                            <a class="nav-link" href="race.php">Race</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="packing.php">Result</a>
+                            <a class="nav-link" href="result.php">Result</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="game.html">Game</a>
