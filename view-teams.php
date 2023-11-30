@@ -11,8 +11,7 @@
     </thead>
     <tbody>
 <?php
-$teams = selectTeams(); // Replace $driver_id with the actual driver ID
-while ($team = $teams->fetch_assoc()) {
+while ($teams = $team-> fetch_assoc()) {
 ?>
   <tr>
     <td><?php echo $team['team_id']; ?></td>
