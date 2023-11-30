@@ -18,8 +18,8 @@
           <td><?php echo $team['team_name']; ?></td>
           <td><?php echo $team['team_principal']; ?></td>
         </tr>
+        }
       <?php
-      }
       ?>
     </tbody>
   </table>
