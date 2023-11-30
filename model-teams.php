@@ -1,4 +1,4 @@
-function selectTeams($driver_id) {
+function selectTeams() {
     try {
         $conn = get_db_connection();
         $stmt = $conn->prepare("SELECT Drivers.driver_name, Teams.team_name
