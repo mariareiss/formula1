@@ -41,7 +41,7 @@
                             <a class="nav-link" href="game.html">Game</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="news.php">News</a>
+                            <a class="nav-link" href="newspage.js">News</a>
                         </li>
                     </ul>
                 </div>
