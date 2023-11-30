@@ -5,7 +5,7 @@ require_once("model-teams.php");
 $pageTitle = "Teams";
 include "view-header.php";
 
-$teams = selectTeams($_POST['did']) 
+$team = selectTeams($_POST['did']) 
 
 include "view-teams.php";
 include "view-footer.php";
