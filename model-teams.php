@@ -7,7 +7,7 @@ function selectTeams($driver) {
 FROM Drivers
 JOIN Teams ON Drivers.team_id = Teams.team_id
 WHERE Drivers.driver_id = ?"); 
-        $stmt->bind_param("d", $driver);
+        $stmt->bind_param("i", $driver);
         $stmt->execute();
         $result = $stmt->get_result();
         $conn->close();
