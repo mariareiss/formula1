@@ -30,9 +30,7 @@
                         <li class="nav-item">
                             <a class="nav-link" href="drivers.php">Driver</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="teams.php">Team</a>
-                        </li>
+
                         <li class="nav-item">
                             <a class="nav-link" href="race.php">Race</a>
                         </li>
