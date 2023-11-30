@@ -8,15 +8,15 @@ $pageTitle = "Home";
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
         body {
-            text-align: center;
-            justify-content:center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
         }
 
         h1 {
-            width: 1200px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
+            font-size: 3rem;
         }
     </style>
 </head>
