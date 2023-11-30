@@ -14,9 +14,9 @@
 while ($teams = $team-> fetch_assoc()) {
 ?>
   <tr>
-    <td><?php echo $team['team_id']; ?></td>
-    <td><?php echo $team['team_name']; ?></td>
-    <td><?php echo $team['team_principal']; ?></td>
+    <td><?php echo $teams['team_id']; ?></td>
+    <td><?php echo $teams['team_name']; ?></td>
+    <td><?php echo $teams['team_principal']; ?></td>
     <td><a href="products-purchased-customer.php?id=<?php echo $customer['customer_id']; ?>">Classes</a></td>
   </tr>
 <?php
