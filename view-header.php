@@ -82,21 +82,7 @@
                 </div>
             </div>
         </nav>
-        <div class="search-container">
-            <form action="" method="GET">
-                <input type="text" placeholder="Search..." name="search">
-                <button type="submit">Search</button>
-            </form>
-        </div>
-        <div class="col-md-4">
-            <?php
-            if (isset($_GET['search'])) {
-                $search_query = $_GET['search'];
-                echo "<p>You searched for: " . htmlspecialchars($search_query) . "</p>";
-                // Process your search query here or interact with the database accordingly
-            }
-            ?>
-        </div>
+
     </div>
 </body>
 
