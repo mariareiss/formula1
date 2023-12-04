@@ -35,7 +35,7 @@ include "view-header.php";
     .grid-container {
       display: grid;
       gap: 20px;
-      grid-template-columns: repeat(5, 1fr);
+      grid-template-columns: repeat(2, 1fr);
       justify-content: center;
     }
 
@@ -53,10 +53,10 @@ include "view-header.php";
       transform: scale(1.05);
     }
 
-    .team-logo, .driver-photo {
+    .team-logo {
       width: 100%;
-      max-width: 150px;
-      height: auto;
+      height: 150px; /* Set a fixed height to maintain consistency */
+      object-fit: contain; /* Maintain aspect ratio and fit the entire image within the specified dimensions */
       border: 5px solid #fff;
       border-radius: 10px;
       overflow: hidden;
