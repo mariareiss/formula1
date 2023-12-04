@@ -6,7 +6,7 @@
     ?>
     <div class="card">
     <div class="card-body">
-      <h5 class="card-title"><?php echo $results['position']; ?></h5>
+      <h5 class="card-title"><?php echo $result['position']; ?></h5>
       <p class="card-text">
       <ul class="list-group">
         
