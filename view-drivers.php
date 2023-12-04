@@ -48,7 +48,9 @@ include "view-driver-newform.php";
                         <th>Nationality</th>
                         <th>Age</th>
                         <th>Driver Team</th>
-                        <th></th>                       
+                        <th></th>     
+                        <th></th>
+                        <th></th>
                     </tr>
                 </thead>
                 <tbody>
