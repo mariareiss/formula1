@@ -28,9 +28,17 @@
         }
     </style>
 </head>
+<div class="row">
+  <div class="col">
+<h1>Drivers</h1>
+  </div>
+  <div class="col-auto">
 <?php
 include "view-driver-newform.php";
 ?>
+</div>
+</div>
+<div class="table-responsive">
 <body>
     <div class="container">
         <h1>Drivers</h1>
