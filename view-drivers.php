@@ -29,7 +29,7 @@
     </style>
 </head>
 <?php
-include "view-customer-newform.php";
+include "view-driver-newform.php";
 ?>
 <body>
     <div class="container">
