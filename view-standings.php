@@ -11,6 +11,9 @@
         }
         .container {
             margin-top: 20px;
+            max-width: 800px; /* Set a maximum width for the container */
+            margin-left: auto;
+            margin-right: auto;
         }
         th {
             font-weight: bold;
@@ -26,37 +29,42 @@
         .driver-link:hover {
             text-decoration: underline;
         }
+        .table {
+            margin-top: 20px; /* Add margin to the table */
+        }
     </style>
 </head>
 <body>
 
-<h1>Standings</h1>
+<div class="container">
+    <h1>Standings</h1>
 
-<div class="table-responsive">
-  <table class="table">
-    <thead>
-      <tr>
-        <th>Driver</th>
-        <th>Season</th>
-        <th>Points</th>
-        <th>Wins</th>
-        <th>Podiums</th>
-          <th></th>
-      </tr>
-    </thead>
-    <tbody>
-      <?php while ($standing = $standings->fetch_assoc()) { ?>
-        <tr>
-          <td><?php echo $standing['driver_name']; ?></td>
-          <td><?php echo $standing['season']; ?></td>
-          <td><?php echo $standing['points']; ?></td>
-          <td><?php echo $standing['wins']; ?></td>
-          <td><?php echo $standing['podiums']; ?></td>
-          <td></td>
-        </tr>
-      <?php } ?>
-    </tbody>
-  </table>
+    <div class="table-responsive">
+        <table class="table">
+            <thead>
+            <tr>
+                <th>Driver</th>
+                <th>Season</th>
+                <th>Points</th>
+                <th>Wins</th>
+                <th>Podiums</th>
+                <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <?php while ($standing = $standings->fetch_assoc()) { ?>
+                <tr>
+                    <td><?php echo $standing['driver_name']; ?></td>
+                    <td><?php echo $standing['season']; ?></td>
+                    <td><?php echo $standing['points']; ?></td>
+                    <td><?php echo $standing['wins']; ?></td>
+                    <td><?php echo $standing['podiums']; ?></td>
+                    <td></td>
+                </tr>
+            <?php } ?>
+            </tbody>
+        </table>
+    </div>
 </div>
 
 </body>
