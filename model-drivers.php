@@ -42,7 +42,7 @@ function deleteDrivers($drid) {
     try {
         $conn = get_db_connection();
         $stmt = $conn->prepare("delete from `Driver` where driver_id=?");
-        $stmt->bind_param("s", $drid);
+        $stmt->bind_param("i", $drid);
         $success = $stmt->execute();
         $conn->close();
         return $success;
