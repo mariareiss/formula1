@@ -3,15 +3,15 @@
 <head>
   <meta charset="UTF-8">
   <title>Formula 1 Race Simulation</title>
-    <style>
-        body {
-            background-image: url('f1-image.avif');
-            background-size: cover;
-            background-repeat: no-repeat;
-            opacity: 1.0;
-        }
+  <style>
+    body {
+      background-image: url('f1-image.avif');
+      background-size: cover;
+      background-repeat: no-repeat;
+      opacity: 1.0;
+    }
 
-    h1 {
+ h1 {
       text-align: center;
       margin-top: 20px;
     }
@@ -105,19 +105,6 @@
     </ul>
   </div>
 
-  <!-- Rest of your HTML content -->
-
-  <script>
-    let selectedPilot = '';
-
-    function selectPilot(color, isChecked) {
-      if (isChecked) {
-        selectedPilot = color;
-      } else {
-        selectedPilot = ''; // Unselect if checkbox is unchecked
-      }
-    }
-
   <div class="track" id="raceTrack">
     <div class="car" id="redCar" onmousedown="startDrag(event, 'red')"><span class="car-text">Lewis Hamilton</span></div>
     <div class="car" id="blueCar" onmousedown="startDrag(event, 'blue')"><span class="car-text">Max Verstappen</span></div>
@@ -130,31 +117,15 @@
 </div>
 
 <script>
-  function selectPilot(color, isChecked) {
-  if (isChecked) {
-    selectedPilot = color;
-  } else {
-    selectedPilot = ''; // Unselect if checkbox is unchecked
-  }
-}
-<div>
-  <p>Select pilots:</p>
-  <ul id="pilots">
-    <li>
-      <input type="checkbox" id="redCheckbox" onchange="selectPilot('red', this.checked)">
-      <label for="redCheckbox">Lewis Hamilton</label>
-    </li>
-    <li>
-      <input type="checkbox" id="blueCheckbox" onchange="selectPilot('blue', this.checked)">
-      <label for="blueCheckbox">Max Verstappen</label>
-    </li>
-    <li>
-      <input type="checkbox" id="greenCheckbox" onchange="selectPilot('green', this.checked)">
-      <label for="greenCheckbox">Charles Leclerc</label>
-    </li>
-  </ul>
-</div>
+  let selectedPilot = '';
 
+  function selectPilot(color, isChecked) {
+    if (isChecked) {
+      selectedPilot = color;
+    } else {
+      selectedPilot = ''; // Unselect if checkbox is unchecked
+    }
+  }
 
   function setSpeed(color, value) {
     pilots[color].speed = value;
