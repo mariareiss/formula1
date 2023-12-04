@@ -11,7 +11,7 @@
       <ul class="list-group">
         
   <?php
-    $results = selectResults($results['position']);
+    $results = selectResults($result['position']);
     
   while ($result = $results->fetch_assoc()) {
     ?>
