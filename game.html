@@ -105,6 +105,19 @@
     </ul>
   </div>
 
+   <div>
+    <p>Set speed for each pilot:</p>
+    <input type="range" id="speedRed" min="1" max="50" value="25" onchange="setSpeed('red', this.value)">
+    <label for="speedRed">Lewis Hamilton</label>
+    <br>
+    <input type="range" id="speedBlue" min="1" max="50" value="25" onchange="setSpeed('blue', this.value)">
+    <label for="speedBlue">Max Verstappen</label>
+    <br>
+    <input type="range" id="speedGreen" min="1" max="50" value="25" onchange="setSpeed('green', this.value)">
+    <label for="speedGreen">Charles Leclerc</label>
+    <!-- Add more speed controls for other pilots here -->
+  </div>
+
   <div class="track" id="raceTrack">
     <div class="car" id="redCar" onmousedown="startDrag(event, 'red')"><span class="car-text">Lewis Hamilton</span></div>
     <div class="car" id="blueCar" onmousedown="startDrag(event, 'blue')"><span class="car-text">Max Verstappen</span></div>
