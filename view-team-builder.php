@@ -11,7 +11,7 @@
     </thead>
     <tbody>
 <?php
-while ($teambuilder = $teamsbuilder->fetch_assoc()) {
+while ($teambuilder = $teambuilders->fetch_assoc()) {
 ?>
   <tr>
     <td><?php echo $teambuilder['driver_b_name']; ?></td>
