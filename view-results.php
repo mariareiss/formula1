@@ -2,7 +2,7 @@
 
 <div class="card-group">
   <?php
-  while ($result = $results->fetch_assoc()) {
+  while ($driver = $drivers->fetch_assoc()) {
     ?>
     <div class="card">
     <div class="card-body">
