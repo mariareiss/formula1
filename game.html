@@ -122,11 +122,31 @@
 </div>
 
 <script>
-  let selectedPilot = '';
-
-  function selectPilot(color) {
+  function selectPilot(color, isChecked) {
+  if (isChecked) {
     selectedPilot = color;
+  } else {
+    selectedPilot = ''; // Unselect if checkbox is unchecked
   }
+}
+<div>
+  <p>Select pilots:</p>
+  <ul id="pilots">
+    <li>
+      <input type="checkbox" id="redCheckbox" onchange="selectPilot('red', this.checked)">
+      <label for="redCheckbox">Lewis Hamilton</label>
+    </li>
+    <li>
+      <input type="checkbox" id="blueCheckbox" onchange="selectPilot('blue', this.checked)">
+      <label for="blueCheckbox">Max Verstappen</label>
+    </li>
+    <li>
+      <input type="checkbox" id="greenCheckbox" onchange="selectPilot('green', this.checked)">
+      <label for="greenCheckbox">Charles Leclerc</label>
+    </li>
+  </ul>
+</div>
+
 
   function setSpeed(color, value) {
     pilots[color].speed = value;
