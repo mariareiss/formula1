@@ -10,7 +10,7 @@
             background-color: #f8f9fa; /* Set your desired background color */
         }
         .container {
-            margin-top: 20px;
+            margin-top: 30px;
             max-width: 1150px; /* Set a maximum width for the container */
             margin-left: auto;
             margin-right: auto;
