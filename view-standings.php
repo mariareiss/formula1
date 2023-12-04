@@ -30,7 +30,7 @@
             text-decoration: underline;
         }
         .table {
-            margin-top: 10px; /* Add margin to the table */
+            margin-top: 05px; /* Add margin to the table */
         }
     </style>
 </head>
