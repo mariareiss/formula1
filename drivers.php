@@ -4,6 +4,32 @@ require_once("model-drivers.php");
 
 $pageTitle="Drivers";
 include "view-header.php";
+if (isset($_POST['actionType'])) {
+  switch ($_POST['actionType']){
+    case "Add":
+    if (insertDrivers($_POST['dName'], $_POST['dNationality'], $_POST['dAge'])){
+      echo '<div class="alert alert-success" role="alert">Customer added.</div>';
+    } else {
+      echo '<div class="alert alert-error" role="alert">Error</div>';      
+    }
+    break;
+    case "Edit":
+    if (updateDrivers($_POST['dName'], $_POST['dNationality'], $_POST['dAge'], $_POST['drid'])){
+      echo '<div class="alert alert-success" role="alert">Customer edited.</div>';
+    } else {
+      echo '<div class="alert alert-error" role="alert">Error</div>';      
+    }
+    break;
+    case "Delete":
+    if (deleteDrivers($_POST['drid'])){
+      echo '<div class="alert alert-success" role="alert">Customer deleted.</div>';
+    } else {
+      echo '<div class="alert alert-error" role="alert">Error</div>';      
+    }
+    break;
+  }
+}
+include "view-header.php";
 $drivers = selectDrivers();
 include "view-drivers.php";
 include "view-footer.php";
