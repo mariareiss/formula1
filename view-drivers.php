@@ -28,6 +28,9 @@
         }
     </style>
 </head>
+<?php
+include "view-customer-newform.php";
+?>
 <body>
     <div class="container">
         <h1>Drivers</h1>
@@ -39,8 +42,7 @@
                         <th>Nationality</th>
                         <th>Age</th>
                         <th>Driver Team</th>
-                        <th></th>
-                        <th></th>
+                        <th></th>                       
                     </tr>
                 </thead>
                 <tbody>
