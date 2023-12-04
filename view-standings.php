@@ -41,6 +41,7 @@
         <th>Points</th>
         <th>Wins</th>
         <th>Podiums</th>
+          <th></th>
       </tr>
     </thead>
     <tbody>
