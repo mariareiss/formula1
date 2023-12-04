@@ -1,3 +1,8 @@
+<?php
+$pageTitle = "Race Results";
+include "view-header.php";
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -130,4 +135,8 @@
   </script>
 </body>
 </html>
+
+<?php
+include "view-footer.php";
+?>
 
