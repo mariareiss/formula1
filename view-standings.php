@@ -11,7 +11,7 @@
         }
         .container {
             margin-top: 20px;
-            max-width: 800px; /* Set a maximum width for the container */
+            max-width: 1000px; /* Set a maximum width for the container */
             margin-left: auto;
             margin-right: auto;
         }
