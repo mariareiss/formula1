@@ -6,12 +6,12 @@
     ?>
     <div class="card">
     <div class="card-body">
-      <h5 class="card-title"><?php echo $result['position']; ?></h5>
+      <h5 class="card-title"><?php echo $driver['driver_name']; ?></h5>
       <p class="card-text">
       <ul class="list-group">
         
   <?php
-    $results = selectResults($result['position']);
+    $results = selectDrivers($driver['driver_id']);
     
   while ($result = $results->fetch_assoc()) {
     ?>
