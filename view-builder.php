@@ -7,17 +7,18 @@
         <th>Driver</th>
         <th>Principal</th>
         <th>Season</th>
+        <th></th>
       </tr>
     </thead>
     <tbody>
 <?php
-while ($teambuilder = $teambuilders->fetch_assoc()) {
+while ($builder = $builders->fetch_assoc()) {
 ?>
   <tr>
-    <td><?php echo $teambuilder['driver_b_name']; ?></td>
-    <td><?php echo $teambuilder['team_b_name']; ?></td>
-    <td><?php echo $teambuilder['team_principal_name']; ?></td>
-    <td><?php echo $teambuilder['team_b_season']; ?></td>
+    <td><?php echo $builder['driver_b_name']; ?></td>
+    <td><?php echo $builder['team_b_name']; ?></td>
+    <td><?php echo $builder['team_principal_name']; ?></td>
+    <td><?php echo $builder['team_b_season']; ?></td>
   </tr>
 <?php
 }
