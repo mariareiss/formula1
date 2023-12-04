@@ -21,8 +21,8 @@ $pageTitle = "Home";
     </style>
 </head>
 <body>
-    <div>
-        <h1>Welcome to your Formula 1 Portal</h1>
+    <div class="header">
+        <p>Welcome to your Formula 1 Portal</p>
     </div>
     <?php
     include "view-header.php";
@@ -30,4 +30,17 @@ $pageTitle = "Home";
     ?>
 </body>
 </html>
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.header {
+    text-align: center;
+}
+
 
