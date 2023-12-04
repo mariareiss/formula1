@@ -1,5 +1,5 @@
 <?php
-function selectTeamBuilder($tbid) {
+function selectBuilder($tbid) {
     try {
         $conn = get_db_connection();
         $stmt = $conn->prepare("SELECT driver_b_name, team_b_name, team_principal_name, team_b_season FROM `Team_Builder` ");
