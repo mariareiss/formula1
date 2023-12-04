@@ -1,65 +1,85 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Standing</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    <style>
-        body {
-            background-color: #f8f9fa; /* Set your desired background color */
-        }
-        .container {
-            margin-top: 20px;
-        }
-        th {
-            font-weight: bold;
-        }
-        td, th {
-            text-align: center;
-            vertical-align: middle !important;
-        }
-        .btn-primary {
-            background-color: #007bff; /* Set your desired button color */
-            border-color: #007bff; /* Set the button border color */
-        }
-        .btn-primary:hover {
-            background-color: #0056b3; /* Set the hover color */
-            border-color: #0056b3; /* Set the hover border color */
-        }
-    </style>
+  <meta charset="UTF-8">
+  <title>Standings</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      margin: 0;
+      padding: 20px;
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 20px;
+      color: #333;
+    }
+
+    .table-responsive {
+      overflow-x: auto;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    th, td {
+      padding: 12px 15px;
+      text-align: left;
+      border-bottom: 1px solid #ddd;
+    }
+
+    th {
+      background-color: #f0f0f0;
+      font-weight: bold;
+      color: #333;
+    }
+
+    td {
+      color: #444;
+    }
+
+    tr:nth-child(even) {
+      background-color: #f9f9f9;
+    }
+  </style>
 </head>
+<body>
 
 <h1>Standings</h1>
+
 <div class="table-responsive">
   <table class="table">
     <thead>
       <tr>
-      <th>Driver</th>
-      <th>Season</th>
-      <th>Points</th>
-      <th>Wins</th>
-      <th>Podiums</th>
-      <th></th>
+        <th>Driver</th>
+        <th>Season</th>
+        <th>Points</th>
+        <th>Wins</th>
+        <th>Podiums</th>
+        <th></th>
       </tr>
     </thead>
     <tbody>
-<?php
-while ($standing = $standings->fetch_assoc()) {
-?>
-  <tr>
-    <td><?php echo $standing['driver_name']; ?></td>
-    <td><?php echo $standing['season']; ?></td>
-    <td><?php echo $standing['points']; ?></td>
-    <td><?php echo $standing['wins']; ?></td>
-    <td><?php echo $standing['podiums']; ?></td>
-    <td>
-      
-    </td>
-  </tr>
-<?php
-}
-?>
+      <?php while ($standing = $standings->fetch_assoc()) { ?>
+        <tr>
+          <td><?php echo $standing['driver_name']; ?></td>
+          <td><?php echo $standing['season']; ?></td>
+          <td><?php echo $standing['points']; ?></td>
+          <td><?php echo $standing['wins']; ?></td>
+          <td><?php echo $standing['podiums']; ?></td>
+          <td></td>
+        </tr>
+      <?php } ?>
     </tbody>
   </table>
 </div>
+
+</body>
+</html>
