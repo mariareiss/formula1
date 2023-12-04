@@ -41,8 +41,6 @@ include "view-driver-newform.php";
 <div class="table-responsive">
 <body>
     <div class="container">
-        <h1>Drivers</h1>
-        <div class="table-responsive">
             <table class="table table-striped">
                 <thead>
                     <tr>
