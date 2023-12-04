@@ -3,8 +3,8 @@
   <table class="table">
     <thead>
       <tr>
-        <th>Team Name</th>
         <th>Driver</th>
+        <th>Team Name</th>
         <th>Principal</th>
         <th>Season</th>
         <th></th>
