@@ -41,7 +41,7 @@ function updateDrivers($dName, $dNationality, $dAge, $drid) {
 function deleteDrivers($drid) {
     try {
         $conn = get_db_connection();
-        $stmt = $conn->prepare("delete from `Driver` where driver_id=?");
+        $stmt = $conn->prepare("delete from `Drivers` where driver_id=?");
         $stmt->bind_param("i", $drid);
         $success = $stmt->execute();
         $conn->close();
