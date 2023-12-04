@@ -73,7 +73,7 @@
                             <a class="nav-link" href="standings.php">Standing</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="team_builder.php">Build your Team</a>
+                            <a class="nav-link" href="team-builder.php">Build your Team</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="game.html">Game</a>
