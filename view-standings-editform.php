@@ -17,18 +17,22 @@
       <div class="modal-body">
         <form method="post" action="">
   <div class="mb-3">
-    <label for="dName<?php echo $standing['standing_id'];?>" class="form-label">Driver Name</label>
-    <input type="text" class="form-control" id="dName<?php echo $driver['driver_id']; ?>" name="dName" value="<?php echo $driver['driver_name']; ?>">
+    <label for="sSeason<?php echo $standing['standing_id'];?>" class="form-label">Season</label>
+    <input type="text" class="form-control" id="sSeason<?php echo $driver['driver_id']; ?>" name="sSeason" value="<?php echo $standing['season']; ?>">
   </div>
   <div class="mb-3">
-    <label for="dNationality<?php echo $standing['standing_id']; ?>" class="form-label">Driver Nationality</label>
-    <input type="text" class="form-control" id="dNationality<?php echo $standing['standing_id'];?>" name="dNationality" value="<?php echo $driver['driver_nationality']; ?>">
+    <label for="sPoints<?php echo $standing['standing_id']; ?>" class="form-label">Points</label>
+    <input type="text" class="form-control" id="sPoints<?php echo $standing['standing_id'];?>" name="sPoints" value="<?php echo $standing['points']; ?>">
   </div>
   <div class="mb-3">
-    <label for="dAge<?php echo $standing['standing_id']; ?>" class="form-label">Driver Age</label>
-    <input type="text" class="form-control" id="dAge<?php echo $standing['standing_id']; ?>" name="dAge" value="<?php echo $driver['driver_age']; ?>">
+    <label for="sWins<?php echo $standing['standing_id']; ?>" class="form-label">Wins</label>
+    <input type="text" class="form-control" id="sWins<?php echo $standing['standing_id']; ?>" name="sWins" value="<?php echo $standing['wins']; ?>">
   </div>
-    <input type="hidden" name="drid" value="<?php echo $standing['standing_id']; ?>">
+  <div class="mb-3">
+    <label for="sPodiums<?php echo $standing['standing_id']; ?>" class="form-label">Podiums</label>
+    <input type="text" class="form-control" id="sPodiums<?php echo $standing['standing_id']; ?>" name="sPodiums" value="<?php echo $standing['podiums']; ?>">
+  </div>
+    <input type="hidden" name="stid" value="<?php echo $standing['standing_id']; ?>">
     <input type="hidden" name="actionType" value="Edit">
   <button type="submit" class="btn btn-primary">Submit</button>
 </form>
