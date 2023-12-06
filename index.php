@@ -14,7 +14,10 @@ $pageTitle = "Home";
         }
 
         h1 {
-            width: 100%;
+            width: 1200px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
 
         .header-container {
