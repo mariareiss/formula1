@@ -21,6 +21,7 @@ include "view-header.php";
       background-color: #343a40;
       text-align: center;
       padding: 10px;
+      max-width: 1000px;
     }
 
     h1 {
