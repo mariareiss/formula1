@@ -1,51 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <h1>Standings chart</h1>
-<div>
-  <canvas id="myChart"></canvas>
-</div>
-
-<div><canvas class="zdog-canvas" width="240" height="240"></canvas></div>
-
+    <meta charset="utf-8">
+    <title>Standings chart</title>
+    <!-- Place your CSS or meta tags here -->
 </head>
-
 <body>
+    <h1>Standings chart</h1>
+    <div>
+        <canvas id="myChart"></canvas>
+    </div>
 
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-<script src="https://unpkg.com/zdog@1/dist/zdog.dist.min.js"></script>
-<script src="zdog-demo.js"></script>
-  <script src="https://code.highcharts.com/highcharts.js"></script>
+    <!-- Include necessary scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="https://unpkg.com/zdog@1/dist/zdog.dist.min.js"></script>
+    <script src="zdog-demo.js"></script>
+    <script src="https://code.highcharts.com/highcharts.js"></script>
 
+    <script>
+        // Get the context of the canvas element
+        const ctx = document.getElementById('myChart').getContext('2d');
 
-<script>
-  const ctx = document.getElementById('myChart');
+        // Example data (replace it with your data retrieval logic)
+        const winsData = [
+            <?php
+            while ($standing = $standings->fetch_assoc()) {
+                echo $standing['wins'] . ", ";
+            }
+            ?>
+        ];
 
-  new Chart(ctx, {
-    type: 'doughnut',
-    data: {
-    datasets: [{
-        data: [
-<?php
-while ($standing = $standings->fetch_assoc()) {
-  echo $standing['wins'] . ", ";
-}
-?>
-        ]
-    }],
+        // Example labels (replace it with your data retrieval logic)
+        const labels = [
+            <?php
+            $standings = selectStandings();
+            while ($standing = $standings->fetch_assoc()) {
+                echo "'" . $standing['standing_id'] . "', ";
+            }
+            ?>
+        ];
 
-    // These labels appear in the legend and in the tooltips when hovering different arcs
-    labels: [
-<?php
-$standings = selectStandings();
-while ($standing = $standings->fetch_assoc()) {
-echo "'" . $standing['standing_id'] . "', ";
-}
-?>
-    ]
-},
-  });
-
-  
+        // Create the doughnut chart
+        new Chart(ctx, {
+            type: 'doughnut',
+            data: {
+                datasets: [{
+                    data: winsData,
+                    backgroundColor: [
+                        // Add desired background colors here
+                    ],
+                    borderColor: [
+                        // Add desired border colors here
+                    ],
+                    borderWidth: 1
+                }],
+                labels: labels
+            },
+            options: {
+                // Add chart options if needed
+            }
+        });
+    </script>
 </body>
+</html>
+
     
     
