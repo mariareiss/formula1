@@ -79,7 +79,7 @@
                             <a class="nav-link" href="builder.php">Build your Team</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="game.html">Game</a>
+                            <a class="nav-link" href="game.php">Game</a>
                         </li>
                     </ul>
                 </div>
