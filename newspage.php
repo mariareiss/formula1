@@ -18,7 +18,7 @@ include "view-header.php";
     }
 
     header {
-      background-color: #66cccc;
+      background-color: #343a40;
       text-align: center;
       padding: 10px;
     }
