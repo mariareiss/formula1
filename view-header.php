@@ -61,25 +61,25 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="/">Home</a>
+                            <a class="nav-link active" aria-current="page" href="newspage.php">F1 Hub</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="drivers.php">Driver</a>
+                            <a class="nav-link" href="index.php">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="race.php">Race</a>
+                            <a class="nav-link" href="drivers.php">Drivers</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="standings.php">Standing</a>
+                            <a class="nav-link" href="race.php">Races</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="standings.php">Standings</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="builder.php">Build your Team</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="game.php">Game</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="newspage.php">News</a>
+                            <a class="nav-link" href="game.html">Game</a>
                         </li>
                     </ul>
                 </div>
