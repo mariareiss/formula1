@@ -8,15 +8,16 @@ $pageTitle = "Home";
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
         body {
-            text-align: center;
-            justify-content:center;
-        }
-
-        h1 {
-            width: 1200px;
             display: flex;
             flex-direction: column;
             align-items: center;
+            justify-content: center;
+            height: 100vh; /* Ensures the content is centered vertically */
+            margin: 0; /* Removes default body margin */
+        }
+
+        h1 {
+            width: 100%;
         }
     </style>
 </head>
@@ -30,5 +31,6 @@ $pageTitle = "Home";
     ?>
 </body>
 </html>
+
 
 
