@@ -23,7 +23,7 @@ $pageTitle = "Home";
     <?php
     include "view-header.php";
     ?>
-    <div>
+    <div style="margin-top: 20px;">
         <h1>Welcome to your Formula 1 Portal</h1>
     </div>
     <?php
