@@ -32,7 +32,7 @@
     <label for="sPodiums<?php echo $standing['standing_id']; ?>" class="form-label">Podiums</label>
     <input type="text" class="form-control" id="sPodiums<?php echo $standing['standing_id']; ?>" name="sPodiums" value="<?php echo $standing['podiums']; ?>">
   </div>
-    <input type="hidden" name="stid" value="<?php echo $standing['standing_id']; ?>">
+    <input type="hidden" name="ssid" value="<?php echo $standing['standing_id']; ?>">
     <input type="hidden" name="actionType" value="Edit">
   <button type="submit" class="btn btn-primary">Submit</button>
 </form>
