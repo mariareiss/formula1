@@ -59,11 +59,11 @@
             <tbody>
             <?php while ($standing = $standings->fetch_assoc()) { ?>
                 <tr>
-                    <td><?php echo $standings['driver_name']; ?></td>
-                    <td><?php echo $standings['season']; ?></td>
-                    <td><?php echo $standings['points']; ?></td>
-                    <td><?php echo $standings['wins']; ?></td>
-                    <td><?php echo $standings['podiums']; ?></td>
+                    <td><?php echo $standing['driver_name']; ?></td>
+                    <td><?php echo $standing['season']; ?></td>
+                    <td><?php echo $standing['points']; ?></td>
+                    <td><?php echo $standing['wins']; ?></td>
+                    <td><?php echo $standing['podiums']; ?></td>
                     <td>
                         <?php
                           include "view-standings-editform.php";
