@@ -27,11 +27,11 @@ function insertStandings($sSeason, $sPoints, $sWins, $sPodiums) {
         throw $e;
     }
 }
-function updateStandings($sSeason, $sPoints, $sWins, $sPodiums $stid) {
+function updateStandings($sSeason, $sPoints, $sWins, $sPodiums $ssid) {
     try {
         $conn = get_db_connection();
         $stmt = $conn->prepare("update `Standings` set `season`= ?, `points`= ?, `wins`= ?, `podiums`=? where standing_id = ?");
-        $stmt->bind_param("ssssi", $sSeason, $sPoints, $sWins, $sPodiums $stid);
+        $stmt->bind_param("ssssi", $sSeason, $sPoints, $sWins, $sPodiums $ssid);
         $success = $stmt->execute();
         $conn->close();
         return $success;
@@ -44,7 +44,7 @@ function deleteStandings($stid) {
     try {
         $conn = get_db_connection();
         $stmt = $conn->prepare("delete from `Standings` where standing_id=?");
-        $stmt->bind_param("i", $stid);
+        $stmt->bind_param("i", $ssid);
         $success = $stmt->execute();
         $conn->close();
         return $success;
