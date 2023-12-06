@@ -11,26 +11,28 @@ $pageTitle = "Home";
             display: flex;
             flex-direction: column;
             align-items: center;
-            margin-top: 50px; /* Adjust the margin as needed */
         }
 
         h1 {
             width: 100%;
         }
+
+        .header-container {
+            margin-top: 20px; /* Adjust the margin as needed */
+        }
     </style>
 </head>
 <body>
-    <?php
-    include "view-header.php";
-    ?>
-    <div style="margin-top: 20px;">
+    <div class="header-container">
+        <?php include "view-header.php"; ?>
+    </div>
+    <div>
         <h1>Welcome to your Formula 1 Portal</h1>
     </div>
-    <?php
-    include "view-footer.php";
-    ?>
+    <?php include "view-footer.php"; ?>
 </body>
 </html>
+
 
 
 
