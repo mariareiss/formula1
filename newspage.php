@@ -21,13 +21,20 @@ include "view-header.php";
       background-color: #343a40;
       text-align: center;
       padding: 10px;
-      max-width: 1000px;
+      max-width: 1200px;
+      display: flex;
+      flex-direction: column; 
+      align-items: center;
     }
 
     h1 {
       margin: 0;
       color: #fff;
-      max-width: 1000px;
+      text-align: center;
+      max-width: 1200px;
+      display: flex;
+      flex-direction: column; /* Stack items vertically */
+      align-items: center;
     }
 
     section {
