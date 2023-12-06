@@ -21,7 +21,7 @@ include "view-header.php";
       background-color: #343a40;
       text-align: center;
       padding: 10px;
-      max-width: 1200px;
+      max-width: 100%;
       display: flex;
       flex-direction: column; 
       align-items: center;
@@ -31,7 +31,7 @@ include "view-header.php";
       margin: 0;
       color: #fff;
       text-align: center;
-      max-width: 1200px;
+      max-width: 100%;
       display: flex;
       flex-direction: column; /* Stack items vertically */
       align-items: center;
