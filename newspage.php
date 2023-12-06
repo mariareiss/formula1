@@ -134,11 +134,12 @@ include "view-header.php";
   </section>
 
 
-  <script>
+<script>
     function redirectToWebsite(url) {
-      window.location.href = url;
+        window.open(url, '_blank');
     }
-  </script>
+</script>
+
 </body>
 </html>
 
