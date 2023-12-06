@@ -16,7 +16,6 @@
           <td><?php echo $result['position']; ?></td>
           <td><?php echo $result['points_earned']; ?></td>
           <td>
-            <!-- Add any additional columns or content here -->
           </td>
         </tr>
       <?php
