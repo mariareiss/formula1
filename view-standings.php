@@ -59,11 +59,11 @@
             <tbody>
             <?php while ($standing = $standings->fetch_assoc()) { ?>
                 <tr>
-                    <td><?php echo $standing['driver_name']; ?></td>
-                    <td><?php echo $standing['season']; ?></td>
-                    <td><?php echo $standing['points']; ?></td>
-                    <td><?php echo $standing['wins']; ?></td>
-                    <td><?php echo $standing['podiums']; ?></td>
+                    <td><?php echo $standings['driver_name']; ?></td>
+                    <td><?php echo $standings['season']; ?></td>
+                    <td><?php echo $standings['points']; ?></td>
+                    <td><?php echo $standings['wins']; ?></td>
+                    <td><?php echo $standings['podiums']; ?></td>
                     <td>
                         <?php
                           include "view-standings-editform.php";
@@ -72,7 +72,7 @@
 
             <td>
       <form method="post" action="">
-        <input type="hidden" name="standing_id" value="<?php echo $standing['standing_id']; ?>">
+        <input type="hidden" name="standing_id" value="<?php echo $standings['standing_id']; ?>">
         <input type="hidden" name="actionType" value="Delete">
       <button type="submit" class="btn btn-primary" onclick="return confirm('Are you sure?');">
           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
