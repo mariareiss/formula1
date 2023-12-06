@@ -28,6 +28,7 @@
         .search-container {
             text-align: center;
             margin-top: 20px;
+            max-width:100%;
         }
 
         .search-container input[type=text] {
@@ -35,6 +36,7 @@
             margin: 5px 0;
             border: none;
             font-size: 17px;
+            max-width:100%;
         }
 
         .search-container button {
