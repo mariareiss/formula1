@@ -18,7 +18,6 @@ include "view-header.php";
     }
 
     header {
-      background-color: #f8f8f8;
       text-align: center;
       padding: 10px;
       max-width: 100%;
