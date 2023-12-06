@@ -84,6 +84,9 @@
                         <li class="nav-item">
                             <a class="nav-link" href="game.php">Game</a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="standings-chart.php">Standings Chart</a>
+                        </li>
                     </ul>
                 </div>
             </div>
