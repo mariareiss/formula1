@@ -77,7 +77,7 @@ include "view-header.php";
   
   <section id="byTeam">
     <h2>Click on a team to learn more</h2>
-    <div class="grid-container" style="width: 1200px;">
+    <div class="grid-container">
       <!-- Team grid with team names -->
       
 <div class="grid-item" onclick="redirectToWebsite('https://www.mercedesamgf1.com/')">
