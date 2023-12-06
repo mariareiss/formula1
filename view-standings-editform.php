@@ -7,32 +7,32 @@
 </button>
 
 <!-- Modal -->
-<div class="modal fade" id="editStandingModal<?php echo $standing['standing_id'];?>" tabindex="-1" aria-labelledby="editStandingModallabel<?php echo $standing['standing_id']; ?>" aria-hidden="true">
+<div class="modal fade" id="editStandingModal<?php echo $standings['standing_id'];?>" tabindex="-1" aria-labelledby="editStandingModallabel<?php echo $standings['standing_id']; ?>" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h1 class="modal-title fs-5" id="editStandingModallabel<?php echo $standing['standing_id']; ?>">Edit Standing</h1>
+        <h1 class="modal-title fs-5" id="editStandingModallabel<?php echo $standings['standing_id']; ?>">Edit Standing</h1>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
         <form method="post" action="">
   <div class="mb-3">
-    <label for="sSeason<?php echo $standing['standing_id'];?>" class="form-label">Season</label>
-    <input type="text" class="form-control" id="sSeason<?php echo $driver['driver_id']; ?>" name="sSeason" value="<?php echo $standing['season']; ?>">
+    <label for="sSeason<?php echo $standings['standing_id'];?>" class="form-label">Season</label>
+    <input type="text" class="form-control" id="sSeason<?php echo $standings['standing_id']; ?>" name="sSeason" value="<?php echo $standings['season']; ?>">
   </div>
   <div class="mb-3">
-    <label for="sPoints<?php echo $standing['standing_id']; ?>" class="form-label">Points</label>
-    <input type="text" class="form-control" id="sPoints<?php echo $standing['standing_id'];?>" name="sPoints" value="<?php echo $standing['points']; ?>">
+    <label for="sPoints<?php echo $standings['standing_id']; ?>" class="form-label">Points</label>
+    <input type="text" class="form-control" id="sPoints<?php echo $standings['standing_id'];?>" name="sPoints" value="<?php echo $standings['points']; ?>">
   </div>
   <div class="mb-3">
-    <label for="sWins<?php echo $standing['standing_id']; ?>" class="form-label">Wins</label>
-    <input type="text" class="form-control" id="sWins<?php echo $standing['standing_id']; ?>" name="sWins" value="<?php echo $standing['wins']; ?>">
+    <label for="sWins<?php echo $standings['standing_id']; ?>" class="form-label">Wins</label>
+    <input type="text" class="form-control" id="sWins<?php echo $standings['standing_id']; ?>" name="sWins" value="<?php echo $standings['wins']; ?>">
   </div>
   <div class="mb-3">
-    <label for="sPodiums<?php echo $standing['standing_id']; ?>" class="form-label">Podiums</label>
-    <input type="text" class="form-control" id="sPodiums<?php echo $standing['standing_id']; ?>" name="sPodiums" value="<?php echo $standing['podiums']; ?>">
+    <label for="sPodiums<?php echo $standings['standing_id']; ?>" class="form-label">Podiums</label>
+    <input type="text" class="form-control" id="sPodiums<?php echo $standings['standing_id']; ?>" name="sPodiums" value="<?php echo $standings['podiums']; ?>">
   </div>
-    <input type="hidden" name="ssid" value="<?php echo $standing['standing_id']; ?>">
+    <input type="hidden" name="ssid" value="<?php echo $standings['standing_id']; ?>">
     <input type="hidden" name="actionType" value="Edit">
   <button type="submit" class="btn btn-primary">Submit</button>
 </form>
