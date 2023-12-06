@@ -11,9 +11,7 @@ $pageTitle = "Home";
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: center;
-            height: 100vh; /* Ensures the content is centered vertically */
-            margin: 0; /* Removes default body margin */
+            margin-top: 50px; /* Adjust the margin as needed */
         }
 
         h1 {
@@ -31,6 +29,7 @@ $pageTitle = "Home";
     ?>
 </body>
 </html>
+
 
 
 
