@@ -21,7 +21,8 @@ $pageTitle = "Home";
         }
 
         .header-container {
-            margin-top: 20px; /* Adjust the margin as needed */
+            margin-top: 20px; 
+            width: 1200px;
         }
     </style>
 </head>
