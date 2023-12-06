@@ -17,6 +17,7 @@
 
         .navbar {
             background-color: #343a40; /* Dark background color */
+            max-width:100%;
         }
 
         .navbar-brand,
