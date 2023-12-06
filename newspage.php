@@ -26,6 +26,7 @@ include "view-header.php";
     h1 {
       margin: 0;
       color: #fff;
+      max-width: 1200px;
     }
 
     section {
