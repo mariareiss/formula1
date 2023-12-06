@@ -20,15 +20,18 @@ $pageTitle = "Home";
     </style>
 </head>
 <body>
+    <?php
+    include "view-header.php";
+    ?>
     <div>
         <h1>Welcome to your Formula 1 Portal</h1>
     </div>
     <?php
-    include "view-header.php";
     include "view-footer.php";
     ?>
 </body>
 </html>
+
 
 
 
