@@ -27,7 +27,7 @@ function insertStandings($sSeason, $sPoints, $sWins, $sPodiums) {
         throw $e;
     }
 }
-function updateStandings($sSeason, $sPoints, $sWins, $sPodiums $ssid) {
+function updateStandings($sSeason, $sPoints, $sWins, $sPodiums, $ssid) {
     try {
         $conn = get_db_connection();
         $stmt = $conn->prepare("update `Standings` set `season`= ?, `points`= ?, `wins`= ?, `podiums`=? where standing_id = ?");
