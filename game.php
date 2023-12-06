@@ -10,23 +10,15 @@ include "view-header.php";
   <title>Formula 1 Race Simulation</title>
   <style>
     body {
-      font-family: 'Arial', sans-serif;
-      margin: 0;
-      padding: 0;
-      background-color: #f8f8f8;
-      color: #333;
+      background-image: url('f1-image.avif');
+      background-size: cover;
+      background-repeat: no-repeat;
+      opacity: 1.0;
     }
 
-    header {
-      background-color: #66cccc;
-      text-align: center;
-      padding: 10px;
-    }
-
-    h1 {
+ h1 {
       text-align: center;
       margin-top: 20px;
-      color: #fff;
     }
 
     .container {
@@ -97,9 +89,7 @@ include "view-header.php";
 </head>
 <body>
 
-<header>
-  <h1>Formula 1 Race Simulation</h1>
-</header>
+<h1>Formula 1 Race Simulation</h1>
 
 <div class="container">
   <div>
