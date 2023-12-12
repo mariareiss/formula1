@@ -29,7 +29,7 @@
                 data: [
             <?php
                 while ($standing = $standings->fetch_assoc()) {
-                    echo $standing['standing_id'] . ", ";
+                    echo $standing['wins'] . ", ";
             }
             ?>
                 ]
@@ -38,8 +38,8 @@
                 labels: [
                     <?php
                         $standings = selectStandings();    
-                        while ($standing = $standings->fetch_assoc()) {
-                            echo "'" . $standing['standing_id'] . "', ";
+                        while ($driver = $drivers->fetch_assoc()) {
+                            echo "'" . $driver['driver_name'] . "', ";
             }
             ?>
                 ]
