@@ -46,20 +46,23 @@
             type: 'doughnut',
             data: {
                 datasets: [{
-                    data: winsData,
-                    backgroundColor: [
-                        // Add desired background colors here
-                    ],
-                    borderColor: [
-                        // Add desired border colors here
-                    ],
-                    borderWidth: 1
-                }],
-                labels: labels
-            },
-            options: {
-                // Add chart options if needed
+                    data: [
+            <?php
+                        while ($standing = $standings->fetch_assoc()) {
+                            echo "'" . $standing['standing_id'] . ", ";
             }
+            ?>
+                ]
+                }],
+                labels: [
+                    <?php
+                        $standings = selectStandings();    
+                        while ($standing = $standings->fetch_assoc()) {
+                            echo "'" . $standing['standing_id'] . ", ";
+            }
+            ?>
+            ]
+            },
         });
     </script>
 </body>
