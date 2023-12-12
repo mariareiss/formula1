@@ -67,9 +67,6 @@
                             <a class="nav-link active" aria-current="page" href="newspage.php">F1 Hub</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="index.php">Home</a>
-                        </li>
-                        <li class="nav-item">
                             <a class="nav-link" href="drivers.php">Drivers</a>
                         </li>
                         <li class="nav-item">
