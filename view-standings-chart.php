@@ -49,6 +49,15 @@ new Chart(ctx, {
             ?>
         ]
     },
+    options: {
+        plugins: {
+            legend: {
+                labels: {
+                    color: '#000000' 
+                }
+            }
+        }
+    }
 });
     </script>
 </body>
