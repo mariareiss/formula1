@@ -31,7 +31,7 @@ function updateStandings($sSeason, $sPoints, $sWins, $sPodiums, $ssid) {
     try {
         $conn = get_db_connection();
         $stmt = $conn->prepare("update `Standings` set `season`= ?, `points`= ?, `wins`= ?, `podiums`=? where standing_id = ?");
-        $stmt->bind_param("ssss", $sSeason, $sPoints, $sWins, $sPodiums);
+        $stmt->bind_param("ssssi", $sSeason, $sPoints, $sWins, $sPodiums, $ssid);
         $success = $stmt->execute();
         $conn->close();
         return $success;
