@@ -20,30 +20,29 @@
         new Chart(ctx, {
             type: 'bar',
             data: {
-            datasets: [{
-                data: [
-            <?php
-                while ($standing = $standings->fetch_assoc()) {
-                    echo $standing['standing_id'] . ", ";
-            }
-            ?>
-                ]
-                }],
-                
                 labels: [
                     <?php
-                        $standings = selectStandings();    
+                    $standings = selectStandings();
+                    while ($standing = $standings->fetch_assoc()) {
+                        echo "'" . $standing['standing_id'] . "', ";
+                    }
+                    ?>
+                ],
+                datasets: [{
+                    label: 'Standing ID',
+                    backgroundColor: 'rgba(54, 162, 235, 0.8)',
+                    borderColor: 'rgba(54, 162, 235, 1)',
+                    borderWidth: 1,
+                    data: [
+                        <?php
+                        $standings = selectStandings();
                         while ($standing = $standings->fetch_assoc()) {
-                            echo "'" . $standing['standing_id'] . "', ";
-            }
-            ?>
-                ]
+                            echo $standing['standing_id'] . ", ";
+                        }
+                        ?>
+                    ]
+                }]
             },
-                    backgroundColor: 'rgba(54, 162, 235, 0.8)', // Bar color
-                    borderColor: 'rgba(54, 162, 235, 1)', // Border color
-                    borderWidth: 1
-                }],
-
             options: {
                 responsive: true,
                 maintainAspectRatio: false,
@@ -84,15 +83,14 @@
                             fontColor: 'black',
                             fontSize: 16,
                             fontStyle: 'bold'
-                        }
-                    }]
-                }
+                        
             }
         });
     </script>
 </body>
 
 </html>
+
 
 
 
