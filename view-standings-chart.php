@@ -8,7 +8,7 @@
 <body>
     <h1 style="text-align: center;">Standings Chart</h1>
 
-    <div style="width: 1000px; margin: 0 auto;">
+    <div style="width: 800px; margin: 0 auto;">
         <canvas id="myChart"></canvas>
     </div>
 
@@ -43,24 +43,41 @@
                 maintainAspectRatio: false,
                 legend: {
                     display: true,
-                    position: 'top'
+                    position: 'top',
+                    labels: {
+                        fontColor: 'black',
+                        fontSize: 16,
+                        fontStyle: 'bold'
+                    }
                 },
                 scales: {
                     xAxes: [{
-                        display: true,
+                        ticks: {
+                            fontColor: 'black',
+                            fontSize: 14,
+                            fontStyle: 'bold'
+                        },
                         scaleLabel: {
                             display: true,
-                            labelString: 'Drivers'
+                            labelString: 'Drivers',
+                            fontColor: 'black',
+                            fontSize: 16,
+                            fontStyle: 'bold'
                         }
                     }],
                     yAxes: [{
-                        display: true,
+                        ticks: {
+                            fontColor: 'black',
+                            fontSize: 14,
+                            fontStyle: 'bold',
+                            beginAtZero: true
+                        },
                         scaleLabel: {
                             display: true,
-                            labelString: 'Points'
-                        },
-                        ticks: {
-                            beginAtZero: true
+                            labelString: 'Points',
+                            fontColor: 'black',
+                            fontSize: 16,
+                            fontStyle: 'bold'
                         }
                     }]
                 }
