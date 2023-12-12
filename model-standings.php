@@ -17,7 +17,7 @@ FROM Drivers d join Results rs on d.driver_id=rs.driver_id join Standing s on rs
 function insertStandings($dName, $sSeason, $sPoints, $sWins, $sPodiums) {
     try {
         $conn = get_db_connection();
-        $stmt = $conn->prepare("INSERT INTO `Standing`(`driver_id`, `driver_name`, `season`, `points`, `wins`, `podiums`) VALUES (?, ?, ?, ?, ?, ?)");
+        $stmt = $conn->prepare("INSERT INTO `Standing`(`driver_name`, `season`, `points`, `wins`, `podiums`) VALUES (?, ?, ?, ?, ?)");
         $stmt->bind_param("sssss", $dName, $sSeason, $sPoints, $sWins, $sPodiums);
         $success = $stmt->execute();
         $conn->close();
