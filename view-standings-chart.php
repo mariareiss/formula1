@@ -6,9 +6,9 @@
 </head>
 
 <body>
-    <h1>Standings Chart</h1>
+    <h1 style="text-align: center;">Standings Chart</h1>
 
-    <div style="width: 400px; height: 400px;">
+    <div style="width: 600px; margin: 0 auto;">
         <canvas id="myChart"></canvas>
     </div>
 
@@ -22,10 +22,11 @@
         const driverStandings = [331, 318, 203, 190, 180];
 
         new Chart(ctx, {
-            type: 'doughnut',
+            type: 'bar',
             data: {
                 labels: driverNames,
                 datasets: [{
+                    label: 'Driver Standings',
                     data: driverStandings,
                     backgroundColor: [
                         'rgba(255, 99, 132, 0.8)',
@@ -42,7 +43,26 @@
                 maintainAspectRatio: false,
                 legend: {
                     display: true,
-                    position: 'right'
+                    position: 'top'
+                },
+                scales: {
+                    xAxes: [{
+                        display: true,
+                        scaleLabel: {
+                            display: true,
+                            labelString: 'Drivers'
+                        }
+                    }],
+                    yAxes: [{
+                        display: true,
+                        scaleLabel: {
+                            display: true,
+                            labelString: 'Points'
+                        },
+                        ticks: {
+                            beginAtZero: true
+                        }
+                    }]
                 }
             }
         });
