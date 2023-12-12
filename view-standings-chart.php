@@ -17,30 +17,35 @@
     <script>
         const ctx = document.getElementById('myChart').getContext('2d');
 
+        // PHP to populate JavaScript arrays from PHP data
+        const labels = [
+            <?php
+            $standings = selectStandings();
+            while ($standing = $standings->fetch_assoc()) {
+                echo "'" . $standing['standing_id'] . "', ";
+            }
+            ?>
+        ];
+
+        const data = [
+            <?php
+            $standings = selectStandings();
+            while ($standing = $standings->fetch_assoc()) {
+                echo $standing['standing_id'] . ", ";
+            }
+            ?>
+        ];
+
         new Chart(ctx, {
             type: 'bar',
             data: {
-                labels: [
-                    <?php
-                    $standings = selectStandings();
-                    while ($standing = $standings->fetch_assoc()) {
-                        echo "'" $standing['standing_id'] "', ";
-                    }
-                    ?>
-                ],
+                labels: labels,
                 datasets: [{
                     label: 'Standing ID',
                     backgroundColor: 'rgba(54, 162, 235, 0.8)',
                     borderColor: 'rgba(54, 162, 235, 1)',
                     borderWidth: 1,
-                    data: [
-                        <?php
-                        $standings = selectStandings();
-                        while ($standing = $standings->fetch_assoc()) {
-                            echo $standing['standing_id'] ", ";
-                        }
-                        ?>
-                    ]
+                    data: data
                 }]
             },
             options: {
@@ -83,13 +88,16 @@
                             fontColor: 'black',
                             fontSize: 16,
                             fontStyle: 'bold'
-                        
+                        }
+                    }]
+                }
             }
         });
     </script>
 </body>
 
 </html>
+
 
 
 
