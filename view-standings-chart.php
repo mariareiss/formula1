@@ -38,8 +38,8 @@
                 labels: [
                     <?php
                         $standings = selectStandings();    
-                        while ($driver = $drivers->fetch_assoc()) {
-                            echo "'" . $driver['driver_name'] . "', ";
+                        while ($standing = $standings->fetch_assoc()) {
+                            echo "'" . $standing['driver_name'] . "', ";
             }
             ?>
                 ]
