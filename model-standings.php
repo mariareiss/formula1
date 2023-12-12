@@ -43,7 +43,7 @@ function updateStandings($sSeason, $sPoints, $sWins, $sPodiums, $ssid) {
 function deleteStandings($stid) {
     try {
         $conn = get_db_connection();
-        $stmt = $conn->prepare("delete from `Standings` where standing_id=?");
+        $stmt = $conn->prepare("delete from `Standing` where standing_id=?");
         $stmt->bind_param("i", $ssid);
         $success = $stmt->execute();
         $conn->close();
