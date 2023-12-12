@@ -10,9 +10,9 @@ new Chart(ctx, {
                 ?>
             ],
             backgroundColor: [
-                'white',   // Color for the first slice
-                'grey',    // Color for the second slice
-                'red',     // Color for the third slice
+                '#F5EEEC',   // Color for the first slice
+                '#B5A7A5',    // Color for the second slice
+                '#FF390F',     // Color for the third slice
                 // Add more colors if needed for additional slices
             ],
         }],
