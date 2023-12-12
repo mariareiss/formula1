@@ -1,3 +1,10 @@
+<?php
+$limitedStandings = [];
+for ($i = 0; $i < 25 && ($standing = $standings->fetch_assoc()); $i++) {
+    $limitedStandings[] = $standing;
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
