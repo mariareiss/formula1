@@ -1,5 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+<div class="container">
+    <h1>Standings</h1>
+    <div class="col-auto">
+  <?php
+  include "view-standings-newform.php";
+  ?>
+    </div>
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -35,14 +42,6 @@
     </style>
 </head>
 <body>
-
-<div class="container">
-    <h1>Standings</h1>
-    <div class="col-auto">
-  <?php
-  include "view-standings-newform.php";
-  ?>
-    </div>
     
     <div class="table-responsive">
         <table class="table">
