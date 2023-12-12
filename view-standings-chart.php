@@ -1,66 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <h1>Standings chart</h1>
-    
+    <meta charset="utf-8">
+    <title>Standings Chart</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <h1>Standings Chart</h1>
+
     <div>
         <canvas id="myChart"></canvas>
     </div>
 
-    <div><canvas class="zdog-canvas" width="100" height="100"></canvas></div>
-    
-</head>
-<body>
-
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-    <script src="https://unpkg.com/zdog@1/dist/zdog.dist.min.js"></script>
-    <script src="zdog-demo.js"></script>
-    <script src="https://code.highcharts.com/highcharts.js"></script>
-
     <script>
-
         const ctx = document.getElementById('myChart');
 
-new Chart(ctx, {
-    type: 'pie',
-    data: {
-        datasets: [{
-            data: [
-                <?php
-                while ($standing = $standings->fetch_assoc()) {
-                    echo $standing['wins'] . ", ";
-                }
-                ?>
-            ],
-            backgroundColor: [
-                '#F5EEEC',   // Color for the first slice
-                '#B5A7A5',    // Color for the second slice
-                '#FF390F',     // Color for the third slice
-                // Add more colors if needed for additional slices
-            ],
-        }],
-        labels: [
+        // Assuming your PHP code will fetch the top 5 drivers based on wins
+        const standingsData = [
             <?php
-            $standings = selectStandings();    
+            $standings = selectTopStandings(5); // Modify this function to return top 5 drivers
+            $data = [];
             while ($standing = $standings->fetch_assoc()) {
-                echo "'" . $standing['driver_name'] . "', ";
+                $data[] = "{label: '{$standing['driver_name']}', wins: {$standing['wins']}}";
             }
+            echo implode(", ", $data);
             ?>
-        ]
-    },
-    options: {
-        plugins: {
-            legend: {
-                labels: {
-                    color: '#000000' 
+        ];
+
+        new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: standingsData.map(data => data.label),
+                datasets: [{
+                    label: 'Wins',
+                    data: standingsData.map(data => data.wins),
+                    backgroundColor: [
+                        '#F5EEEC', 
+                        '#B5A7A5', 
+                        '#FF390F',
+                        // Add more colors if needed
+                    ],
+                    borderColor: [
+                        // Define border colors if needed
+                    ],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                },
+                plugins: {
+                    legend: {
+                        labels: {
+                            color: '#000000' 
+                        }
+                    }
                 }
             }
-        }
-    }
-});
+        });
     </script>
 </body>
 </html>
+
 
 
