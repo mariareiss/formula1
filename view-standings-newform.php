@@ -17,24 +17,24 @@
       <div class="modal-body">
         <form method="post" action="">
             <div class="mb-3">
-              <label for="driver" class="form-label">Driver</label>
-              <input type="text" class="form-control" id="driver" name="driver">
+              <label for="dName" class="form-label">Driver</label>
+              <input type="text" class="form-control" id="dName" name="dName">
             </div>
             <div class="mb-3">
-              <label for="season" class="form-label">Season</label>
-              <input type="text" class="form-control" id="season" name="season">
+              <label for=sSeason" class="form-label">Season</label>
+              <input type="text" class="form-control" id="sSeason" name="sSeason">
             </div>
             <div class="mb-3">
-              <label for="points" class="form-label">Points</label>
-              <input type="text" class="form-control" id="points" name="points">
+              <label for="sPoints" class="form-label">Points</label>
+              <input type="text" class="form-control" id="sPoints" name="sPoints">
             </div>
             <div class="mb-3">
-              <label for="wins" class="form-label">Wins</label>
-              <input type="text" class="form-control" id="wins" name="wins">
+              <label for="sWins" class="form-label">Wins</label>
+              <input type="text" class="form-control" id="sWins" name="sWins">
             </div>
             <div class="mb-3">
-              <label for="podiums" class="form-label">Podiums</label>
-              <input type="text" class="form-control" id="podiums" name="podiums">
+              <label for="sPodiums" class="form-label">Podiums</label>
+              <input type="text" class="form-control" id="sPodiums" name="sPodiums">
             </div>
 
               <input type="hidden" name="actionType" value="Add">
