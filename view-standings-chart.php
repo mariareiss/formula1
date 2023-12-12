@@ -8,7 +8,7 @@
 <body>
     <h1 style="text-align: center;">Standings Chart</h1>
 
-    <div style="width: 800px; margin: 0 auto;">
+    <div style="width: 1000px; margin: 0 auto;">
         <canvas id="myChart"></canvas>
     </div>
 
@@ -56,7 +56,7 @@
                     position: 'top',
                     labels: {
                         fontColor: 'black',
-                        fontSize: 16,
+                        fontSize: 20,
                         fontStyle: 'bold'
                     }
                 },
@@ -64,21 +64,21 @@
                     xAxes: [{
                         ticks: {
                             fontColor: 'black',
-                            fontSize: 14,
+                            fontSize: 18,
                             fontStyle: 'bold'
                         },
                         scaleLabel: {
                             display: true,
                             labelString: 'Drivers',
                             fontColor: 'black',
-                            fontSize: 16,
+                            fontSize: 18,
                             fontStyle: 'bold'
                         }
                     }],
                     yAxes: [{
                         ticks: {
                             fontColor: 'black',
-                            fontSize: 14,
+                            fontSize: 18,
                             fontStyle: 'bold',
                             beginAtZero: true
                         },
@@ -86,7 +86,7 @@
                             display: true,
                             labelString: 'Points',
                             fontColor: 'black',
-                            fontSize: 16,
+                            fontSize: 18,
                             fontStyle: 'bold'
                         }
                     }]
@@ -95,7 +95,6 @@
         });
     </script>
 </body>
-
 </html>
 
 
