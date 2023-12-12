@@ -17,7 +17,7 @@
     <script>
         const ctx = document.getElementById('myChart').getContext('2d');
 
-new Chart(ctx, {
+        new Chart(ctx, {
             type: 'bar',
             data: {
             datasets: [{
@@ -39,7 +39,12 @@ new Chart(ctx, {
             ?>
                 ]
             },
-                options: {
+                    backgroundColor: 'rgba(54, 162, 235, 0.8)', // Bar color
+                    borderColor: 'rgba(54, 162, 235, 1)', // Border color
+                    borderWidth: 1
+                }],
+
+            options: {
                 responsive: true,
                 maintainAspectRatio: false,
                 legend: {
@@ -81,11 +86,14 @@ new Chart(ctx, {
                             fontStyle: 'bold'
                         }
                     }]
-                });
+                }
+            }
+        });
     </script>
 </body>
 
 </html>
+
 
 
 
