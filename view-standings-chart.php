@@ -24,7 +24,7 @@
                     <?php
                     $standings = selectStandings();
                     while ($standing = $standings->fetch_assoc()) {
-                        echo "'" . $standing['standing_id'] . "', ";
+                        echo "'" $standing['standing_id'] "', ";
                     }
                     ?>
                 ],
@@ -37,7 +37,7 @@
                         <?php
                         $standings = selectStandings();
                         while ($standing = $standings->fetch_assoc()) {
-                            echo $standing['standing_id'] . ", ";
+                            echo $standing['standing_id'] ", ";
                         }
                         ?>
                     ]
