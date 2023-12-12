@@ -8,7 +8,7 @@
 <body>
     <h1 style="text-align: center;">Standings Chart</h1>
 
-    <div style="width: 800px; margin: 0 auto;">
+    <div style="width: 1100px; margin: 0 auto;">
         <canvas id="myChart"></canvas>
     </div>
 
