@@ -7,7 +7,7 @@
         <canvas id="myChart"></canvas>
     </div>
 
-    <div><canvas class="zdog-canvas" width="240" height="240"></canvas></div>
+    <div><canvas class="zdog-canvas" width="100" height="100"></canvas></div>
     
 </head>
 <body>
