@@ -28,6 +28,7 @@
             while ($builder = $builders->fetch_assoc()) {
             ?>
                 <tr>
+                    <td><?php echo $builder['team_builder_id']; ?></td>
                     <td><?php echo $builder['driver_b_name']; ?></td>
                     <td><?php echo $builder['team_b_name']; ?></td>
                     <td><?php echo $builder['team_principal_name']; ?></td>
