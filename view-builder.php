@@ -28,7 +28,7 @@
             while ($builder = $builders->fetch_assoc()) {
             ?>
                 <tr>
-                    <td><?php echo $builder['builder_id']; ?></td>
+                    <td><?php echo $builder['team_builder_id']; ?></td>
                     <td><?php echo $builder['driver_b_name']; ?></td>
                     <td><?php echo $builder['team_b_name']; ?></td>
                     <td><?php echo $builder['team_principal_name']; ?></td>
@@ -38,7 +38,7 @@
                         include "view-builder-editform.php";
                         ?>
                         <form method="post" action="">
-                            <input type="hidden" name="dbi" value="<?php echo $builder['builder_id']; ?>">
+                            <input type="hidden" name="dbi" value="<?php echo $builder['team_builder_id']; ?>">
                             <input type="hidden" name="actionType" value="Delete">
                             <button type="submit" class="btn btn-primary" onclick="return confirm('Are you sure?');">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
