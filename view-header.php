@@ -87,6 +87,9 @@
                         <li class="nav-item">
                             <a class="nav-link" href="racemap.php">Race Map</a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="glossary.php">Glossary</a>
+                        </li>
                     </ul>
                 </div>
             </div>
