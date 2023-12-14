@@ -162,8 +162,9 @@ include "view-header.php";
     <div class="glossary-entry">
         <h2 onclick="toggleDefinition('formation-lap')">Paddock</h2>
         <p class="definition" id="paddock">The paddock is the area at a racetrack where teams set up temporary facilities, including team garages and hospitality units. Example: "Fans gathered in the paddock for a chance to see their favorite drivers."</p>
-   
-         <div class="glossary-entry">
+    </div>
+    
+    <div class="glossary-entry">
         <h2 onclick="toggleDefinition('grid-penalty')">Grid Penalty</h2>
         <p class="definition" id="grid-penalty">A grid penalty is a penalty imposed on a driver, requiring them to start the race from a lower grid position. Example: "The driver received a grid penalty for a gearbox change."</p>
     </div>
