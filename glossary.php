@@ -249,19 +249,51 @@ include "view-header.php";
         <p class="definition" id="flat-out">Driving flat out means driving at maximum speed without lifting off the throttle. Example: "The driver kept the pedal to the metal, going flat out through the straight."</p>
     </div>
 </main>
-
-   
        
-    <script>
-        function toggleDefinition(termId) {
-            var definition = document.getElementById(termId);
-            if (definition.style.display === "none") {
-                definition.style.display = "block";
-            } else {
-                definition.style.display = "none";
-            }
+<script>
+    function toggleDefinition(termId) {
+        var definition = document.getElementById(termId);
+        if (definition.style.display === "none") {
+            showDefinition(definition);
+        } else {
+            hideDefinition(definition);
         }
-    </script>
+    }
+
+    function showDefinition(element) {
+        element.style.display = "block";
+        element.style.animation = "fadeIn 0.3s ease-in-out";
+    }
+
+    function hideDefinition(element) {
+        element.style.animation = "fadeOut 0.3s ease-in-out";
+        setTimeout(() => {
+            element.style.display = "none";
+            element.style.animation = "none";
+        }, 300);
+    }
+</script>
+
+<style>
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+        }
+        to {
+            opacity: 1;
+        }
+    }
+
+    @keyframes fadeOut {
+        from {
+            opacity: 1;
+        }
+        to {
+            opacity: 0;
+        }
+    }
+</style>
+
 </body>
 
 </html>
