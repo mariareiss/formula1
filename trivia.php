@@ -186,7 +186,7 @@ include "view-header.php";
             <div id="result"></div>
         </main>
 
-        <script>
+<script>
     var currentQuestion = 1;
 
     function checkAnswer(questionId, selectedOption) {
@@ -199,7 +199,7 @@ include "view-header.php";
         }
 
         if (selectedOption === 'B') {
-            question.parentNode.removeChild(question);
+            question.style.display = "none";
             currentQuestion++;
 
             if (currentQuestion <= 10) {
@@ -210,9 +210,9 @@ include "view-header.php";
             }
         } else {
             options.forEach(function (option) {
-                if (option.innerHTML.startsWith(selectedOption)) {
+                if (option.innerHTML.includes(selectedOption)) {
                     option.style.backgroundColor = "#f88"; // Red for incorrect answer
-                } else if (option.innerHTML.startsWith('B')) {
+                } else if (option.innerHTML.includes('B')) {
                     option.style.backgroundColor = "#9af79a"; // Green for correct answer
                 }
             });
@@ -220,8 +220,6 @@ include "view-header.php";
         }
     }
 </script>
-
-
 
     </div>
 </body>
