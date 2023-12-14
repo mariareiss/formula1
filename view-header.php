@@ -90,6 +90,9 @@
                         <li class="nav-item">
                             <a class="nav-link" href="glossary.php">Glossary</a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="trivia.php">Trivia Game</a>
+                        </li>
                     </ul>
                 </div>
             </div>
