@@ -84,6 +84,9 @@
                         <li class="nav-item">
                             <a class="nav-link" href="standings-chart.php">Standings Chart</a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="racemap.html">Race Map</a>
+                        </li>
                     </ul>
                 </div>
             </div>
