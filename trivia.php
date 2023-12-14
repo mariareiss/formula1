@@ -187,39 +187,42 @@ include "view-header.php";
         </main>
 
         <script>
-            var currentQuestion = 1;
+    var currentQuestion = 1;
 
-            function checkAnswer(questionId, selectedOption) {
-                var question = document.getElementById(questionId);
-                var options = question.getElementsByClassName('option');
-                var result = document.getElementById('result');
+    function checkAnswer(questionId, selectedOption) {
+        var question = document.getElementById(questionId);
+        var options = question.getElementsByClassName('option');
+        var result = document.getElementById('result');
 
-                for (var i = 0; i < options.length; i++) {
-                    options[i].style.backgroundColor = "#fff"; // Reset background color
-                }
+        for (var i = 0; i < options.length; i++) {
+            options[i].style.backgroundColor = "#fff"; // Reset background color
+        }
 
-                if (selectedOption === 'B') {
-                    document.getElementById('trivia-main').removeChild(question);
-                    currentQuestion++;
+        if (selectedOption === 'B') {
+            question.parentNode.removeChild(question);
+            currentQuestion++;
 
-                    if (currentQuestion <= 10) {
-                        var nextQuestion = document.getElementById('question' + currentQuestion);
-                        nextQuestion.style.display = "block";
-                    } else {
-                        result.innerHTML = "Congratulations! You've completed the trivia.";
-                    }
-                } else {
-                    options.forEach(function (option) {
-                        if (option.innerHTML.startsWith(selectedOption)) {
-                            option.style.backgroundColor = "#f88"; // Red for incorrect answer
-                        } else if (option.innerHTML.startsWith('B')) {
-                            option.style.backgroundColor = "#9af79a"; // Green for correct answer
-                        }
-                    });
-                    result.innerHTML = "Incorrect! Try again.";
-                }
+            if (currentQuestion <= 10) {
+                var nextQuestion = document.getElementById('question' + currentQuestion);
+                nextQuestion.style.display = "block";
+            } else {
+                result.innerHTML = "Congratulations! You've completed the trivia.";
             }
-        </script>
+        } else {
+            options.forEach(function (option) {
+                if (option.innerHTML.startsWith(selectedOption)) {
+                    option.style.backgroundColor = "#f88"; // Red for incorrect answer
+                } else if (option.innerHTML.startsWith('B')) {
+                    option.style.backgroundColor = "#9af79a"; // Green for correct answer
+                }
+            });
+            result.innerHTML = "Incorrect! Try again.";
+        }
+    }
+</script>
+
+
+
     </div>
 </body>
 
