@@ -93,6 +93,9 @@
                         <li class="nav-item">
                             <a class="nav-link" href="trivia.php">Trivia Game</a>
                         </li>
+                         <li class="nav-item">
+                            <a class="nav-link" href="insights.php">Insights</a>
+                        </li>
                     </ul>
                 </div>
             </div>
