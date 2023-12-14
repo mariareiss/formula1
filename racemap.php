@@ -24,8 +24,8 @@ include "view-header.php";
             height: 100vh;
         }
         #map {
-            height: 70vh; /* Adjust the height as needed */
-            width: 90%; /* Adjust the width as needed */
+            height: 500px;
+            width: 80%;
             margin: 20px 0;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             border-radius: 8px;
@@ -56,7 +56,27 @@ include "view-header.php";
 <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
 <script>
     const races = [
-        // Race data here
+        { location: [48.8566, 2.3522], name: 'French Grand Prix' },
+        { location: [51.5099, -0.1335], name: 'British Grand Prix' },
+        { location: [45.5017, -73.5673], name: 'Canadian Grand Prix' },
+        { location: [35.6895, 139.6917], name: 'Japanese Grand Prix' },
+        { location: [40.7128, -74.0060], name: 'United States Grand Prix' },
+        { location: [-37.8136, 144.9631], name: 'Australian Grand Prix' },
+        { location: [55.7558, 37.6176], name: 'Russian Grand Prix' },
+        { location: [-23.5505, -46.6333], name: 'Brazilian Grand Prix' },
+        { location: [28.6139, 77.2090], name: 'Indian Grand Prix' },
+        { location: [48.8566, 2.3522], name: 'French Grand Prix' },
+        { location: [51.5099, -0.1335], name: 'British Grand Prix' },
+        { location: [45.5017, -73.5673], name: 'Canadian Grand Prix' },
+        { location: [35.6895, 139.6917], name: 'Japanese Grand Prix' },
+        { location: [40.7128, -74.0060], name: 'United States Grand Prix' },
+        { location: [-37.8136, 144.9631], name: 'Australian Grand Prix' },
+        { location: [55.7558, 37.6176], name: 'Russian Grand Prix' },
+        { location: [-23.5505, -46.6333], name: 'Brazilian Grand Prix' },
+        { location: [28.6139, 77.2090], name: 'Indian Grand Prix' },
+        { location: [1.3521, 103.8198], name: 'Singapore Grand Prix' },
+        { location: [41.9028, 12.4964], name: 'Italian Grand Prix' },
+        // Add more races as needed
     ];
 
     const map = L.map('map').setView([0, 0], 2);
