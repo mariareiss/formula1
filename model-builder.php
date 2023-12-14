@@ -30,7 +30,7 @@ function insertBuilder($dbn, $dbt, $dbp, $dbs) {
 function updateBuilder($dbn, $dbt, $dbp, $dbs, $dbi) {
     try {
         $conn = get_db_connection();
-        $stmt = $conn->prepare("UPDATE `Builder` SET `driver_b_name` = ? , `team_b_name` = ?, `team_principal_name` = ?, `team_b_season` = ? WHERE `builder_id` = ?;");
+        $stmt = $conn->prepare("UPDATE `Builder` SET `driver_b_name` = ? , `team_b_name` = ?, `team_principal_name` = ?, `team_b_season` = ? WHERE `team_builder_id` = ?;");
         $stmt->bind_param("ssssi", $dbn, $dbt, $dbp, $dbs, $dbi);
         $success = $stmt->execute();
         $conn->close();
@@ -44,7 +44,7 @@ function updateBuilder($dbn, $dbt, $dbp, $dbs, $dbi) {
 function deleteBuilder($dbi) {
     try {
         $conn = get_db_connection();
-        $stmt = $conn->prepare("DELETE FROM `Builder` WHERE builder_id = ?");
+        $stmt = $conn->prepare("DELETE FROM `Builder` WHERE team_builder_id = ?");
         $stmt->bind_param("i", $dbi);
         $success = $stmt->execute();
         $conn->close();
