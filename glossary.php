@@ -35,6 +35,18 @@ include "view-header.php";
             margin-top: 20px;
         }
 
+         .instructions {
+            background-color: #f8f8f8;
+            border: 1px solid #ddd;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+        }
+        
+        .instructions h2 {
+            color: #007bff;
+        }
+
         .glossary-entry {
             background-color: #fff;
             border: 1px solid #ddd;
@@ -64,6 +76,12 @@ include "view-header.php";
         </header>
 
 <main>
+    <div class="instructions">
+        <h2>How to Interact with the Page</h2>
+        <p>Welcome to the F1 Glossary! Click on a term below to reveal its definition.</p>
+        <p>Have fun exploring the world of Formula 1!</p>
+    </div>
+    
     <div class="glossary-entry">
         <h2 onclick="toggleDefinition('drift')">Drift</h2>
         <p class="definition" id="drift">In motorsports, drift refers to intentionally oversteering, causing the rear tires to lose traction, resulting in a controlled slide. Example: "The driver executed a perfect drift around the hairpin turn."</p>
@@ -253,11 +271,7 @@ include "view-header.php";
 <script>
     function toggleDefinition(termId) {
         var definition = document.getElementById(termId);
-        if (definition.style.display === "none") {
-            showDefinition(definition);
-        } else {
-            hideDefinition(definition);
-        }
+        definition.style.display = (definition.style.display === "none" || definition.style.display === "") ? "block" : "none";
     }
 
     function showDefinition(element) {
