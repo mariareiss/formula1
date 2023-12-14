@@ -1,3 +1,10 @@
+<?php
+$pageTitle = "Glossary";
+include "view-header.php";
+?>
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -262,3 +269,7 @@
 </body>
 
 </html>
+
+<?php
+include "view-footer.php";
+?>
