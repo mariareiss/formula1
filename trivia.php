@@ -12,8 +12,10 @@ include "view-header.php";
     <title>F1 Trivia</title>
     <style>
         body {
-            background-color: #f2f2f2;
             font-family: 'Arial', sans-serif;
+            background-color: #f2f2f2;
+            margin: 0;
+            padding: 0;
         }
 
         .container {
@@ -22,42 +24,45 @@ include "view-header.php";
             padding: 20px;
         }
 
-        header {
-            background-color: #007bff;
-            color: #fff;
-            text-align: center;
-            padding: 10px;
-        }
-
         main {
             margin-top: 20px;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
         }
 
         .trivia-question {
-            background-color: #fff;
-            border: 1px solid #ddd;
-            padding: 20px;
-            margin-bottom: 20px;
-            border-radius: 5px;
+            display: none;
         }
 
         .options-container {
-            display: flex;
-            flex-direction: column;
-            margin-top: 15px;
+            margin-top: 10px;
         }
 
         .option {
-            padding: 10px;
-            margin-bottom: 10px;
             cursor: pointer;
+            padding: 10px;
+            margin-bottom: 5px;
+            background-color: #fff;
             border: 1px solid #ddd;
             border-radius: 5px;
-            transition: background-color 0.3s;
         }
 
         .option:hover {
-            background-color: #f0f0f0;
+            background-color: #f9f9f9;
+        }
+
+        .correct {
+            background-color: #9af79a;
+        }
+
+        .incorrect {
+            background-color: #f88;
+        }
+
+        #result {
+            font-weight: bold;
+            margin-top: 10px;
         }
     </style>
 </head>
@@ -65,10 +70,10 @@ include "view-header.php";
 <body>
     <div class="container">
         <header>
-            <h1>F1 Trivia</h1>
+            <h1>F1 Trivia Game</h1>
         </header>
 
-        <main>
+        <main id="trivia-main">
             <div class="trivia-question" id="question1">
                 <h2>Question 1</h2>
                 <p>Who holds the record for the most Formula 1 World Championships?</p>
@@ -80,7 +85,7 @@ include "view-header.php";
                 </div>
             </div>
 
-            <div class="trivia-question" id="question2" style="display: none;">
+            <div class="trivia-question" id="question2">
                 <h2>Question 2</h2>
                 <p>Which team has the most Constructors' Championships in Formula 1 history?</p>
                 <div class="options-container">
@@ -91,7 +96,7 @@ include "view-header.php";
                 </div>
             </div>
 
-            <div class="trivia-question" id="question3" style="display: none;">
+            <div class="trivia-question" id="question3">
                 <h2>Question 3</h2>
                 <p>Which circuit is known as "The Temple of Speed"?</p>
                 <div class="options-container">
@@ -102,7 +107,7 @@ include "view-header.php";
                 </div>
             </div>
 
-            <div class="trivia-question" id="question4" style="display: none;">
+            <div class="trivia-question" id="question4">
                 <h2>Question 4</h2>
                 <p>Which driver holds the record for the most Grand Prix wins in a single season?</p>
                 <div class="options-container">
@@ -113,7 +118,7 @@ include "view-header.php";
                 </div>
             </div>
 
-            <div class="trivia-question" id="question5" style="display: none;">
+            <div class="trivia-question" id="question5">
                 <h2>Question 5</h2>
                 <p>Which team introduced the concept of the "double diffuser" in the 2009 season?</p>
                 <div class="options-container">
@@ -124,7 +129,7 @@ include "view-header.php";
                 </div>
             </div>
 
-            <div class="trivia-question" id="question6" style="display: none;">
+            <div class="trivia-question" id="question6">
                 <h2>Question 6</h2>
                 <p>Which driver is known as the "Flying Finn"?</p>
                 <div class="options-container">
@@ -135,7 +140,7 @@ include "view-header.php";
                 </div>
             </div>
 
-            <div class="trivia-question" id="question7" style="display: none;">
+            <div class="trivia-question" id="question7" >
                 <h2>Question 7</h2>
                 <p>Which team is known for its "Orange Army" fanbase?</p>
                 <div class="options-container">
@@ -146,7 +151,7 @@ include "view-header.php";
                 </div>
             </div>
 
-            <div class="trivia-question" id="question8" style="display: none;">
+            <div class="trivia-question" id="question8">
                 <h2>Question 8</h2>
                 <p>Which Grand Prix is known for its unique night race format?</p>
                 <div class="options-container">
@@ -157,7 +162,7 @@ include "view-header.php";
                 </div>
             </div>
 
-            <div class="trivia-question" id="question9" style="display: none;">
+            <div class="trivia-question" id="question9">
                 <h2>Question 9</h2>
                 <p>Which driver won the inaugural FIA Pole Trophy in 2019?</p>
                 <div class="options-container">
@@ -168,7 +173,7 @@ include "view-header.php";
                 </div>
             </div>
 
-            <div class="trivia-question" id="question10" style="display: none;">
+            <div class="trivia-question" id="question10">
                 <h2>Question 10</h2>
                 <p>Which team introduced the "shark fin" aerodynamic feature in the 2017 season?</p>
                 <div class="options-container">
@@ -178,34 +183,47 @@ include "view-header.php";
                     <div class="option" onclick="checkAnswer('question10', 'D')">D. Williams Racing</div>
                 </div>
             </div>
+            <div id="result"></div>
         </main>
 
         <script>
+            var currentQuestion = 1;
+
             function checkAnswer(questionId, selectedOption) {
                 var question = document.getElementById(questionId);
                 var options = question.getElementsByClassName('option');
+                var result = document.getElementById('result');
 
                 for (var i = 0; i < options.length; i++) {
                     options[i].style.backgroundColor = "#fff"; // Reset background color
                 }
 
-                if (selectedOption === 'A') {
-                    options[0].style.backgroundColor = "#9af79a"; // Green for correct answer
+                if (selectedOption === 'B') {
+                    document.getElementById('trivia-main').removeChild(question);
+                    currentQuestion++;
+
+                    if (currentQuestion <= 10) {
+                        var nextQuestion = document.getElementById('question' + currentQuestion);
+                        nextQuestion.style.display = "block";
+                    } else {
+                        result.innerHTML = "Congratulations! You've completed the trivia.";
+                    }
                 } else {
                     options.forEach(function (option) {
                         if (option.innerHTML.startsWith(selectedOption)) {
                             option.style.backgroundColor = "#f88"; // Red for incorrect answer
-                        } else if (option.innerHTML.startsWith('A')) {
+                        } else if (option.innerHTML.startsWith('B')) {
                             option.style.backgroundColor = "#9af79a"; // Green for correct answer
                         }
                     });
+                    result.innerHTML = "Incorrect! Try again.";
                 }
             }
         </script>
-    </body>
+    </div>
+</body>
 
-    </html>
-
+</html>
 
 <?php
 include "view-footer.php";
