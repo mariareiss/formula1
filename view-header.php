@@ -96,6 +96,9 @@
                          <li class="nav-item">
                             <a class="nav-link" href="insights.php">Insights</a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="polls.php">Polls</a>
+                        </li>
                     </ul>
                 </div>
             </div>
