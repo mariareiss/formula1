@@ -24,7 +24,7 @@ include "view-header.php";
             height: 100vh;
         }
         #map {
-            height: 500px;
+            height: 800px;
             width: 80%;
             margin: 20px 0;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
