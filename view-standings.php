@@ -8,7 +8,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <style>
         body {
-            background-color: #f8f9fa;
+            background-color: #f8f9fa; /* Set your desired background color */
             font-family: 'Arial', sans-serif;
             margin: 0;
             padding: 0;
@@ -17,7 +17,7 @@
         header {
             text-align: center;
             padding: 20px;
-            background-color: #001f3f;
+            background-color: #001f3f; /* Dark blue color */
             color: #fff;
             border-bottom: 2px solid #fff;
         }
@@ -39,9 +39,6 @@
 
         .container {
             margin-top: 20px;
-            max-width: 1600px;
-            margin-left: auto;
-            margin-right: auto;
         }
 
         th {
@@ -55,7 +52,7 @@
         }
 
         .driver-link {
-            color: #007bff;
+            color: #007bff; /* Set the link color */
             text-decoration: none;
         }
 
@@ -64,7 +61,7 @@
         }
 
         .table {
-            margin-top: 20px;
+            margin-top: 20px; /* Add margin to the table */
         }
 
         .col-auto {
@@ -72,13 +69,13 @@
         }
 
         .btn-primary {
-            background-color: #007bff;
-            border-color: #007bff;
+            background-color: #007bff; /* Set your desired button color */
+            border-color: #007bff; /* Set the button border color */
         }
 
         .btn-primary:hover {
-            background-color: #0056b3;
-            border-color: #0056b3;
+            background-color: #0056b3; /* Set the hover color */
+            border-color: #0056b3; /* Set the hover border color */
         }
 
         .add-btn-container {
@@ -94,11 +91,11 @@
 </head>
 
 <body>
-    <div class="container">
-        <header>
-            <h1>Formula One Standings Data</h1>
-        </header>
+    <header>
+        <h1>Formula One Standings Data</h1>
+    </header>
 
+    <div class="container">
         <div class="row">
             <div class="col">
                 <h1>Standings</h1>
