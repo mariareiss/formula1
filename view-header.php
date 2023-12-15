@@ -12,7 +12,8 @@
             background-image: url('f1-image.avif');
             background-size: cover;
             background-repeat: no-repeat;
-            opacity: 1.0;
+            background-position: center;
+            opacity: 0.7; /* Slightly more opaque */
             margin: 0;
             padding: 0;
         }
