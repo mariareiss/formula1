@@ -5,9 +5,11 @@ include "view-header.php";
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css"> <!-- Link to an external CSS file for better organization -->
     <style>
         body {
             font-family: 'Arial', sans-serif;
@@ -15,6 +17,12 @@ include "view-header.php";
             padding: 0;
             background-color: #f8f8f8;
             color: #333;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            overflow: hidden;
         }
 
         header {
@@ -23,6 +31,7 @@ include "view-header.php";
             background-color: #343a40;
             color: #fff;
             border-bottom: 2px solid #fff;
+            width: 100%;
         }
 
         h1 {
@@ -32,6 +41,9 @@ include "view-header.php";
 
         section {
             margin: 30px;
+            text-align: center;
+            color: #333;
+            max-width: 800px;
         }
 
         .grid-container {
@@ -40,7 +52,7 @@ include "view-header.php";
             grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
             justify-content: center;
         }
-        
+
         .grid-item {
             text-align: center;
             padding: 20px;
@@ -77,11 +89,12 @@ include "view-header.php";
     </style>
     <title>Formula One News Hub</title>
 </head>
+
 <body>
     <header>
         <h1>Formula One News Hub</h1>
     </header>
-  
+
     <section id="byTeam">
         <h2>Click on a team to learn more</h2>
         <div class="grid-container">
@@ -100,7 +113,7 @@ include "view-header.php";
                 <div class="team-logo"><img src="ferrari.jpg" alt="Ferrari Logo"></div>
                 <p class="team-name">Ferrari</p>
             </div>
-            
+
             <div class="grid-item" onclick="redirectToWebsite('https://www.mclaren.com/racing/')">
                 <div class="team-logo"><img src="mclaren2.png" alt="McLaren Logo"></div>
                 <p>McLaren</p>
@@ -145,9 +158,7 @@ include "view-header.php";
         }
     </script>
 
+    <?php include "view-footer.php"; ?>
 </body>
-</html>
 
-<?php
-include "view-footer.php";
-?>
+</html>
