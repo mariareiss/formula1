@@ -38,6 +38,12 @@ $pageTitle = "Home";
             border-radius: 15px; /* Added border-radius for a softer look */
         }
 
+        .landing-content2 {
+            text-align: center;
+            color: #333;
+            max-width: 800px;
+        }
+
         h1 {
             font-size: 3em; /* Increased font size for a bold impact */
             margin-bottom: 15px;
@@ -85,9 +91,12 @@ $pageTitle = "Home";
         <?php include "view-header.php"; ?>
     </div>
 
-    <div class="landing-content fade-in">
+    <div class="landing-content2">
         <h1>Welcome to the Formula 1 Portal</h1>
         <h2>Click on any of the navigation tabs to learn/explore more</h2>
+    </div>
+    
+    <div class="landing-content fade-in">
         <img class="landing-image" src="f1.2.jpg" alt="Formula 1 Image"> 
     </div>
 
