@@ -1,5 +1,5 @@
 <?php
-$pageTitle = "Race Results";
+$pageTitle = "Polls";
 include "view-header.php";
 ?>
 
