@@ -1,3 +1,8 @@
+<?php
+$pageTitle = "Game";
+include "view-header.php";
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
