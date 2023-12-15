@@ -39,7 +39,7 @@ include "view-header.php";
         }
 
         main {
-            width: 1200px;
+            max-width: 800px;
             margin: 20px auto;
             padding: 20px;
             background-color: #fff;
@@ -47,9 +47,8 @@ include "view-header.php";
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
 
-        p {
-            line-height: 1.6;
-            color: #555;
+        h2, h3 {
+            color: #333;
         }
 
         .poll-container {
@@ -82,8 +81,12 @@ include "view-header.php";
             border-radius: 4px;
         }
 
+        .vote-btn:hover {
+            background-color: #0056b3;
+        }
+
         .results-container {
-            margin-top: 20px;
+            margin-top: 10px;
             font-weight: bold;
         }
 
@@ -113,7 +116,7 @@ include "view-header.php";
                     <button class="vote-btn" onclick="vote('leclerc', 'driver')">Vote for Charles Leclerc</button>
                 </li>
             </ul>
-            <div class="results-container" id="results-driver">Votes:</div>
+            <div class="results-container" id="results-driver">Votes: 0</div>
         </div>
 
         <div class="poll-container">
@@ -129,7 +132,7 @@ include "view-header.php";
                     <button class="vote-btn" onclick="vote('ferrari', 'team')">Vote for Ferrari</button>
                 </li>
             </ul>
-            <div class="results-container" id="results-team">Votes:</div>
+            <div class="results-container" id="results-team">Votes: 0</div>
         </div>
 
         <div class="poll-container">
@@ -145,7 +148,7 @@ include "view-header.php";
                     <button class="vote-btn" onclick="vote('monaco', 'circuit')">Vote for Monaco</button>
                 </li>
             </ul>
-            <div class="results-container" id="results-circuit">Votes:</div>
+            <div class="results-container" id="results-circuit">Votes: 0</div>
         </div>
 
     </main>
