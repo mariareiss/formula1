@@ -39,16 +39,12 @@ include "view-header.php";
         }
 
         main {
-            max-width: 800px;
+            width: 1200px;
             margin: 20px auto;
             padding: 20px;
             background-color: #fff;
             border-radius: 8px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-
-        h1, h2, h3 {
-            color: #333;
         }
 
         p {
