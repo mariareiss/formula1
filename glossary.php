@@ -1,5 +1,5 @@
 <?php
-$pageTitle = "F1 Glossary";
+$pageTitle = "Glossary";
 include "view-header.php";
 ?>
 
