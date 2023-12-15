@@ -94,11 +94,6 @@
 </head>
 
 <body>
-
-    <div class="navbar">
-        <a class="navbar-brand" href="#">Formula One Standings Data</a>
-    </div>
-
     <div class="container">
         <header>
             <h1>Formula One Standings Data</h1>
