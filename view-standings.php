@@ -13,7 +13,6 @@
             margin: 0;
             padding: 0;
         }
-
         header {
             text-align: center;
             padding: 20px;
@@ -59,6 +58,9 @@
             background-color: #0056b3; /* Set the hover color */
             border-color: #0056b3; /* Set the hover border color */
         }
+        .add-btn-container {
+            text-align: right;
+        }
     </style>
 </head>
 
@@ -69,9 +71,9 @@
             <h1>Formula One Standings Data</h1>
         </header>
         <div class="col">
-                <h2>Standings</h2>
-         </div>
-        <div class="col-auto">
+            <h2>Standings</h2>
+        </div>
+        <div class="add-btn-container">
             <?php include "view-standings-newform.php"; ?>
         </div>
 
