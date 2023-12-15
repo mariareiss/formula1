@@ -85,14 +85,15 @@
             'Engine Mapping', 'DNF (Did Not Finish)', 'Pole Position', 'Flat Spot'
         );
 
-        <div class="term-details" id="term-details">
-            <!-- Definition content will be dynamically added here -->
-        </div>
         // Loop through each term and generate HTML
         foreach ($terms as $index => $term) {
             echo '<div class="term" onclick="toggleDetails(' . $index . ')">' . $term . '</div>';
         }
         ?>
+
+        <div class="term-details" id="term-details">
+            <!-- Definition content will be dynamically added here -->
+        </div>
 
     </main>
 
