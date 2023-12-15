@@ -74,9 +74,8 @@ include "view-header.php";
     <header>
         <h1>F1 Glossary</h1>
     </header>
-
-    <div class="container">
-    <div class="container">
+    
+    <div class="glossary-grid">
         <div class="glossary-entry" onclick="toggleDefinition('drift')">
             <h2>Drift</h2>
             <p class="definition" id="drift">In motorsports, drift refers to intentionally oversteering, causing the rear tires to lose traction, resulting in a controlled slide. Example: "The driver executed a perfect drift around the hairpin turn."</p>
