@@ -1,8 +1,3 @@
-<?php
-$pageTitle = "Race Results";
-include "view-header.php";
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -123,6 +118,14 @@ include "view-header.php";
   </style>
 </head>
 <body>
+
+  <div>
+  <?php
+    // Include view-header.php in its own container
+    echo '<div class="header-container">';
+    include "view-header.php";
+    echo '</div>';
+  ?>
 
 <h1>Formula 1 Race Simulation</h1>
 
