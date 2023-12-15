@@ -23,7 +23,7 @@ include "view-header.php";
 
     header {
       text-align: center;
-      padding: 20px;
+      padding: 0px;
       background-color: #001f3f; /* Dark blue color */
       color: #fff;
       border-bottom: 2px solid #fff;
