@@ -56,7 +56,7 @@ include "view-header.php";
 <body>
     
     <header>
-        <h1>F1 Race Simulator</h1>
+        <h1>Driving Simulator</h1>
         <p id="instructions">Use the Arrow keys (Right/Left) to navigate and avoid obstacles.</p>
         <p id="score">Score: 0</p>
     </header>
