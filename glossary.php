@@ -9,18 +9,13 @@ include "view-header.php";
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>F1 Glossary</title>
     <style>
         body {
             font-family: 'Arial', sans-serif;
             margin: 0;
             padding: 0;
             background-color: #f4f4f4;
-            color: #333;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            height: 100vh;
         }
 
         header {
@@ -29,8 +24,6 @@ include "view-header.php";
             background-color: #001f3f; /* Dark blue color */
             color: #fff;
             border-bottom: 2px solid #fff;
-            width: 100%;
-            margin-bottom: 20px;
         }
 
         h1 {
@@ -38,49 +31,73 @@ include "view-header.php";
             font-size: 28px;
         }
 
-        .glossary-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 20px;
+        main {
             max-width: 800px;
-            width: 100%;
-            margin: 0 auto;
-        }
-
-        .glossary-entry {
-            text-align: center;
+            margin: 20px auto;
             padding: 20px;
             background-color: #fff;
             border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            cursor: pointer;
-            transition: transform 0.3s, box-shadow 0.3s;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
 
-        .glossary-entry:hover {
-            transform: scale(1.05);
-            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+        h2, h3 {
+            color: #333;
         }
 
-        .definition {
-            display: none;
-            margin-top: 20px;
+        p {
+            line-height: 1.6;
+            color: #555;
+        }
+
+        .section {
+            margin-bottom: 30px;
+        }
+
+        .image-container {
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+
+        .component {
+            margin-bottom: 30px;
+        }
+
+        .video-container {
+            position: relative;
+            width: 100%;
+            padding-bottom: 56.25%; /* 16:9 aspect ratio */
+            overflow: hidden;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
         }
 
         footer {
             text-align: center;
             margin-top: 20px;
             padding: 10px;
-            background-color: #001f3f;
+            background-color: #333;
             color: #fff;
-            width: 100%;
             border-radius: 0 0 8px 8px;
         }
     </style>
-    <title>F1 Glossary</title>
 </head>
 
 <body>
+
     <header>
         <h1>F1 Glossary</h1>
     </header>
