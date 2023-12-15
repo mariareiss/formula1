@@ -1,7 +1,3 @@
-<?php
-include "view-header.php";
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -180,7 +176,3 @@ include "view-header.php";
 </body>
 
 </html>
-
-<?php
-include "view-footer.php";
-?>
