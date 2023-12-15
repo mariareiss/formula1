@@ -30,8 +30,8 @@
         }
 
         main {
-            max-width: 1200px; /* 1.5x width */
-            height: 600px; /* 2x height */
+            max-width: 1100px; /* 1.5x width */
+            height: 550px; /* 2x height */
             margin: 20px auto;
             padding: 20px;
             background-color: #fff;
