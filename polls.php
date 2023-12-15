@@ -42,7 +42,7 @@ include "view-header.php";
             display: grid;
             grid-template-columns: repeat(4, 1fr);
             gap: 20px;
-            max-width: 800px;
+            max-width: 98%;
             margin: 20px auto;
             padding: 20px;
             background-color: #fff;
