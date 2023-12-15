@@ -9,12 +9,13 @@
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <style>
         
-        body {
-            background-color: #cfe8f3; /* Light pastel blue color */
-            margin: 0;
-            padding: 0;
-            font-family: 'Arial', sans-serif;
-        }
+body {
+    background: linear-gradient(45deg, #aed9e0, #ffb6c1); /* Pastel-themed gradient background */
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+}
+
 
         .navbar {
             background: linear-gradient(to right, #dc3545, #8b0000); /* Gradient background */
