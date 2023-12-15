@@ -39,6 +39,12 @@ include "view-header.php";
             font-size: 28px;
         }
 
+        .instructions {
+            text-align: center;
+            margin: 30px;
+            max-width: 800px;
+        }
+
         section {
             margin: 30px;
             text-align: center;
@@ -95,8 +101,11 @@ include "view-header.php";
         <h1>Formula One News Hub</h1>
     </header>
 
-    <section id="byTeam">
+    <div class="instructions">
         <h2>Click on a team to learn more</h2>
+    </div>
+
+    <section id="byTeam">
         <div class="grid-container">
             <!-- Team grid with team names -->
             <div class="grid-item" onclick="redirectToWebsite('https://www.mercedesamgf1.com/')">
@@ -148,7 +157,6 @@ include "view-header.php";
                 <div class="team-logo"><img src="alpha.png" alt="AlphaTauri Logo"></div>
                 <p>AlphaTauri</p>
             </div>
-
         </div>
     </section>
 
