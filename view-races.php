@@ -8,6 +8,9 @@
     <style>
         body {
             background-color: #f8f9fa; /* Set your desired background color */
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
         }
         .container {
             margin-top: 20px;
