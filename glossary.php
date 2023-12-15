@@ -39,16 +39,6 @@ include "view-header.php";
             font-size: 28px;
         }
 
-        .container {
-            max-width: 800px;
-            width: 100%;
-            margin: 0 auto;
-            padding: 20px;
-            background-color: #fff;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            border-radius: 8px;
-        }
-
         .glossary-entry {
             background-color: #fff;
             border: 1px solid #ddd;
