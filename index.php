@@ -32,7 +32,7 @@ $pageTitle = "Home";
         .landing-content {
             text-align: center;
             color: #fff; /* White text for better visibility on the background */
-            max-width: 600px;
+            max-width: 400px;
             padding: 20px; /* Added padding for better spacing */
             background-blend-mode: overlay; /* Blend mode for a better blend with the background */
             border-radius: 15px; /* Added border-radius for a softer look */
