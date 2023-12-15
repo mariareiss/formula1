@@ -43,12 +43,22 @@ include "view-header.php";
             border-radius: 8px;
             margin-top: 20px;
         }
+
+        p {
+            margin-top: 10px;
+        }
+
+        #score {
+            font-size: 18px;
+        }
     </style>
 </head>
 <body>
     
     <header>
-    <h1>F1 Race Simulator</h1>
+        <h1>F1 Race Simulator</h1>
+        <p id="instructions">Use the Arrow keys (Right/Left) to navigate and avoid obstacles.</p>
+        <p id="score">Score: 0</p>
     </header>
     
     <canvas id="raceCanvas" width="800" height="400"></canvas>
@@ -66,9 +76,32 @@ include "view-header.php";
             speed: 5
         };
 
+        const obstacle = {
+            x: canvas.width - 50,
+            y: 200,
+            width: 20,
+            height: 20,
+            color: '#00ff00',
+            speed: 5
+        };
+
+        let score = 0;
+        let gameSpeed = 5;
+
         function drawCar() {
             ctx.fillStyle = car.color;
             ctx.fillRect(car.x, car.y, car.width, car.height);
+        }
+
+        function drawObstacle() {
+            ctx.fillStyle = obstacle.color;
+            ctx.fillRect(obstacle.x, obstacle.y, obstacle.width, obstacle.height);
+        }
+
+        function drawScore() {
+            ctx.fillStyle = '#333';
+            ctx.font = '20px Arial';
+            ctx.fillText(`Score: ${score}`, 10, 30);
         }
 
         function clearCanvas() {
@@ -77,7 +110,27 @@ include "view-header.php";
 
         function update() {
             clearCanvas();
+            obstacle.x -= gameSpeed;
+
+            if (obstacle.x + obstacle.width < 0) {
+                obstacle.x = canvas.width;
+                score++;
+                gameSpeed += 0.5; // Increase game speed over time
+            }
+
             drawCar();
+            drawObstacle();
+            drawScore();
+
+            // Check for collision
+            if (
+                car.x < obstacle.x + obstacle.width &&
+                car.x + car.width > obstacle.x &&
+                car.y < obstacle.y + obstacle.height &&
+                car.y + car.height > obstacle.y
+            ) {
+                gameOver();
+            }
         }
 
         function handleKeyPress(e) {
@@ -90,6 +143,20 @@ include "view-header.php";
             update();
         }
 
+        function gameOver() {
+            alert(`Game Over! Your score is ${score}.`);
+            resetGame();
+        }
+
+        function resetGame() {
+            score = 0;
+            gameSpeed = 5;
+            car.x = 50;
+            obstacle.x = canvas.width - 50;
+            update();
+        }
+
+        setInterval(update, 1000 / 60); // Update every 60 frames per second
         document.addEventListener('keydown', handleKeyPress);
     </script>
 
