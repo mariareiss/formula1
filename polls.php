@@ -42,7 +42,7 @@ include "view-header.php";
             display: grid;
             grid-template-columns: repeat(4, 1fr);
             gap: 20px;
-            max-width: 98%;
+            max-width: 800px;
             margin: 20px auto;
             padding: 20px;
             background-color: #fff;
@@ -194,7 +194,7 @@ include "view-header.php";
             <ul class="poll-options">
                 <li class="poll-option">
                     <span>Monaco Grand Prix</span>
-                    <button class="vote-btn" onclick="vote('monaco1', 'race')">Vote</button>
+                    <button class="vote-btn" onclick="vote('monaco', 'race')">Vote</button>
                     <span id="votes-monaco-race">0</span>
                 </li>
                 <li class="poll-option">
