@@ -32,6 +32,12 @@ include "view-header.php";
             font-size: 28px;
         }
 
+         .team-logo img {
+          object-fit: cover;
+          width: 100%;
+          height: 100%;
+        }
+
         .instructions {
             text-align: center;
             margin: 30px;
