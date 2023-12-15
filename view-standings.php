@@ -61,7 +61,7 @@
         }
 
         .table {
-            margin-top: 2px; /* Add margin to the table */
+            margin-top: 0px; /* Add margin to the table */
         }
 
         .col-auto {
