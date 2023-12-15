@@ -26,7 +26,7 @@
         }
         .container {
             margin-top: 20px;
-            max-width: 1150px; /* Set a maximum width for the container */
+            max-width: 1600px; /* Set a maximum width for the container */
             margin-left: auto;
             margin-right: auto;
         }
@@ -45,7 +45,7 @@
             text-decoration: underline;
         }
         .table {
-            margin-top: 5px; /* Add margin to the table */
+            margin-top: 20px; /* Add margin to the table */
         }
         .col-auto {
             margin-bottom: 20px;
@@ -60,6 +60,7 @@
         }
         .add-btn-container {
             text-align: right;
+            margin-bottom: 20px;
         }
     </style>
 </head>
@@ -81,7 +82,7 @@
         </div>
 
         <div class="table-responsive">
-            <table class="table">
+            <table class="table table-striped">
                 <thead>
                     <tr>
                         <th>Driver</th>
