@@ -1,8 +1,3 @@
-<?php
-$pageTitle = "Glossary";
-include "view-header.php";
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -18,9 +13,10 @@ include "view-header.php";
             background-color: #f4f4f4;
             color: #333;
             display: flex;
+            flex-direction: column;
             align-items: center;
             justify-content: center;
-            min-height: 100vh;
+            min-height: 0vh;
         }
 
         header {
@@ -38,7 +34,8 @@ include "view-header.php";
         }
 
         main {
-            display: flex;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
             gap: 20px;
             max-width: 800px;
             margin: 20px;
@@ -46,12 +43,6 @@ include "view-header.php";
             background-color: #fff;
             border-radius: 8px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-
-        .terms {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 20px;
         }
 
         .term {
@@ -68,10 +59,12 @@ include "view-header.php";
         }
 
         .term-details {
-            flex: 1;
+            display: none;
+            grid-column: span 2;
             padding: 10px;
             background-color: #f4f4f4;
             border-radius: 5px;
+            margin-top: 10px;
         }
     </style>
 </head>
@@ -83,31 +76,31 @@ include "view-header.php";
     </header>
 
     <main>
-        <div class="terms" id="terms-container">
-            <?php
-            // F1 glossary terms array
-            $terms = array(
-                'Aerodynamics', 'Downforce', 'DRS (Drag Reduction System)', 'Hybrid Power Unit', 'Pit Stop',
-                'Grid Penalty', 'DRS (Drag Reduction System)', 'Podium', 'Formation Lap', 'Blue Flags',
-                'Pit Wall', 'Safety Car', 'Time Penalty', 'Chicane', 'Pit Crew',
-                'Engine Mapping', 'DNF (Did Not Finish)', 'Pole Position', 'Flat Spot'
-            );
+        <?php
+        // F1 glossary terms array
+        $terms = array(
+            'Aerodynamics', 'Downforce', 'DRS (Drag Reduction System)', 'Hybrid Power Unit', 'Pit Stop',
+            'Grid Penalty', 'DRS (Drag Reduction System)', 'Podium', 'Formation Lap', 'Blue Flags',
+            'Pit Wall', 'Safety Car', 'Time Penalty', 'Chicane', 'Pit Crew',
+            'Engine Mapping', 'DNF (Did Not Finish)', 'Pole Position', 'Flat Spot'
+        );
 
-            // Loop through each term and generate HTML
-            foreach ($terms as $index => $term) {
-                echo '<div class="term" onclick="toggleDetails(' . $index . ')">' . $term . '</div>';
-            }
-            ?>
-        </div>
         <div class="term-details" id="term-details">
             <!-- Definition content will be dynamically added here -->
         </div>
+        // Loop through each term and generate HTML
+        foreach ($terms as $index => $term) {
+            echo '<div class="term" onclick="toggleDetails(' . $index . ')">' . $term . '</div>';
+        }
+        ?>
+
     </main>
 
     <script>
         function toggleDetails(index) {
             const termDetails = document.getElementById('term-details');
             termDetails.innerHTML = '<p>' + getTermDefinition(index) + '</p>';
+            termDetails.style.display = 'block';
         }
 
         function getTermDefinition(index) {
