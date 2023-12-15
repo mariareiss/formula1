@@ -148,13 +148,13 @@ include "view-header.php";
   <div>
     <p>Set speed for each pilot:</p>
     <input type="range" id="speedRed" min="1" max="50" value="25" onchange="setSpeed('red', this.value)">
-    <label for="speedRed">Lewis Hamilton</label>
+    <label for="speedRed">Hamilton</label>
     <br>
     <input type="range" id="speedBlue" min="1" max="50" value="25" onchange="setSpeed('blue', this.value)">
-    <label for="speedBlue">Max Verstappen</label>
+    <label for="speedBlue">Verstappen</label>
     <br>
     <input type="range" id="speedGreen" min="1" max="50" value="25" onchange="setSpeed('green', this.value)">
-    <label for="speedGreen">Charles Leclerc</label>
+    <label for="speedGreen">Leclerc</label>
     <!-- Add more speed controls for other pilots here -->
   </div>
 
