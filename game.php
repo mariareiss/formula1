@@ -26,16 +26,6 @@ include "view-header.php";
       border-bottom: 2px solid #fff;
     }
 
-    nav {
-      background-color: #001f3f;
-      color: #fff;
-      padding: 10px;
-    }
-
-    .navbar-brand {
-      color: #fff !important;
-    }
-
     h1 {
       margin: 0;
       font-size: 28px;
