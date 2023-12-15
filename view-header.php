@@ -37,18 +37,13 @@
         }
 
         .navbar-nav .nav-link.active {
-            color: #000;
-            font-weight: bold;
             background-color: #ffc107;
             border-radius: 5px;
             padding: 8px 15px;
         }
 
-        /* Add new styles for the yellow box and black text */
-        .navbar-nav .nav-link.f1-hub {
-            background-color: #ffc107;
-            border-radius: 5px;
-            padding: 8px 15px;
+        .navbar-nav .nav-link.active,
+        .navbar-nav .nav-link.active:hover {
             color: #000;
             font-weight: bold;
         }
@@ -86,7 +81,7 @@
     <div class="container">
         <nav class="navbar navbar-expand-lg">
             <div class="container-fluid">
-                <a class="navbar-brand" href="#">Navigation Bar</a> <!-- Renamed the tab -->
+                <a class="navbar-brand" href="#">Nav Bar</a> 
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
                     aria-label="Toggle navigation">
