@@ -13,12 +13,15 @@
             background-size: cover;
             background-repeat: no-repeat;
             opacity: 1.0;
+            margin: 0;
+            padding: 0;
         }
 
         .navbar {
-            background-color: #dc3545; /* F1 Red */
+            background: linear-gradient(to right, #dc3545, #8b0000); /* Gradient background */
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle box shadow */
             max-width: 100%;
-                        border-bottom: 2px solid #fff; /* White border under navbar */
+            z-index: 1000;
         }
 
         .navbar-brand {
@@ -28,11 +31,19 @@
 
         .navbar-nav .nav-link {
             color: #fff; /* White text color */
+            transition: color 0.3s ease;
+        }
+
+        .navbar-nav .nav-link:hover {
+            color: #ffc107; /* Yellow on hover */
         }
 
         .navbar-nav .nav-link.active {
             color: #000; /* Black text color for active link */
             font-weight: bold;
+            background-color: #ffc107; /* Yellow background for active link */
+            border-radius: 5px;
+            padding: 8px 15px;
         }
 
         .search-container {
@@ -47,6 +58,7 @@
             border: none;
             font-size: 17px;
             max-width: 100%;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle box shadow */
         }
 
         .search-container button {
@@ -57,6 +69,8 @@
             color: white;
             border: none;
             font-size: 17px;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle box shadow */
         }
     </style>
 </head>
@@ -118,4 +132,3 @@
 </body>
 
 </html>
-
