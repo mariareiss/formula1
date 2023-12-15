@@ -29,7 +29,7 @@
             max-width: 800px;
             padding: 20px;
             border-radius: 10px;
-            background-color: rgba(255, 255, 255, 0.8);
+            background-color: rgba(255, 255, 255, 0.9);
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
 
@@ -45,51 +45,19 @@
             margin-bottom: 20px;
         }
 
-        .slider-container {
+        .image-container {
             width: 100%;
-            overflow: hidden;
+            max-width: 800px;
             margin-top: 20px;
-            border-radius: 10px;
-        }
-
-        .slider {
-            display: flex;
-            transition: transform 0.5s ease-in-out;
-            width: 500px; /* Adjusted to accommodate three 400px images */
-            margin: 0 auto;
             border-radius: 10px;
             overflow: hidden;
         }
 
-        .slide {
-            min-width: 500px; /* Width of each slide */
-            box-sizing: border-box;
-        }
-
-        .slider img {
+        .image-container img {
             width: 100%;
-            height: 100%;
-            object-fit: cover; /* Maintain aspect ratio and cover the entire box */
+            height: auto;
+            object-fit: cover;
             border-radius: 10px;
-        }
-
-        .button-container {
-            margin-top: 20px;
-        }
-
-        .cta-button {
-            padding: 12px 24px;
-            font-size: 1.2em;
-            background-color: #007bff;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-        }
-
-        .cta-button:hover {
-            background-color: #0056b3;
         }
 
         .footer-container {
@@ -122,54 +90,14 @@
         <h1>Welcome to the Formula 1 Portal</h1>
         <h2>Explore the thrilling world of Formula 1 racing</h2>
 
-        <!-- Image Slider -->
-        <div class="slider-container">
-            <div class="slider">
-                <div class="slide"><img src="f1.2.jpg" alt="Formula 1 Image 2"></div>
-            </div>
-        </div>
-
-        <!-- Call-to-Action Button -->
-        <div class="button-container">
-            <button class="cta-button">Explore Now</button>
+        <!-- Single Image -->
+        <div class="image-container">
+            <img src="f1.2.jpg" alt="Formula 1 Image 2">
         </div>
     </div>
 
     <div class="footer-container">
         <?php include "view-footer.php"; ?>
     </div>
-
-    <!-- Script for Image Slider -->
-    <script>
-        const slider = document.querySelector('.slider');
-        let isDragging = false;
-        let startPosX = 0;
-        let currentTranslate = 0;
-        let prevTranslate = 0;
-
-        slider.addEventListener('mousedown', (e) => {
-            isDragging = true;
-            startPosX = e.clientX;
-        });
-
-        slider.addEventListener('mousemove', (e) => {
-            if (isDragging) {
-                const currentPosX = e.clientX;
-                const deltaX = currentPosX - startPosX;
-                currentTranslate = prevTranslate + deltaX;
-                slider.style.transform = `translateX(${currentTranslate}px)`;
-            }
-        });
-
-        slider.addEventListener('mouseup', () => {
-            isDragging = false;
-            prevTranslate = currentTranslate;
-        });
-
-        slider.addEventListener('mouseleave', () => {
-            isDragging = false;
-            prevTranslate = currentTranslate;
-        });
-    </script>
 </body>
 </html>
