@@ -50,12 +50,12 @@
         .slider {
             display: flex;
             transition: transform 0.5s ease-in-out;
-            width: 1200px; /* Adjusted to accommodate three 400px images */
+            width: 500px; /* Adjusted to accommodate three 400px images */
             margin: 0 auto;
         }
 
         .slide {
-            min-width: 400px; /* Width of each slide */
+            min-width: 500px; /* Width of each slide */
             box-sizing: border-box;
         }
 
