@@ -3,8 +3,6 @@ $pageTitle = "Glossary";
 include "view-header.php";
 ?>
 
-
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -16,6 +14,8 @@ include "view-header.php";
         body {
             background-color: #f2f2f2;
             font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
         }
 
         .container {
@@ -28,21 +28,23 @@ include "view-header.php";
             background-color: #007bff;
             color: #fff;
             text-align: center;
-            padding: 10px;
+            padding: 20px;
+            width: 100%;
+            margin-bottom: 20px;
         }
 
         main {
             margin-top: 20px;
         }
 
-         .instructions {
+        .instructions {
             background-color: #f8f8f8;
             border: 1px solid #ddd;
             padding: 20px;
             margin-bottom: 20px;
             border-radius: 5px;
         }
-        
+
         .instructions h2 {
             color: #007bff;
         }
@@ -53,10 +55,12 @@ include "view-header.php";
             padding: 10px;
             margin-bottom: 10px;
             border-radius: 5px;
+            cursor: pointer;
         }
 
         .definition {
             display: none;
+            margin-top: 10px;
         }
 
         footer {
@@ -68,7 +72,7 @@ include "view-header.php";
         }
     </style>
 </head>
-
+    
 <body>
     <div class="container">
         <header>
