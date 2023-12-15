@@ -27,16 +27,6 @@
             font-size: 28px;
         }
 
-        .navbar {
-            background-color: #001f3f;
-            padding: 1rem;
-        }
-
-        .navbar-brand,
-        .navbar-nav .nav-link {
-            color: #fff;
-        }
-
         .container {
             margin-top: 20px;
         }
