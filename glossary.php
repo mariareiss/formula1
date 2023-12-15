@@ -39,11 +39,19 @@ include "view-header.php";
             font-size: 28px;
         }
 
+        .glossary-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            max-width: 800px;
+            width: 100%;
+            margin: 0 auto;
+        }
+
         .glossary-entry {
             background-color: #fff;
             border: 1px solid #ddd;
             padding: 20px;
-            margin-bottom: 20px;
             border-radius: 8px;
             cursor: pointer;
             transition: transform 0.3s;
@@ -74,8 +82,9 @@ include "view-header.php";
     <header>
         <h1>F1 Glossary</h1>
     </header>
-    
+
     <div class="glossary-grid">
+
         <div class="glossary-entry" onclick="toggleDefinition('drift')">
             <h2>Drift</h2>
             <p class="definition" id="drift">In motorsports, drift refers to intentionally oversteering, causing the rear tires to lose traction, resulting in a controlled slide. Example: "The driver executed a perfect drift around the hairpin turn."</p>
@@ -166,11 +175,12 @@ include "view-header.php";
             <p class="definition" id="drs">DRS is a system that enables a car to reduce aerodynamic drag and increase straight-line speed. Example: "The driver activated DRS to gain an advantage while overtaking."</p>
         </div>
 
+
     </div>
 
-    <footer>
-        <p>&copy; 2023 F1 Glossary</p>
-    </footer>
+    <?php
+    include "view-footer.php";
+    ?>
 
     <script>
         function toggleDefinition(termId) {
@@ -182,6 +192,3 @@ include "view-header.php";
 
 </html>
 
-<?php
-include "view-footer.php";
-?>
