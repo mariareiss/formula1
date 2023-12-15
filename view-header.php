@@ -122,9 +122,6 @@
                         <li class="nav-item">
                             <a class="nav-link <?= $pageTitle === 'Polls' ? 'active' : '' ?>" href="polls.php">Polls</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link <?= $pageTitle === 'Build your Team' ? 'active' : '' ?>" href="builder.php">Build your Team</a>
-                        </li>
                     </ul>
                 </div>
             </div>
