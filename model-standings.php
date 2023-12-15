@@ -18,7 +18,7 @@ function insertStandings($dName, $sSeason, $sPoints, $sWins, $sPodiums) {
     try {
         $conn = get_db_connection();
         $stmt = $conn->prepare("INSERT INTO `Standing`(`driver_name`, `season`, `points`, `wins`, `podiums`) VALUES (?, ?, ?, ?, ?)");
-        $stmt->bind_param("sssss", $dName, $sSeason, $sPoints, $sWins, $sPodiums);
+        $stmt->bind_param("siiii", $dName, $sSeason, $sPoints, $sWins, $sPodiums);
         $success = $stmt->execute();
         $conn->close();
         return $success;
@@ -27,18 +27,20 @@ function insertStandings($dName, $sSeason, $sPoints, $sWins, $sPodiums) {
         throw $e;
     }
 }
+
 function updateStandings($sSeason, $sPoints, $sWins, $sPodiums, $ssid) {
-    try {
-        $conn = get_db_connection();
-        $stmt = $conn->prepare("update `Standings` set `season`= ?, `points`= ?, `wins`= ?, `podiums`=? where standing_id = ?");
-        $stmt->bind_param("ssssi", $sSeason, $sPoints, $sWins, $sPodiums, $ssid);
-        $success = $stmt->execute();
-        $conn->close();
-        return $success;
-    } catch (Exception $e) {
-        $conn->close();
-        throw $e;
-    }
+  try {
+    $conn = get_db_connection();
+    $stmt = $conn->prepare("UPDATE Standings SET season = ?, points = ?, wins = ?, podiums = ? WHERE standing_id = ?");
+    $stmt->bind_param("siiii", $sSeason, $sPoints, $sWins, $sPodiums, $ssid);
+    $success = $stmt->execute();
+    $conn->close();
+    return $success;
+  } catch (Exception $e) {
+    $conn->close();
+    throw $e;
+  }
+
 }
 function deleteStandings($ssid) {
     try {
