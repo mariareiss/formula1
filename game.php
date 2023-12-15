@@ -36,7 +36,7 @@ include "view-header.php";
 
         .container {
             max-width: 800px;
-            margin: 0 auto;
+            margin: 20px auto;
             padding: 20px;
             background-color: #fff;
             border-radius: 8px;
@@ -71,7 +71,7 @@ include "view-header.php";
 
         button {
             display: block;
-            margin: 10px auto;
+            margin: 20px auto;
             padding: 12px 24px;
             font-size: 18px;
             font-weight: bold;
@@ -85,6 +85,47 @@ include "view-header.php";
 
         button:hover {
             background-color: #0056b3;
+        }
+
+        .simulation-section {
+            margin-top: 30px;
+        }
+
+        .track {
+            width: 100%;
+            height: 400px;
+            border: 1px solid #000;
+            position: relative;
+            background-color: #808080;
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        .car {
+            width: 40px;
+            height: 20px;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            cursor: pointer;
+            border-radius: 4px;
+            transition: background-color 0.3s ease;
+            user-select: none;
+        }
+
+        .car:hover {
+            background-color: #ccc;
+        }
+
+        .car-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 12px;
+            font-weight: bold;
+            color: #000000;
+            pointer-events: none;
         }
     </style>
 </head>
@@ -111,6 +152,14 @@ include "view-header.php";
         </div>
 
         <button onclick="startRace()">Start Race</button>
+
+        <!-- Simulation Section -->
+        <div class="simulation-section">
+            <h2>Simulation Section</h2>
+            <div class="track" id="raceTrack">
+                <!-- Cars will be dynamically added here during simulation -->
+            </div>
+        </div>
     </div>
 
     <!-- Bootstrap JavaScript Bundle with Popper -->
@@ -137,9 +186,27 @@ include "view-header.php";
             if (selectedDrivers.length === 3) {
                 // Start the race simulation with selected drivers
                 alert(`Race started with drivers: ${selectedDrivers.join(', ')}`);
+                simulateRace(selectedDrivers);
             } else {
                 alert('Please select exactly 3 drivers to start the race.');
             }
+        }
+
+        function simulateRace(drivers) {
+            // Simulate the race here
+            const raceTrack = document.getElementById('raceTrack');
+            
+            // Clear previous cars
+            raceTrack.innerHTML = '';
+
+            // Create cars for selected drivers
+            drivers.forEach((driver, index) => {
+                const car = document.createElement('div');
+                car.className = 'car';
+                car.style.left = `${index * 100}px`; // Position cars horizontally
+                car.innerHTML = `<span class="car-text">${driver}</span>`;
+                raceTrack.appendChild(car);
+            });
         }
     </script>
 </body>
