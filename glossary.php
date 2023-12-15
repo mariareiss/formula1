@@ -9,15 +9,16 @@ include "view-header.php";
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>F1 Glossary</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Link to an external CSS file for better organization -->
     <style>
         body {
             font-family: 'Arial', sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f4f4f4;
+            background-color: #f8f8f8;
             color: #333;
             display: flex;
+            flex-direction: column;
             align-items: center;
             justify-content: center;
             min-height: 100vh;
@@ -26,10 +27,11 @@ include "view-header.php";
         header {
             text-align: center;
             padding: 20px;
-            background-color: #001f3f;
+            background-color: #001f3f; /* Dark blue color */
             color: #fff;
             border-bottom: 2px solid #fff;
             width: 100%;
+            margin-bottom: 20px;
         }
 
         h1 {
@@ -37,107 +39,158 @@ include "view-header.php";
             font-size: 28px;
         }
 
-        main {
-            display: flex;
-            flex-direction: column-reverse; /* Reverse the order of flex items */
+        .glossary-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
             max-width: 800px;
-            margin: 20px;
+            width: 100%;
+            margin: 0 auto;
+        }
+
+        .glossary-entry {
+            text-align: center;
             padding: 20px;
             background-color: #fff;
             border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-
-        .terms {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 20px;
-        }
-
-        .term {
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             cursor: pointer;
-            padding: 10px;
-            background-color: #f4f4f4;
-            border-radius: 5px;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .glossary-entry:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        .definition {
+            display: none;
+            margin-top: 20px;
+        }
+
+        footer {
             text-align: center;
-            transition: background-color 0.3s;
-        }
-
-        .term:hover {
-            background-color: #ddd;
-        }
-
-        .term-details {
+            margin-top: 20px;
             padding: 10px;
-            background-color: #f4f4f4;
-            border-radius: 5px;
-            margin-bottom: 20px;
+            background-color: #001f3f;
+            color: #fff;
+            width: 100%;
+            border-radius: 0 0 8px 8px;
         }
     </style>
+    <title>F1 Glossary</title>
 </head>
 
 <body>
-
     <header>
         <h1>F1 Glossary</h1>
     </header>
 
-    <main>
-        <div class="term-details" id="term-details">
-            <!-- Definition content will be dynamically added here -->
-        </div>
-        <div class="terms" id="terms-container">
-            <?php
-            // F1 glossary terms array
-            $terms = array(
-                'Aerodynamics', 'Downforce', 'DRS (Drag Reduction System)', 'Hybrid Power Unit', 'Pit Stop',
-                'Grid Penalty', 'DRS (Drag Reduction System)', 'Podium', 'Formation Lap', 'Blue Flags',
-                'Pit Wall', 'Safety Car', 'Time Penalty', 'Chicane', 'Pit Crew',
-                'Engine Mapping', 'DNF (Did Not Finish)', 'Pole Position', 'Flat Spot'
-            );
+    <div class="glossary-grid">
 
-            // Loop through each term and generate HTML
-            foreach ($terms as $index => $term) {
-                echo '<div class="term" onclick="toggleDetails(' . $index . ')">' . $term . '</div>';
-            }
-            ?>
+        <div class="glossary-entry" onclick="toggleDefinition('drift')">
+            <h2>Drift</h2>
+            <p class="definition" id="drift">In motorsports, drift refers to intentionally oversteering, causing the rear tires to lose traction, resulting in a controlled slide. Example: "The driver executed a perfect drift around the hairpin turn."</p>
         </div>
-    </main>
+
+        <div class="glossary-entry" onclick="toggleDefinition('downforce')">
+            <h2>Downforce</h2>
+            <p class="definition" id="downforce">Downforce is the aerodynamic force that pushes a race car toward the track, improving traction and stability. Example: "The new aerodynamic package increased the car's downforce."</p>
+        </div>
+
+        <div class="glossary-entry" onclick="toggleDefinition('overtake')">
+            <h2>Overtake</h2>
+            <p class="definition" id="overtake">To overtake is to pass another car during a race, moving ahead in position. Example: "The driver skillfully used DRS to overtake the competitor on the straight."</p>
+        </div>
+
+        <div class="glossary-entry" onclick="toggleDefinition('slicks')">
+            <h2>Slicks</h2>
+            <p class="definition" id="slicks">Slick tires have a smooth tread without grooves, providing maximum contact with the road. Example: "The team switched to slicks as the track dried up."</p>
+        </div>
+
+        <div class="glossary-entry" onclick="toggleDefinition('understeer')">
+            <h2>Understeer</h2>
+            <p class="definition" id="understeer">Understeer occurs when the front tires lose traction, causing the car to drift wide in a turn. Example: "The setup change helped reduce understeer, improving cornering."</p>
+        </div>
+
+        <div class="glossary-entry" onclick="toggleDefinition('oversteer')">
+            <h2>Oversteer</h2>
+            <p class="definition" id="oversteer">Oversteer happens when the rear tires lose traction, causing the back end of the car to slide out. Example: "The driver corrected oversteer with quick steering and throttle control."</p>
+        </div>
+
+        <div class="glossary-entry" onclick="toggleDefinition('grid-position')">
+            <h2>Grid Position</h2>
+            <p class="definition" id="grid-position">Grid position refers to a driver's starting position on the grid at the beginning of a race. Example: "The driver qualified in third place, securing a favorable grid position for the race."</p>
+        </div>
+
+        <div class="glossary-entry" onclick="toggleDefinition('pit-stop')">
+            <h2>Pit Stop</h2>
+            <p class="definition" id="pit-stop">A pit stop is a scheduled stop in the pit lane for a car to receive service, such as tire changes and refueling. Example: "The team executed a fast pit stop, gaining valuable time."</p>
+        </div>
+
+        <div class="glossary-entry" onclick="toggleDefinition('pole-position')">
+            <h2>Pole Position</h2>
+            <p class="definition" id="pole-position">Pole position is the first starting position on the grid, earned by the driver with the fastest qualifying time. Example: "The driver celebrated securing pole position for the Grand Prix."</p>
+        </div>
+
+        <div class="glossary-entry" onclick="toggleDefinition('safety-car')">
+            <h2>Safety Car</h2>
+            <p class="definition" id="safety-car">A safety car is deployed during a race to control the pace and allow for the safe clearing of track incidents. Example: "The safety car was on the track after a multiple-car collision."</p>
+        </div>
+
+        <div class="glossary-entry" onclick="toggleDefinition('driving-line')">
+            <h2>Driving Line</h2>
+            <p class="definition" id="driving-line">The driving line is the optimal path a driver takes around a racetrack to achieve the fastest lap time. Example: "The driver followed the perfect driving line through the complex corners."</p>
+        </div>
+
+        <div class="glossary-entry" onclick="toggleDefinition('qualifying')">
+            <h2>Qualifying</h2>
+            <p class="definition" id="qualifying">Qualifying determines the starting order of drivers based on their lap times. Example: "The team focused on improving the car's performance for the upcoming qualifying session."</p>
+        </div>
+
+        <div class="glossary-entry" onclick="toggleDefinition('checkered-flag')">
+            <h2>Checkered Flag</h2>
+            <p class="definition" id="checkered-flag">The checkered flag signals the end of a race, waving as the first car crosses the finish line. Example: "The driver celebrated victory as they crossed the finish line under the checkered flag."</p>
+        </div>
+
+        <div class="glossary-entry" onclick="toggleDefinition('formation-lap')">
+            <h2>Formation Lap</h2>
+            <p class="definition" id="formation-lap">The formation lap is a pre-race lap where drivers warm up tires and engines before lining up on the grid. Example: "The driver maintained tire temperature during the formation lap."</p>
+        </div>
+
+        <div class="glossary-entry" onclick="toggleDefinition('chicane')">
+            <h2>Chicane</h2>
+            <p class="definition" id="chicane">A chicane is a sequence of tight corners designed to slow down vehicles on a racetrack. Example: "The challenging chicane tested the driver's precision and control."</p>
+        </div>
+
+        <div class="glossary-entry" onclick="toggleDefinition('fastest-lap')">
+            <h2>Fastest Lap</h2>
+            <p class="definition" id="fastest-lap">The fastest lap is the quickest lap time recorded by a driver during a race. Example: "The driver set the fastest lap of the race with impressive speed."</p>
+        </div>
+
+        <div class="glossary-entry" onclick="toggleDefinition('parc-ferme')">
+            <h2>Parc Fermé</h2>
+            <p class="definition" id="parc-ferme">Parc fermé is a restricted area where cars are held after qualifying and the race for inspection. Example: "The car was impounded in parc fermé for post-race scrutineering."</p>
+        </div>
+
+        <div class="glossary-entry" onclick="toggleDefinition('drs')">
+            <h2>DRS (Drag Reduction System)</h2>
+            <p class="definition" id="drs">DRS is a system that enables a car to reduce aerodynamic drag and increase straight-line speed. Example: "The driver activated DRS to gain an advantage while overtaking."</p>
+        </div>
+
+
+    </div>
+
+    <?php
+    include "view-footer.php";
+    ?>
 
     <script>
-        function toggleDetails(index) {
-            const termDetails = document.getElementById('term-details');
-            termDetails.innerHTML = '<p>' + getTermDefinition(index) + '</p>';
-        }
-
-        function getTermDefinition(index) {
-            // F1 glossary definitions array
-            const definitions = [
-                'The study of the behavior of air, particularly as it interacts with the surfaces of the F1 car. Aerodynamics plays a crucial role in determining a car\'s speed and handling.',
-                'The aerodynamic force that pushes the F1 car toward the track, increasing tire grip and improving cornering capabilities. Downforce is essential for high-speed stability.',
-                'An adjustable flap on the rear wing that can be opened to reduce aerodynamic drag and increase straight-line speed. DRS is used in designated zones during races.',
-                'The modern power unit used in F1, consisting of a V6 turbocharged engine and energy recovery systems (ERS). ERS components include the MGU-K and MGU-H.',
-                'A scheduled stop during a race where a team changes a car\'s tires, makes adjustments, and refuels if necessary. Pit stops are crucial for strategy and maintenance.',
-                'A penalty imposed on a driver for rule violations or exceeding the allowed number of engine components. Grid penalties result in the driver starting the race from a lower grid position.',
-                'An adjustable flap on the rear wing that can be opened to reduce aerodynamic drag and increase straight-line speed. DRS is used in designated zones during races.',
-                'The raised platform where the top three finishers of a race stand to receive trophies and celebrate. Achieving a podium finish is a significant accomplishment in F1.',
-                'The pre-race lap where F1 cars circulate the track to warm up tires and prepare for the race start. Drivers follow a set formation behind the safety car.',
-                'Flags shown to lapped cars to inform them that a faster car is approaching from behind. Lapped cars are expected to yield to faster competitors.',
-                'The area in the pit lane where the team\'s management and engineers monitor the race, communicate with the driver, and make strategic decisions.',
-                'A vehicle deployed during a race to neutralize the competition in case of accidents or unsafe track conditions. The safety car leads the field until the track is clear.',
-                'A penalty imposed on a driver for rule violations, such as exceeding track limits or causing avoidable collisions. Time penalties are added to a driver\'s race time.',
-                'A sequence of tight corners deliberately designed to slow down cars on a straight portion of the track. Chicanes are used to create challenging and technical sections.',
-                'The team members responsible for performing pit stops, including tire changes, adjustments, and refueling. Pit crews must work quickly and efficiently.',
-                'The electronic control of an F1 engine\'s performance characteristics. Engine mapping is adjusted to optimize power delivery, fuel efficiency, and overall performance.',
-                'A classification given to a driver or team that did not complete the race distance due to mechanical failure, accidents, or other reasons.',
-                'The grid position at the front of the starting lineup. It is awarded to the driver who sets the fastest qualifying time before the race.',
-                'A localized area of excessive wear on a tire caused by heavy braking and wheel locking. Flat spots can affect a car\'s handling and performance.'
-            ];
-
-            return definitions[index];
+        function toggleDefinition(termId) {
+            var definition = document.getElementById(termId);
+            definition.style.display = (definition.style.display === "none" || definition.style.display === "") ? "block" : "none";
         }
     </script>
-
 </body>
 
 </html>
