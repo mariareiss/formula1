@@ -70,11 +70,14 @@
         <header>
             <h1>Formula One Standings Data</h1>
         </header>
-        <div class="col">
-            <h2>Standings</h2>
-        </div>
-        <div class="add-btn-container">
-            <?php include "view-standings-newform.php"; ?>
+        
+        <div class="row">
+            <div class="col">
+                <h2>Standings</h2>
+            </div>
+            <div class="col-auto add-btn-container">
+                <?php include "view-standings-newform.php"; ?>
+            </div>
         </div>
 
         <div class="table-responsive">
