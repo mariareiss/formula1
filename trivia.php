@@ -11,18 +11,33 @@ include "view-header.php";
     <title>F1 Trivia Page</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Arial', sans-serif;
             margin: 0;
             padding: 0;
             background-color: #f4f4f4;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
         }
 
         header {
-            background-color: #333;
-            color: #fff;
             text-align: center;
-            padding: 1em;
+            padding: 20px;
+            background-color: #001f3f; /* Dark blue color */
+            color: #fff;
+            border-bottom: 2px solid #fff;
+            width: 100%;
+            margin-bottom: 20px;
         }
+
+        h1 {
+            margin: 0;
+            font-size: 28px;
+        }
+
 
         main {
             max-width: 800px;
