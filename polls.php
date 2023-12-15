@@ -69,6 +69,9 @@ include "view-header.php";
         }
 
         .poll-option {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
             margin-bottom: 10px;
         }
 
@@ -107,57 +110,82 @@ include "view-header.php";
             <h2 class="poll-title">Poll 1: Favorite Formula 1 Driver</h2>
             <ul class="poll-options">
                 <li class="poll-option">
-                    <button class="vote-btn" onclick="vote('hamilton', 'driver')">Vote for Lewis Hamilton</button>
+                    <span>Lewis Hamilton</span>
+                    <button class="vote-btn" onclick="vote('hamilton', 'driver')">Vote</button>
+                    <span id="votes-hamilton">0</span>
                 </li>
                 <li class="poll-option">
-                    <button class="vote-btn" onclick="vote('verstappen', 'driver')">Vote for Max Verstappen</button>
+                    <span>Max Verstappen</span>
+                    <button class="vote-btn" onclick="vote('verstappen', 'driver')">Vote</button>
+                    <span id="votes-verstappen">0</span>
                 </li>
                 <li class="poll-option">
-                    <button class="vote-btn" onclick="vote('leclerc', 'driver')">Vote for Charles Leclerc</button>
+                    <span>Charles Leclerc</span>
+                    <button class="vote-btn" onclick="vote('leclerc', 'driver')">Vote</button>
+                    <span id="votes-leclerc">0</span>
                 </li>
             </ul>
-            <div class="results-container" id="results-driver">Votes: 0</div>
+            <div class="results-container" id="results-driver">Total Votes: 0</div>
         </div>
 
         <div class="poll-container">
             <h2 class="poll-title">Poll 2: Best Formula 1 Team</h2>
             <ul class="poll-options">
                 <li class="poll-option">
-                    <button class="vote-btn" onclick="vote('mercedes', 'team')">Vote for Mercedes</button>
+                    <span>Mercedes</span>
+                    <button class="vote-btn" onclick="vote('mercedes', 'team')">Vote</button>
+                    <span id="votes-mercedes">0</span>
                 </li>
                 <li class="poll-option">
-                    <button class="vote-btn" onclick="vote('redbull', 'team')">Vote for Red Bull Racing</button>
+                    <span>Red Bull Racing</span>
+                    <button class="vote-btn" onclick="vote('redbull', 'team')">Vote</button>
+                    <span id="votes-redbull">0</span>
                 </li>
                 <li class="poll-option">
-                    <button class="vote-btn" onclick="vote('ferrari', 'team')">Vote for Ferrari</button>
+                    <span>Ferrari</span>
+                    <button class="vote-btn" onclick="vote('ferrari', 'team')">Vote</button>
+                    <span id="votes-ferrari">0</span>
                 </li>
             </ul>
-            <div class="results-container" id="results-team">Votes: 0</div>
+            <div class="results-container" id="results-team">Total Votes: 0</div>
         </div>
 
         <div class="poll-container">
             <h2 class="poll-title">Poll 3: Favorite F1 Circuit</h2>
             <ul class="poll-options">
                 <li class="poll-option">
-                    <button class="vote-btn" onclick="vote('monza', 'circuit')">Vote for Monza</button>
+                    <span>Monza</span>
+                    <button class="vote-btn" onclick="vote('monza', 'circuit')">Vote</button>
+                    <span id="votes-monza">0</span>
                 </li>
                 <li class="poll-option">
-                    <button class="vote-btn" onclick="vote('spa', 'circuit')">Vote for Spa-Francorchamps</button>
+                    <span>Spa-Francorchamps</span>
+                    <button class="vote-btn" onclick="vote('spa', 'circuit')">Vote</button>
+                    <span id="votes-spa">0</span>
                 </li>
                 <li class="poll-option">
-                    <button class="vote-btn" onclick="vote('monaco', 'circuit')">Vote for Monaco</button>
+                    <span>Monaco</span>
+                    <button class="vote-btn" onclick="vote('monaco', 'circuit')">Vote</button>
+                    <span id="votes-monaco">0</span>
                 </li>
             </ul>
-            <div class="results-container" id="results-circuit">Votes: 0</div>
+            <div class="results-container" id="results-circuit">Total Votes: 0</div>
         </div>
 
     </main>
 
     <script>
         const vote = (option, category) => {
-            const resultsElement = document.getElementById(`results-${category}`);
-            const currentVotes = parseInt(resultsElement.innerText.split(": ")[1]) || 0;
-            resultsElement.innerText = `Votes: ${currentVotes + 1}`;
+            const votesElement = document.getElementById(`votes-${option}`);
+            const totalVotesElement = document.getElementById(`results-${category}`);
+            
+            let currentVotes = parseInt(votesElement.innerText) || 0;
+            currentVotes++;
+            votesElement.innerText = currentVotes;
+            
+            let totalVotes = parseInt(totalVotesElement.innerText.split(": ")[1]) || 0;
+            totalVotes++;
+            totalVotesElement.innerText = `Total Votes: ${totalVotes}`;
         };
     </script>
 </body>
