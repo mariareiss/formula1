@@ -25,7 +25,7 @@ include "view-header.php";
             display: flex;
             flex-direction: column;
             align-items: center;
-            background: linear-gradient(to right, #dc3545, #8b0000); /* Gradient background */
+            background: linear-gradient(to right, #4CAF50, #FFC107); /* Complementary color scheme */
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle box shadow */
         }
 
@@ -68,9 +68,10 @@ include "view-header.php";
         }
 
         .team-logo {
-            width: 150px; /* Adjusted size for better visual appeal */
-            height: 150px; /* Adjusted size for better visual appeal */
-            object-fit: cover;
+            width: 100%; /* Adjusted to fill the container */
+            height: auto; /* Maintain aspect ratio */
+            max-width: 150px; /* Set maximum width */
+            max-height: 150px; /* Set maximum height */
             border: 5px solid #fff;
             border-radius: 10px;
             overflow: hidden;
