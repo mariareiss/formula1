@@ -167,16 +167,18 @@ include "view-header.php";
             var topic = document.getElementById('insights-topic').value;
             var carComponentsContent = document.getElementById('car-components-content');
             var strategiesContent = document.getElementById('strategies-content');
+            var racesContent = document.getElementById('races-content');
+            var technologyContent = document.getElementById('technology-content');
+            var teamsContent = document.getElementById('teams-content');
 
-            if (topic === 'car-components') {
-                carComponentsContent.style.display = 'block';
-                strategiesContent.style.display = 'none';
-            } else if (topic === 'strategies') {
-                carComponentsContent.style.display = 'none';
-                strategiesContent.style.display = 'block';
-            }
+            carComponentsContent.style.display = topic === 'car-components' ? 'block' : 'none';
+            strategiesContent.style.display = topic === 'strategies' ? 'block' : 'none';
+            racesContent.style.display = topic === 'races' ? 'block' : 'none';
+            technologyContent.style.display = topic === 'technology' ? 'block' : 'none';
+            teamsContent.style.display = topic === 'teams' ? 'block' : 'none';
         }
     </script>
+    
 </body>
 
 </html>
