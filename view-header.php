@@ -13,7 +13,7 @@
             background-size: cover;
             background-repeat: no-repeat;
             background-position: center;
-            opacity: 0.7; /* Slightly more opaque */
+            opacity: 1.0; /* Slightly more opaque */
             margin: 0;
             padding: 0;
         }
