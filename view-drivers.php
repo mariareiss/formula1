@@ -24,6 +24,11 @@
             margin: 0;
             font-size: 28px;
         }
+        
+        body {
+            margin: 0;
+        }
+        
         .instructions {
             text-align: center;
             margin: 30px;
