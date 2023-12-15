@@ -68,16 +68,16 @@ include "view-header.php";
         }
 
         .team-logo {
-            width: 100%;
-            height: 100%;
-            object-fit: cover; /* Covers the entire container, distorting the logo's aspect ratio if necessary */
-            border: 5px solid #333;
+            width: 100%; /* Adjusted to fill the container */
+            height: 100%; /* Adjusted to fill the container */
+            object-fit: contain; /* Maintain aspect ratio and fit within the container */
+            border: 5px solid #333; /* Dark border color */
             border-radius: 10px;
             overflow: hidden;
-            margin-bottom: 10px;
+            margin-bottom: 10px; /* Add margin to create space between image and text */
             display: flex;
-            justify-content: center;
-            align-items: center;
+            justify-content: center; /* Center image horizontally within the container */
+            align-items: center; /* Center image vertically within the container */
         }
 
     </style>
