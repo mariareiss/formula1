@@ -23,7 +23,7 @@ include "view-header.php";
 
     header {
       text-align: center;
-      padding: 0px;
+      padding: 20px;
       background-color: #001f3f; /* Dark blue color */
       color: #fff;
       border-bottom: 2px solid #fff;
@@ -80,22 +80,50 @@ include "view-header.php";
       user-select: none;
     }
 
+    .car:hover {
+      background-color: #0056b3;
+    }
+
     button {
       display: block;
       margin: 10px auto;
-      padding: 8px 16px;
-      font-size: 16px;
+      padding: 12px 24px;
+      font-size: 18px;
       font-weight: bold;
       color: #fff;
       background-color: #007bff;
       border: none;
-      border-radius: 4px;
+      border-radius: 8px;
       cursor: pointer;
       transition: background-color 0.3s ease;
     }
 
     button:hover {
       background-color: #0056b3;
+    }
+
+    .track {
+      width: 80%;
+      max-width: 600px;
+      height: 300px;
+      border: 2px solid #000;
+      position: relative;
+      margin: 20px auto;
+      background-color: #808080;
+      border-radius: 4px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .car-text {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 12px;
+      font-weight: bold;
+      color: #fff;
+      pointer-events: none;
     }
   </style>
 </head>
@@ -150,6 +178,31 @@ include "view-header.php";
 
   <!-- Bootstrap JavaScript Bundle with Popper -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+  <script>
+    function startDrag(event, pilot) {
+      // Implement drag functionality here
+    }
+
+    function selectPilot(pilot, isSelected) {
+      // Implement pilot selection logic here
+    }
+
+    function setSpeed(pilot, speed) {
+      // Implement speed setting logic here
+    }
+
+    function startRace() {
+      // Implement race start logic here
+    }
+
+    function stopRace() {
+      // Implement race stop logic here
+    }
+
+    function restartRace() {
+      // Implement race restart logic here
+    }
+  </script>
 </body>
 
 </html>
