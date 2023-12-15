@@ -12,6 +12,19 @@
             margin: 0;
             padding: 0;
         }
+
+        header {
+            text-align: center;
+            padding: 20px;
+            background-color: #001f3f; /* Dark blue color */
+            color: #fff;
+            border-bottom: 2px solid #fff;
+        }
+        
+        h1 {
+            margin: 0;
+            font-size: 28px;
+        }
         .container {
             margin-top: 20px;
         }
@@ -33,6 +46,10 @@
     </style>
 </head>
 <body>
+    <header>
+        <h1>Formula One Race Data</h1>
+    </header>
+    
     <div class="container">
         <h1>Races</h1>
         <div class="table-responsive">
