@@ -27,6 +27,10 @@
             text-align: center;
             color: #333;
             max-width: 800px;
+            padding: 20px;
+            border-radius: 10px;
+            background-color: rgba(255, 255, 255, 0.8);
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
 
         h1 {
@@ -45,6 +49,7 @@
             width: 100%;
             overflow: hidden;
             margin-top: 20px;
+            border-radius: 10px;
         }
 
         .slider {
@@ -52,6 +57,8 @@
             transition: transform 0.5s ease-in-out;
             width: 500px; /* Adjusted to accommodate three 400px images */
             margin: 0 auto;
+            border-radius: 10px;
+            overflow: hidden;
         }
 
         .slide {
@@ -63,16 +70,16 @@
             width: 100%;
             height: 100%;
             object-fit: cover; /* Maintain aspect ratio and cover the entire box */
+            border-radius: 10px;
         }
-
 
         .button-container {
             margin-top: 20px;
         }
 
         .cta-button {
-            padding: 10px 20px;
-            font-size: 1em;
+            padding: 12px 24px;
+            font-size: 1.2em;
             background-color: #007bff;
             color: white;
             border: none;
@@ -120,6 +127,11 @@
             <div class="slider">
                 <div class="slide"><img src="f1.2.jpg" alt="Formula 1 Image 2"></div>
             </div>
+        </div>
+
+        <!-- Call-to-Action Button -->
+        <div class="button-container">
+            <button class="cta-button">Explore Now</button>
         </div>
     </div>
 
