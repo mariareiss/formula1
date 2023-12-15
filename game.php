@@ -9,21 +9,26 @@ include "view-header.php";
   <meta charset="UTF-8">
   <title>Formula 1 Race Simulation</title>
   <style>
-    body {
-      background-image: url('f1-image.avif');
-      background-size: cover;
-      background-repeat: no-repeat;
-      opacity: 1.0;
-      font-family: 'Arial', sans-serif;
-      margin: 0;
-      padding: 0;
-      color: #fff;
-    }
+      body {
+          font-family: 'Arial', sans-serif;
+          margin: 0;
+          padding: 0;
+          background-color: #f8f8f8;
+          color: #333;
+      }
 
-    h1 {
-      text-align: center;
-      margin-top: 20px;
-    }
+      header {
+          text-align: center;
+          padding: 20px;
+          background-color: #001f3f; /* Dark blue color */
+          color: #fff;
+          border-bottom: 2px solid #fff;
+      }
+
+      h1 {
+          margin: 0;
+          font-size: 28px;
+      }
 
     .container {
       max-width: 800px;
