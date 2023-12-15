@@ -68,6 +68,9 @@
         <header>
             <h1>Formula One Standings Data</h1>
         </header>
+        <div class="col">
+                <h2>Standings</h2>
+         </div>
         <div class="col-auto">
             <?php include "view-standings-newform.php"; ?>
         </div>
