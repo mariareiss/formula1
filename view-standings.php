@@ -27,6 +27,16 @@
             font-size: 28px;
         }
 
+        .navbar {
+            background-color: #001f3f;
+            padding: 1rem;
+        }
+
+        .navbar-brand,
+        .navbar-nav .nav-link {
+            color: #fff;
+        }
+
         .container {
             margin-top: 20px;
             max-width: 1600px; /* Set a maximum width for the container */
@@ -38,7 +48,8 @@
             font-weight: bold;
         }
 
-        td, th {
+        td,
+        th {
             text-align: center;
             vertical-align: middle !important;
         }
@@ -78,6 +89,10 @@
 </head>
 
 <body>
+
+    <div class="navbar">
+        <a class="navbar-brand" href="#">Formula One Standings Data</a>
+    </div>
 
     <div class="container">
         <header>
