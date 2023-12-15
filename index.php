@@ -31,7 +31,8 @@ $pageTitle = "Home";
         <?php include "view-header.php"; ?>
     </div>
     <div>
-        <h1>Welcome to your Formula 1 Portal</h1>
+        <h1>Welcome to the Formula 1 Portal</h1>
+        <h2>Click on any of the navigation tabs to learn/explore more</h2>
     </div>
     <?php include "view-footer.php"; ?>
 </body>
