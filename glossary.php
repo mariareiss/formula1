@@ -9,13 +9,13 @@ include "view-header.php";
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>F1 Glossary</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Link to an external CSS file for better organization -->
     <style>
         body {
             font-family: 'Arial', sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f4f4f4;
+            background-color: #f8f8f8;
             color: #333;
             display: flex;
             flex-direction: column;
@@ -45,20 +45,22 @@ include "view-header.php";
             gap: 20px;
             max-width: 800px;
             width: 100%;
-            margin: 20px;
+            margin: 0 auto;
         }
 
         .glossary-entry {
-            background-color: #fff;
-            border: 1px solid #ddd;
+            text-align: center;
             padding: 20px;
+            background-color: #fff;
             border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             cursor: pointer;
-            transition: transform 0.3s;
+            transition: transform 0.3s, box-shadow 0.3s;
         }
 
         .glossary-entry:hover {
-            transform: scale(1.02);
+            transform: scale(1.05);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
         }
 
         .definition {
@@ -76,6 +78,7 @@ include "view-header.php";
             border-radius: 0 0 8px 8px;
         }
     </style>
+    <title>F1 Glossary</title>
 </head>
 
 <body>
