@@ -9,7 +9,6 @@ include "view-header.php";
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>F1 Races 2023 Map</title>
-    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
     <style>
         body {
             font-family: 'Arial', sans-serif;
@@ -22,6 +21,17 @@ include "view-header.php";
             align-items: center;
             justify-content: center;
             height: 100vh;
+        }
+        header {
+            text-align: center;
+            padding: 20px;
+            background-color: #001f3f; /* Dark blue color */
+            color: #fff;
+            border-bottom: 2px solid #fff;
+        }
+        h1 {
+            margin: 0;
+            font-size: 28px;
         }
         #map {
             height: 800px;
@@ -40,10 +50,13 @@ include "view-header.php";
             border-radius: 8px;
         }
     </style>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
 </head>
 <body>
 
-<h1>F1 Races 2023 Map</h1>
+<header>
+    <h1>F1 Races 2023 Map</h1>
+</header>
 
 <div id="instructions">
     <h2>How to Use</h2>
