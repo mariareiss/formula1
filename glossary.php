@@ -26,12 +26,31 @@ include "view-header.php";
         }
 
         header {
-            background-color: #007bff;
+            background-color: #1a1a1a;
             color: #fff;
             text-align: center;
             padding: 20px;
             width: 100%;
             margin-bottom: 20px;
+        }
+
+        nav {
+            background-color: #333;
+            padding: 10px;
+            width: 100%;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            padding: 10px;
+            margin: 0 10px;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #1a1a1a;
         }
 
         .container {
@@ -47,29 +66,34 @@ include "view-header.php";
         .glossary-entry {
             background-color: #fff;
             border: 1px solid #ddd;
-            padding: 10px;
-            margin-bottom: 10px;
-            border-radius: 5px;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 8px;
             cursor: pointer;
+            transition: transform 0.3s;
+        }
+
+        .glossary-entry:hover {
+            transform: scale(1.02);
         }
 
         .definition {
             display: none;
-            margin-top: 10px;
+            margin-top: 20px;
         }
 
         footer {
             text-align: center;
             margin-top: 20px;
             padding: 10px;
-            background-color: #007bff;
+            background-color: #1a1a1a;
             color: #fff;
             width: 100%;
             border-radius: 0 0 8px 8px;
         }
     </style>
 </head>
-
+    
 <body>
     <header>
         <h1>F1 Glossary</h1>
