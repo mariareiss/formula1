@@ -120,7 +120,7 @@
                             <a class="nav-link <?= $pageTitle === 'Standings Chart' ? 'active' : '' ?>" href="standings-chart.php">Standings Chart</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link <?= $pageTitle === 'Game' ? 'active' : '' ?>" href="game.php">Game</a>
+                            <a class="nav-link <?= $pageTitle === 'Game' ? 'active' : '' ?>" href="game.php">Game (Beta Test)</a>
                         </li>
                     </ul>
                 </div>
