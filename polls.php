@@ -194,7 +194,7 @@ include "view-header.php";
             <ul class="poll-options">
                 <li class="poll-option">
                     <span>Monaco Grand Prix</span>
-                    <button class="vote-btn" onclick="vote('monaco', 'race')">Vote</button>
+                    <button class="vote-btn" onclick="vote('monaco1', 'race')">Vote</button>
                     <span id="votes-monaco-race">0</span>
                 </li>
                 <li class="poll-option">
