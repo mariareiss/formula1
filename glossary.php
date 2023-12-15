@@ -8,20 +8,21 @@ include "view-header.php";
 
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>F1 Glossary</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
     <style>
         body {
-            background-color: #f2f2f2;
             font-family: 'Arial', sans-serif;
             margin: 0;
             padding: 0;
-        }
-
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 20px;
+            background-color: #f4f4f4;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
         }
 
         header {
@@ -33,20 +34,14 @@ include "view-header.php";
             margin-bottom: 20px;
         }
 
-        main {
-            margin-top: 20px;
-        }
-
-        .instructions {
-            background-color: #f8f8f8;
-            border: 1px solid #ddd;
+        .container {
+            max-width: 800px;
+            width: 100%;
+            margin: 0 auto;
             padding: 20px;
-            margin-bottom: 20px;
-            border-radius: 5px;
-        }
-
-        .instructions h2 {
-            color: #007bff;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
         }
 
         .glossary-entry {
@@ -69,15 +64,16 @@ include "view-header.php";
             padding: 10px;
             background-color: #007bff;
             color: #fff;
+            width: 100%;
+            border-radius: 0 0 8px 8px;
         }
     </style>
 </head>
-    
+
 <body>
-    <div class="container">
-        <header>
-            <h1>F1 Glossary</h1>
-        </header>
+    <header>
+        <h1>F1 Glossary</h1>
+    </header>
 
 <main>
     <div class="instructions">
