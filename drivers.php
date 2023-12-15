@@ -32,4 +32,3 @@ if (isset($_POST['actionType'])) {
 $drivers = selectDrivers();
 include "view-drivers.php";
 include "view-footer.php";
-?>
