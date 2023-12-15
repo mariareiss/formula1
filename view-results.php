@@ -11,6 +11,18 @@
             text-align: center;
         }
 
+        header {
+            text-align: center;
+            padding: 20px;
+            background-color: #001f3f; /* Dark blue color */
+            color: #fff;
+            border-bottom: 2px solid #fff;
+        }
+        h1 {
+            margin: 0;
+            font-size: 28px;
+        }
+
         .table-container {
             width: 1200px;
             margin-top: 20px; /* Adjust the margin as needed */
@@ -22,7 +34,10 @@
     </style>
 </head>
 <body>
-    <h1>Results</h1>
+    <header>
+        <h1>Formula One Results Data</h1>
+    </header>
+    
     <div class="table-container">
         <div class="table-responsive">
             <table class="table">
