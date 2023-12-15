@@ -13,6 +13,7 @@
             margin: 0;
             padding: 0;
         }
+
         header {
             text-align: center;
             padding: 20px;
@@ -20,44 +21,55 @@
             color: #fff;
             border-bottom: 2px solid #fff;
         }
+
         h1 {
             margin: 0;
             font-size: 28px;
         }
+
         .container {
             margin-top: 20px;
             max-width: 1600px; /* Set a maximum width for the container */
             margin-left: auto;
             margin-right: auto;
         }
+
         th {
             font-weight: bold;
         }
+
         td, th {
             text-align: center;
             vertical-align: middle !important;
         }
+
         .driver-link {
             color: #007bff; /* Set the link color */
             text-decoration: none;
         }
+
         .driver-link:hover {
             text-decoration: underline;
         }
+
         .table {
             margin-top: 20px; /* Add margin to the table */
         }
+
         .col-auto {
             margin-bottom: 20px;
         }
+
         .btn-primary {
             background-color: #007bff; /* Set your desired button color */
             border-color: #007bff; /* Set the button border color */
         }
+
         .btn-primary:hover {
             background-color: #0056b3; /* Set the hover color */
             border-color: #0056b3; /* Set the hover border color */
         }
+
         .add-btn-container {
             text-align: right;
             margin-bottom: 20px;
@@ -71,7 +83,7 @@
         <header>
             <h1>Formula One Standings Data</h1>
         </header>
-        
+
         <div class="row">
             <div class="col">
                 <h2>Standings</h2>
