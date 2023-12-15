@@ -28,6 +28,7 @@ include "view-header.php";
             background-color: #001f3f; /* Dark blue color */
             color: #fff;
             border-bottom: 2px solid #fff;
+            width: 100%;
         }
         h1 {
             margin: 0;
