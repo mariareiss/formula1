@@ -38,7 +38,7 @@
         }
 
         .container {
-            margin-top: 0px;
+            margin-top: 20px;
         }
 
         th {
@@ -61,7 +61,7 @@
         }
 
         .table {
-            margin-top: 20px; /* Add margin to the table */
+            margin-top: 2px; /* Add margin to the table */
         }
 
         .col-auto {
