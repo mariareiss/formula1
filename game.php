@@ -56,8 +56,8 @@ include "view-header.php";
 <body>
     
     <header>
-        <h1>Driving Simulator</h1>
-        <p id="instructions">Use the Arrow keys (Right/Left) to navigate and avoid obstacles.</p>
+        <h1>F1 Race Simulator</h1>
+        <p id="instructions">Use the Arrow keys (Right/Left/Up/Down) to navigate and avoid obstacles.</p>
         <p id="score">Score: 0</p>
     </header>
     
@@ -78,7 +78,7 @@ include "view-header.php";
 
         const obstacle = {
             x: canvas.width - 50,
-            y: 200,
+            y: Math.floor(Math.random() * canvas.height), // Randomize obstacle height
             width: 20,
             height: 20,
             color: '#00ff00',
@@ -114,6 +114,7 @@ include "view-header.php";
 
             if (obstacle.x + obstacle.width < 0) {
                 obstacle.x = canvas.width;
+                obstacle.y = Math.floor(Math.random() * canvas.height); // Randomize obstacle height
                 score++;
                 gameSpeed += 0.5; // Increase game speed over time
             }
@@ -138,6 +139,10 @@ include "view-header.php";
                 car.x += car.speed;
             } else if (e.key === 'ArrowLeft' && car.x > 0) {
                 car.x -= car.speed;
+            } else if (e.key === 'ArrowUp' && car.y > 0) {
+                car.y -= car.speed;
+            } else if (e.key === 'ArrowDown' && car.y + car.height < canvas.height) {
+                car.y += car.speed;
             }
 
             update();
@@ -152,7 +157,9 @@ include "view-header.php";
             score = 0;
             gameSpeed = 5;
             car.x = 50;
+            car.y = 200;
             obstacle.x = canvas.width - 50;
+            obstacle.y = Math.floor(Math.random() * canvas.height);
             update();
         }
 
