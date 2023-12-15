@@ -90,7 +90,7 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <li class="nav-item">
-                            <a id="f1HubLink" class="nav-link <?= $pageTitle === 'F1 Hub' ? 'active' : '' ?>" href="newspage.php">F1 Hub</a>
+                            <a class="nav-link <?= basename($_SERVER['PHP_SELF']) === 'newspage.php' ? 'active' : '' ?>" href="newspage.php">F1 Hub</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link <?= $pageTitle === 'Drivers' ? 'active' : '' ?>" href="drivers.php">Drivers</a>
