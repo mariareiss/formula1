@@ -9,13 +9,18 @@ include "view-header.php";
   <meta charset="UTF-8">
   <title>Formula 1 Race Simulation</title>
   <style>
-    body {
-      background-color: #f2f2f2;
-      font-family: 'Arial', sans-serif;
-      margin: 0;
-      padding: 0;
-      color: #333;
-    }
+      body {
+          font-family: 'Arial', sans-serif;
+          margin: 0;
+          padding: 0;
+          background-color: #f8f8f8;
+          color: #333;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          min-height: 0vh;
+      }
 
     h1 {
       text-align: center;
