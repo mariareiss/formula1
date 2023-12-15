@@ -118,15 +118,8 @@
         <!-- Image Slider -->
         <div class="slider-container">
             <div class="slider">
-                <div class="slide"><img src="f1logo.jpg" alt="Formula 1 Image 1"></div>
                 <div class="slide"><img src="f1.2.jpg" alt="Formula 1 Image 2"></div>
-                <div class="slide"><img src="f1.3.jpg" alt="Formula 1 Image 3"></div>
             </div>
-        </div>
-
-        <!-- Call-to-Action Button -->
-        <div class="button-container">
-            <button class="cta-button">Explore Now</button>
         </div>
     </div>
 
