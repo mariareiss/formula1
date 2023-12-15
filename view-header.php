@@ -8,14 +8,12 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <style>
+        
         body {
-            background-image: url('f1-image.avif');
-            background-size: cover;
-            background-repeat: no-repeat;
-            background-position: center;
-            opacity: 1.0; /* Slightly more opaque */
+            background: linear-gradient(45deg, #343a40, #dc3545); /* F1-themed gradient background */
             margin: 0;
             padding: 0;
+            font-family: 'Arial', sans-serif;
         }
 
         .navbar {
