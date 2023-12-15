@@ -1,6 +1,5 @@
-<?php
-$pageTitle = "index";
-include "view-header.php";
+"<?php
+$pageTitle = "Home";
 ?>
 
 <!DOCTYPE html>
@@ -15,19 +14,23 @@ include "view-header.php";
             margin: 0;
             padding: 0;
             display: flex;
+            flex-direction: column;
             align-items: center;
             justify-content: center;
             height: 100vh;
             overflow: hidden;
         }
 
-        .content-container {
+        .header-container {
+            width: 100%;
+            position: absolute;
+            top: 0;
+        }
+
+        .landing-content {
             text-align: center;
             color: #333;
-            padding: 20px;
-            border-radius: 10px;
-            background-color: rgba(255, 255, 255, 0.9);
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
         }
 
         h1 {
@@ -39,22 +42,12 @@ include "view-header.php";
         h2 {
             font-size: 1.5em;
             color: #555;
-            margin-bottom: 20px;
         }
 
-        .image-container {
+        .footer-container {
             width: 100%;
-            max-width: 800px;
-            margin-top: 20px;
-            border-radius: 10px;
-            overflow: hidden;
-        }
-
-        .image-container img {
-            width: 100%;
-            height: auto;
-            object-fit: cover;
-            border-radius: 10px;
+            position: absolute;
+            bottom: 0;
         }
 
         /* Add some animations */
@@ -73,14 +66,17 @@ include "view-header.php";
     </style>
 </head>
 <body>
-    <div class="content-container fade-in">
-        <h1>Welcome to the Formula 1 Portal</h1>
-        <h2>Explore the thrilling world of Formula 1 racing</h2>
+    <div class="header-container">
+        <?php include "view-header.php"; ?>
+    </div>
 
-        <!-- Single Image -->
-        <div class="image-container">
-            <img src="f1.2.jpg" alt="Formula 1 Image 2">
-        </div>
+    <div class="landing-content fade-in">
+        <h1>Welcome to the Formula 1 Portal</h1>
+        <h2>Click on any of the navigation tabs to learn/explore more</h2>
+    </div>
+
+    <div class="footer-container">
+        <?php include "view-footer.php"; ?>
     </div>
 </body>
 </html>
