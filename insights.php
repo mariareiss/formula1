@@ -76,6 +76,9 @@ include "view-header.php";
             <select id="insights-topic" onchange="changeInsight()">
                 <option value="car-components">Car Components</option>
                 <option value="strategies">Strategies</option>
+                <option value="races">Race Circuits</option>
+                <option value="technology">Technology Innovations</option>
+                <option value="teams">F1 Teams</option>
             </select>
         </div>
 
@@ -100,6 +103,57 @@ include "view-header.php";
                 <li><strong>Fuel Management:</strong> Efficient use of fuel to maximize performance without running out during the race.</li>
                 <li><strong>Overtaking Strategies:</strong> Tactics to pass competitors while minimizing time and risk.</li>
                 <li><strong>Qualifying Strategies:</strong> Approaches to secure a favorable starting position on the grid.</li>
+            </ul>
+        </div>
+
+                <div class="analysis-content" id="races-content" style="display: none;">
+            <h2>Race Circuits in Formula 1</h2>
+            <p>Formula 1 races take place on a variety of circuits, each with its unique challenges and characteristics. Here are some notable race circuits:</p>
+            <ul>
+                <li><strong>Monaco Grand Prix:</strong> Known for its tight and challenging street circuit in the principality of Monaco.</li>
+                <li><strong>Suzuka Circuit:</strong> A figure-eight layout in Japan, famous for its demanding corners like the "S" curves and the Degner Curve.</li>
+                <li><strong>Monza Circuit:</strong> Hosts the Italian Grand Prix and is known for its high-speed straights and historic significance.</li>
+                <li><strong>Spa-Francorchamps:</strong> Located in Belgium, it features a mix of fast straights and challenging corners, such as Eau Rouge.</li>
+                <li><strong>Silverstone Circuit:</strong> Home of the British Grand Prix, characterized by its fast corners like Maggots and Becketts.</li>
+                <li><strong>Singapore Street Circuit:</strong> A night race on the streets of Singapore, demanding precision and concentration.</li>
+                <li><strong>Circuit of the Americas:</strong> Located in Austin, Texas, with a challenging layout and a distinctive uphill run to Turn 1.</li>
+                <li><strong>Baku City Circuit:</strong> Known for its narrow sections through the city and the long straight along the Baku waterfront.</li>
+                <li><strong>Shanghai International Circuit:</strong> Hosts the Chinese Grand Prix, featuring a unique design with a long back straight.</li>
+                <li><strong>Hungaroring:</strong> A twisty and narrow circuit in Hungary, providing limited overtaking opportunities.</li>
+            </ul>
+        </div>
+
+        <div class="analysis-content" id="technology-content" style="display: none;">
+            <h2>Technology Innovations in Formula 1</h2>
+            <p>Formula 1 is a hotbed for technological innovations that often find their way into everyday vehicles. Here are some technological advancements in F1:</p>
+            <ul>
+                <li><strong>Hybrid Power Units:</strong> F1 cars use hybrid power units combining a V6 turbocharged engine with energy recovery systems.</li>
+                <li><strong>Drag Reduction System (DRS):</strong> Adjustable flaps on the rear wing to reduce drag and enhance straight-line speed.</li>
+                <li><strong>Energy Recovery Systems (ERS):</strong> Components like MGU-K and MGU-H that recover and reuse energy during braking and from exhaust heat.</li>
+                <li><strong>Aerodynamic Innovations:</strong> Advanced aerodynamics, including front wings, bargeboards, and diffusers, to optimize downforce and reduce drag.</li>
+                <li><strong>Carbon Fiber Construction:</strong> F1 cars are constructed with lightweight and strong carbon fiber materials for chassis and body parts.</li>
+                <li><strong>Advanced Materials:</strong> Use of materials like titanium and composites for lightweight and durable components.</li>
+                <li><strong>Telemetry and Data Analysis:</strong> Advanced data collection and telemetry systems for real-time analysis of car performance.</li>
+                <li><strong>Advanced Tires:</strong> Specially designed and customized tires for different track conditions, providing optimal grip and durability.</li>
+                <li><strong>Simulations and Virtual Reality:</strong> Use of simulations and virtual reality for driver training and testing.</li>
+                <li><strong>Computational Fluid Dynamics (CFD):</strong> Simulation techniques to optimize aerodynamic designs without physical prototypes.</li>
+            </ul>
+        </div>
+
+        <div class="analysis-content" id="teams-content" style="display: none;">
+            <h2>Formula 1 Teams</h2>
+            <p>Formula 1 consists of teams that compete in the championship, each with its unique history, achievements, and characteristics. Here are some notable F1 teams:</p>
+            <ul>
+                <li><strong>Mercedes-AMG Petronas Formula One Team:</strong> A dominant force in recent years, winning multiple championships.</li>
+                <li><strong>Scuderia Ferrari:</strong> The most successful and iconic team in F1 history, known for its passionate fanbase.</li>
+                <li><strong>Red Bull Racing:</strong> A team known for its energy and aggressive approach, challenging the traditional powerhouses.</li>
+                <li><strong>McLaren F1 Team:</strong> A historic team with a rich legacy, making a resurgence in recent seasons.</li>
+                <li><strong>Aston Martin Cognizant Formula One Team:</strong> Formerly Racing Point, rebranded with the luxury carmaker's involvement.</li>
+                <li><strong>Alpine F1 Team:</strong> The team associated with the Alpine brand, showcasing French automotive excellence.</li>
+                <li><strong>Alfa Romeo Racing Orlen:</strong> A team with a connection to the Alfa Romeo brand, bringing style and heritage to F1.</li>
+                <li><strong>Haas F1 Team:</strong> An American team in F1, known for its association with Haas Automation.</li>
+                <li><strong>Williams Racing:</strong> A historic team with a storied past, focusing on rebuilding its competitive edge.</li>
+                <li><strong>Scuderia AlphaTauri:</strong> A sister team to Red Bull Racing, providing a platform for young talents.</li>
             </ul>
         </div>
     </div>
