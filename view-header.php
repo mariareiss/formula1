@@ -108,7 +108,7 @@
                             <a class="nav-link <?= $pageTitle === 'Glossary' ? 'active' : '' ?>" href="glossary.php">Glossary</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link <?= $pageTitle === 'Trivia Game' ? 'active' : '' ?>" href="trivia.php">Trivia Game</a>
+                            <a class="nav-link <?= $pageTitle === 'Trivia Game' ? 'active' : '' ?>" href="trivia.php">Trivia</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link <?= $pageTitle === 'Insights' ? 'active' : '' ?>" href="insights.php">Insights</a>
