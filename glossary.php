@@ -16,6 +16,12 @@ include "view-header.php";
             margin: 0;
             padding: 0;
             background-color: #f4f4f4;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
         }
 
         header {
@@ -24,6 +30,7 @@ include "view-header.php";
             background-color: #001f3f; /* Dark blue color */
             color: #fff;
             border-bottom: 2px solid #fff;
+            width: 100%;
         }
 
         h1 {
@@ -32,8 +39,11 @@ include "view-header.php";
         }
 
         main {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
             max-width: 800px;
-            margin: 20px auto;
+            margin: 20px;
             padding: 20px;
             background-color: #fff;
             border-radius: 8px;
@@ -49,40 +59,22 @@ include "view-header.php";
             color: #555;
         }
 
-        .section {
-            margin-bottom: 30px;
+        .term {
+            margin-bottom: 20px;
         }
 
-        .image-container {
-            text-align: center;
-            margin: 20px 0;
+        .term-details {
+            display: none;
         }
 
-        img {
-            max-width: 100%;
-            height: auto;
-            border-radius: 8px;
+        .show-details-btn {
+            cursor: pointer;
+            color: #007BFF;
+            text-decoration: underline;
         }
 
-        .component {
-            margin-bottom: 30px;
-        }
-
-        .video-container {
-            position: relative;
-            width: 100%;
-            padding-bottom: 56.25%; /* 16:9 aspect ratio */
-            overflow: hidden;
-            border-radius: 8px;
-            margin: 20px 0;
-        }
-
-        .video-container iframe {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
+        .show-details-btn:hover {
+            color: #0056b3;
         }
 
         footer {
@@ -102,112 +94,48 @@ include "view-header.php";
         <h1>F1 Glossary</h1>
     </header>
 
-    <div class="glossary-grid">
-
-        <div class="glossary-entry" onclick="toggleDefinition('drift')">
-            <h2>Drift</h2>
-            <p class="definition" id="drift">In motorsports, drift refers to intentionally oversteering, causing the rear tires to lose traction, resulting in a controlled slide. Example: "The driver executed a perfect drift around the hairpin turn."</p>
+    <main>
+        <div class="section">
+            <h2>Term 1</h2>
+            <div class="term">
+                <p>
+                    Definition of Term 1 goes here. Provide a detailed explanation of the term and its significance in Formula 1.
+                </p>
+                <button class="show-details-btn" onclick="toggleDetails('term1')">Show Details</button>
+                <div class="term-details" id="term1-details">
+                    <p>Additional details about Term 1.</p>
+                </div>
+            </div>
         </div>
 
-        <div class="glossary-entry" onclick="toggleDefinition('downforce')">
-            <h2>Downforce</h2>
-            <p class="definition" id="downforce">Downforce is the aerodynamic force that pushes a race car toward the track, improving traction and stability. Example: "The new aerodynamic package increased the car's downforce."</p>
+        <div class="section">
+            <h2>Term 2</h2>
+            <div class="term">
+                <p>
+                    Definition of Term 2 goes here. Provide a detailed explanation of the term and its significance in Formula 1.
+                </p>
+                <button class="show-details-btn" onclick="toggleDetails('term2')">Show Details</button>
+                <div class="term-details" id="term2-details">
+                    <p>Additional details about Term 2.</p>
+                </div>
+            </div>
         </div>
 
-        <div class="glossary-entry" onclick="toggleDefinition('overtake')">
-            <h2>Overtake</h2>
-            <p class="definition" id="overtake">To overtake is to pass another car during a race, moving ahead in position. Example: "The driver skillfully used DRS to overtake the competitor on the straight."</p>
-        </div>
+        <!-- Repeat similar blocks for other terms -->
 
-        <div class="glossary-entry" onclick="toggleDefinition('slicks')">
-            <h2>Slicks</h2>
-            <p class="definition" id="slicks">Slick tires have a smooth tread without grooves, providing maximum contact with the road. Example: "The team switched to slicks as the track dried up."</p>
-        </div>
+    </main>
 
-        <div class="glossary-entry" onclick="toggleDefinition('understeer')">
-            <h2>Understeer</h2>
-            <p class="definition" id="understeer">Understeer occurs when the front tires lose traction, causing the car to drift wide in a turn. Example: "The setup change helped reduce understeer, improving cornering."</p>
-        </div>
-
-        <div class="glossary-entry" onclick="toggleDefinition('oversteer')">
-            <h2>Oversteer</h2>
-            <p class="definition" id="oversteer">Oversteer happens when the rear tires lose traction, causing the back end of the car to slide out. Example: "The driver corrected oversteer with quick steering and throttle control."</p>
-        </div>
-
-        <div class="glossary-entry" onclick="toggleDefinition('grid-position')">
-            <h2>Grid Position</h2>
-            <p class="definition" id="grid-position">Grid position refers to a driver's starting position on the grid at the beginning of a race. Example: "The driver qualified in third place, securing a favorable grid position for the race."</p>
-        </div>
-
-        <div class="glossary-entry" onclick="toggleDefinition('pit-stop')">
-            <h2>Pit Stop</h2>
-            <p class="definition" id="pit-stop">A pit stop is a scheduled stop in the pit lane for a car to receive service, such as tire changes and refueling. Example: "The team executed a fast pit stop, gaining valuable time."</p>
-        </div>
-
-        <div class="glossary-entry" onclick="toggleDefinition('pole-position')">
-            <h2>Pole Position</h2>
-            <p class="definition" id="pole-position">Pole position is the first starting position on the grid, earned by the driver with the fastest qualifying time. Example: "The driver celebrated securing pole position for the Grand Prix."</p>
-        </div>
-
-        <div class="glossary-entry" onclick="toggleDefinition('safety-car')">
-            <h2>Safety Car</h2>
-            <p class="definition" id="safety-car">A safety car is deployed during a race to control the pace and allow for the safe clearing of track incidents. Example: "The safety car was on the track after a multiple-car collision."</p>
-        </div>
-
-        <div class="glossary-entry" onclick="toggleDefinition('driving-line')">
-            <h2>Driving Line</h2>
-            <p class="definition" id="driving-line">The driving line is the optimal path a driver takes around a racetrack to achieve the fastest lap time. Example: "The driver followed the perfect driving line through the complex corners."</p>
-        </div>
-
-        <div class="glossary-entry" onclick="toggleDefinition('qualifying')">
-            <h2>Qualifying</h2>
-            <p class="definition" id="qualifying">Qualifying determines the starting order of drivers based on their lap times. Example: "The team focused on improving the car's performance for the upcoming qualifying session."</p>
-        </div>
-
-        <div class="glossary-entry" onclick="toggleDefinition('checkered-flag')">
-            <h2>Checkered Flag</h2>
-            <p class="definition" id="checkered-flag">The checkered flag signals the end of a race, waving as the first car crosses the finish line. Example: "The driver celebrated victory as they crossed the finish line under the checkered flag."</p>
-        </div>
-
-        <div class="glossary-entry" onclick="toggleDefinition('formation-lap')">
-            <h2>Formation Lap</h2>
-            <p class="definition" id="formation-lap">The formation lap is a pre-race lap where drivers warm up tires and engines before lining up on the grid. Example: "The driver maintained tire temperature during the formation lap."</p>
-        </div>
-
-        <div class="glossary-entry" onclick="toggleDefinition('chicane')">
-            <h2>Chicane</h2>
-            <p class="definition" id="chicane">A chicane is a sequence of tight corners designed to slow down vehicles on a racetrack. Example: "The challenging chicane tested the driver's precision and control."</p>
-        </div>
-
-        <div class="glossary-entry" onclick="toggleDefinition('fastest-lap')">
-            <h2>Fastest Lap</h2>
-            <p class="definition" id="fastest-lap">The fastest lap is the quickest lap time recorded by a driver during a race. Example: "The driver set the fastest lap of the race with impressive speed."</p>
-        </div>
-
-        <div class="glossary-entry" onclick="toggleDefinition('parc-ferme')">
-            <h2>Parc Fermé</h2>
-            <p class="definition" id="parc-ferme">Parc fermé is a restricted area where cars are held after qualifying and the race for inspection. Example: "The car was impounded in parc fermé for post-race scrutineering."</p>
-        </div>
-
-        <div class="glossary-entry" onclick="toggleDefinition('drs')">
-            <h2>DRS (Drag Reduction System)</h2>
-            <p class="definition" id="drs">DRS is a system that enables a car to reduce aerodynamic drag and increase straight-line speed. Example: "The driver activated DRS to gain an advantage while overtaking."</p>
-        </div>
-
-
-    </div>
+    <script>
+        function toggleDetails(termId) {
+            const termDetails = document.getElementById(`${termId}-details`);
+            termDetails.style.display = termDetails.style.display === 'none' ? 'block' : 'none';
+        }
+    </script>
 
     <?php
     include "view-footer.php";
     ?>
 
-    <script>
-        function toggleDefinition(termId) {
-            var definition = document.getElementById(termId);
-            definition.style.display = (definition.style.display === "none" || definition.style.display === "") ? "block" : "none";
-        }
-    </script>
 </body>
 
 </html>
-
