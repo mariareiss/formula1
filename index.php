@@ -10,23 +10,15 @@
             margin: 0;
             padding: 0;
             display: flex;
-            flex-direction: column;
             align-items: center;
             justify-content: center;
             height: 100vh;
             overflow: hidden;
         }
 
-        .header-container {
-            width: 100%;
-            position: absolute;
-            top: 0;
-        }
-
-        .landing-content {
+        .content-container {
             text-align: center;
             color: #333;
-            max-width: 800px;
             padding: 20px;
             border-radius: 10px;
             background-color: rgba(255, 255, 255, 0.9);
@@ -60,12 +52,6 @@
             border-radius: 10px;
         }
 
-        .footer-container {
-            width: 100%;
-            position: absolute;
-            bottom: 0;
-        }
-
         /* Add some animations */
         .fade-in {
             animation: fadeIn 2s ease-in-out;
@@ -82,11 +68,7 @@
     </style>
 </head>
 <body>
-    <div class="header-container">
-        <?php include "view-header.php"; ?>
-    </div>
-
-    <div class="landing-content fade-in">
+    <div class="content-container fade-in">
         <h1>Welcome to the Formula 1 Portal</h1>
         <h2>Explore the thrilling world of Formula 1 racing</h2>
 
@@ -94,10 +76,6 @@
         <div class="image-container">
             <img src="f1.2.jpg" alt="Formula 1 Image 2">
         </div>
-    </div>
-
-    <div class="footer-container">
-        <?php include "view-footer.php"; ?>
     </div>
 </body>
 </html>
