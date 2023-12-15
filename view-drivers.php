@@ -93,11 +93,11 @@
 
 <body>
     <header>
-        <h1>Formula One News Hub</h1>
+        <h1>Formula One Driver Data</h1>
     </header>
 
     <div class="instructions">
-        <h2>Click on a team to learn more</h2>
+        <h2>Click on buttons to add, edit, and delete the data</h2>
     </div>
 
     <div class="container">
