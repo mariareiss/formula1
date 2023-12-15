@@ -9,32 +9,25 @@ include "view-header.php";
   <meta charset="UTF-8">
   <title>Formula 1 Race Simulation</title>
   <style>
-      body {
-          font-family: 'Arial', sans-serif;
-          margin: 0;
-          padding: 0;
-          background-color: #f8f8f8;
-          color: #333;
-      }
+    body {
+      background-color: #f2f2f2;
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+      padding: 0;
+      color: #333;
+    }
 
-      header {
-          text-align: center;
-          padding: 20px;
-          background-color: #001f3f; /* Dark blue color */
-          color: #fff;
-          border-bottom: 2px solid #fff;
-      }
-
-      h1 {
-          margin: 0;
-          font-size: 28px;
-      }
+    h1 {
+      text-align: center;
+      margin-top: 20px;
+      color: #333;
+    }
 
     .container {
       max-width: 800px;
-      margin: 0 auto;
+      margin: 20px auto;
       padding: 20px;
-      background-color: rgba(255, 255, 255, 0.8);
+      background-color: #fff;
       border-radius: 8px;
       box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     }
@@ -42,7 +35,7 @@ include "view-header.php";
     .track {
       width: 600px;
       height: 400px;
-      border: 1px solid #000;
+      border: 1px solid #ccc;
       position: relative;
       margin: 20px auto;
       background-color: #808080;
@@ -73,7 +66,7 @@ include "view-header.php";
       transform: translate(-50%, -50%);
       font-size: 12px;
       font-weight: bold;
-      color: #000000;
+      color: #000;
       pointer-events: none;
     }
 
@@ -292,8 +285,7 @@ include "view-header.php";
   function stopDrag() {
     isDragging = false;
     document.removeEventListener('mousemove', moveCar);
-    document.removeEventListener('mouseup',
-    stopDrag);
+    document.removeEventListener('mouseup', stopDrag);
   }
 </script>
 
