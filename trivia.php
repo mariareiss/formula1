@@ -1,5 +1,5 @@
 <?php
-$pageTitle = "trivia";
+$pageTitle = "Trivia Game";
 include "view-header.php";
 ?>
 
