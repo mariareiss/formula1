@@ -12,6 +12,7 @@
             font-family: 'Arial', sans-serif;
             margin: 0;
             padding: 0;
+            height:0px;
         }
         header {
             text-align: center;
