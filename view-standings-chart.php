@@ -1,16 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <h1>Standings chart</h1>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Standings Chart</title>
     
-    <div>
-        <canvas id="myChart"></canvas>
-    </div>
+    <!-- Add your CSS styles or include external stylesheets here -->
 
-    <div><canvas class="zdog-canvas" width="80" height="80"></canvas></div>
-    
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f8f8;
+            color: #333;
+        }
+
+        header {
+            text-align: center;
+            padding: 20px;
+            background-color: #001f3f; /* Dark blue color */
+            color: #fff;
+            border-bottom: 2px solid #fff;
+        }
+
+        h1 {
+            margin: 0;
+            font-size: 28px;
+        }
+
+        main {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        canvas {
+            display: block;
+            margin: auto;
+        }
+    </style>
 </head>
 <body>
+
+    <header>
+        <h1>Standings Chart</h1>
+    </header>
+
+    <main>
+        <canvas id="myChart"></canvas>
+    </main>
 
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
@@ -19,11 +61,10 @@
     <script src="https://code.highcharts.com/highcharts.js"></script>
 
     <script>
-
         const ctx = document.getElementById('myChart');
 
         new Chart(ctx, {
-            type: 'bar',  // Change the chart type to 'bar'
+            type: 'bar',
             data: {
                 labels: [
                     <?php
@@ -44,16 +85,14 @@
                         ?>
                     ],
                     backgroundColor: [
-                        '#F5EEEC',   // Color for the first bar
-                        '#B5A7A5',    // Color for the second bar
-                        '#FF390F',     // Color for the third bar
-                        // Add more colors if needed for additional bars
+                        '#F5EEEC',
+                        '#B5A7A5',
+                        '#FF390F',
                     ],
                     borderColor: [
-                        '#F5EEEC',   // Border color for the first bar
-                        '#B5A7A5',    // Border color for the second bar
-                        '#FF390F',     // Border color for the third bar
-                        // Add more colors if needed for additional bars
+                        '#F5EEEC',
+                        '#B5A7A5',
+                        '#FF390F',
                     ],
                     borderWidth: 1,
                 }]
