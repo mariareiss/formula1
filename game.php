@@ -23,6 +23,21 @@ include "view-header.php";
             min-height: 0vh;
         }
 
+        header {
+            text-align: center;
+            padding: 20px;
+            background-color: #001f3f; /* Dark blue color */
+            color: #fff;
+            border-bottom: 2px solid #fff;
+            width: 100%;
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            margin: 0;
+            font-size: 28px;
+        }
+
         canvas {
             border: 2px solid #333;
             border-radius: 8px;
