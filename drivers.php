@@ -28,7 +28,9 @@ if (isset($_POST['actionType'])) {
     }
     break;
   }
+  
 }
 $drivers = selectDrivers();
 include "view-drivers.php";
 include "view-footer.php";
+?>
