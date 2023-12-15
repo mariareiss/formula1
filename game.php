@@ -12,11 +12,11 @@ include "view-header.php";
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
   <style>
     body {
-          background-color: #f8f9fa; /* Set your desired background color */
-          font-family: 'Arial', sans-serif;
-          margin: 0;
-          padding: 0;
-      }
+      background-color: #f8f9fa; /* Set your desired background color */
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+      padding: 0;
+    }
 
     header {
       text-align: center;
@@ -25,7 +25,7 @@ include "view-header.php";
       color: #fff;
       border-bottom: 2px solid #fff;
     }
-
+    
     h1 {
       margin: 0;
       font-size: 28px;
@@ -102,6 +102,28 @@ include "view-header.php";
   <header>
     <h1>Formula 1 Race Simulation</h1>
   </header>
+
+  <nav class="navbar navbar-expand-lg navbar-dark">
+    <div class="container">
+      <a class="navbar-brand" href="#">Home</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item active">
+            <a class="nav-link" href="#">Link 1</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Link 2</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Link 3</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
 
   <div class="container">
     <div>
