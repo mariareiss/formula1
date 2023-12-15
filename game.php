@@ -8,20 +8,23 @@ include "view-header.php";
 
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
   <title>Formula 1 Race Simulation</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
   <style>
     body {
-      background-color: #f8f9fa;
       font-family: 'Arial', sans-serif;
       margin: 0;
       padding: 0;
+      background-color: #f8f8f8;
+      color: #333;
     }
 
     header {
       text-align: center;
       padding: 20px;
-      background-color: #001f3f;
+      background-color: #001f3f; /* Dark blue color */
       color: #fff;
       border-bottom: 2px solid #fff;
     }
@@ -32,50 +35,49 @@ include "view-header.php";
     }
 
     .container {
-      max-width: 800px;
-      margin: 20px auto;
-      padding: 20px;
-      background-color: #fff;
-      border-radius: 8px;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      margin: 30px;
+      text-align: center;
+      max-width: 1600px;
     }
 
-    .track {
-      width: 100%;
-      height: 400px;
-      border: 1px solid #000;
-      position: relative;
-      margin: 20px 0;
-      background-color: #808080;
-      border-radius: 4px;
-      overflow: hidden;
+    .grid-container {
+      display: grid;
+      gap: 20px;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      justify-content: center;
+    }
+
+    .grid-item {
+      text-align: center;
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      cursor: pointer;
+      transition: transform 0.2s ease-in-out, box-shadow 0.3s ease-in-out;
+    }
+
+    .grid-item:hover {
+      transform: scale(1.05);
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
     }
 
     .car {
-      width: 40px;
-      height: 20px;
+      width: 80px;
+      height: 40px;
       position: absolute;
       top: 50%;
       transform: translateY(-50%);
       cursor: pointer;
-      border-radius: 4px;
-      transition: background-color 0.3s ease;
-      user-select: none;
-    }
-
-    .car:hover {
-      background-color: #ccc;
-    }
-
-    .car-text {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      font-size: 12px;
+      border-radius: 8px;
+      background-color: #007bff;
+      color: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
       font-weight: bold;
-      color: #000000;
-      pointer-events: none;
+      font-size: 14px;
+      user-select: none;
     }
 
     button {
@@ -103,70 +105,42 @@ include "view-header.php";
     <h1>Formula 1 Race Simulation</h1>
   </header>
 
-  <nav class="navbar navbar-expand-lg navbar-dark">
-    <div class="container">
-      <a class="navbar-brand" href="#">Home</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav">
-          <li class="nav-item active">
-            <a class="nav-link" href="#">Link 1</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Link 2</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Link 3</a>
-          </li>
-        </ul>
+  <div class="container">
+    <div class="grid-container" id="pilots">
+      <div class="grid-item" onclick="selectPilot('red', true)">
+        <div class="car">Lewis Hamilton</div>
+      </div>
+      <div class="grid-item" onclick="selectPilot('blue', true)">
+        <div class="car">Max Verstappen</div>
+      </div>
+      <div class="grid-item" onclick="selectPilot('green', true)">
+        <div class="car">Charles Leclerc</div>
       </div>
     </div>
-  </nav>
 
-  <div class="container">
-    <div class="row">
-      <div class="col-md-6">
-        <div>
-          <p>Select pilots:</p>
-          <ul id="pilots">
-            <li>
-              <input type="checkbox" id="redCheckbox" onchange="selectPilot('red', this.checked)">
-              <label for="redCheckbox">Lewis Hamilton</label>
-            </li>
-            <li>
-              <input type="checkbox" id="blueCheckbox" onchange="selectPilot('blue', this.checked)">
-              <label for="blueCheckbox">Max Verstappen</label>
-            </li>
-            <li>
-              <input type="checkbox" id="greenCheckbox" onchange="selectPilot('green', this.checked)">
-              <label for="greenCheckbox">Charles Leclerc</label>
-            </li>
-          </ul>
-        </div>
+    <div class="instructions">
+      <h2>Set speed for each pilot:</h2>
+    </div>
 
-        <div>
-          <p>Set speed for each pilot:</p>
-          <input type="range" id="speedRed" min="1" max="50" value="25" onchange="setSpeed('red', this.value)">
-          <label for="speedRed">Lewis Hamilton</label>
-          <br>
-          <input type="range" id="speedBlue" min="1" max="50" value="25" onchange="setSpeed('blue', this.value)">
-          <label for="speedBlue">Max Verstappen</label>
-          <br>
-          <input type="range" id="speedGreen" min="1" max="50" value="25" onchange="setSpeed('green', this.value)">
-          <label for="speedGreen">Charles Leclerc</label>
-          <!-- Add more speed controls for other pilots here -->
-        </div>
+    <div class="grid-container">
+      <div class="grid-item">
+        <input type="range" id="speedRed" min="1" max="50" value="25" onchange="setSpeed('red', this.value)">
+        <label for="speedRed">Lewis Hamilton</label>
       </div>
-
-      <div class="col-md-6">
-        <div class="track" id="raceTrack">
-          <div class="car" id="redCar" onmousedown="startDrag(event, 'red')"><span class="car-text">Lewis Hamilton</span></div>
-          <div class="car" id="blueCar" onmousedown="startDrag(event, 'blue')"><span class="car-text">Max Verstappen</span></div>
-          <div class="car" id="greenCar" onmousedown="startDrag(event, 'green')"><span class="car-text">Charles Leclerc</span></div>
-        </div>
+      <div class="grid-item">
+        <input type="range" id="speedBlue" min="1" max="50" value="25" onchange="setSpeed('blue', this.value)">
+        <label for="speedBlue">Max Verstappen</label>
       </div>
+      <div class="grid-item">
+        <input type="range" id="speedGreen" min="1" max="50" value="25" onchange="setSpeed('green', this.value)">
+        <label for="speedGreen">Charles Leclerc</label>
+      </div>
+    </div>
+
+    <div class="track" id="raceTrack">
+      <div class="car" id="redCar" onmousedown="startDrag(event, 'red')"><span class="car-text">Lewis Hamilton</span></div>
+      <div class="car" id="blueCar" onmousedown="startDrag(event, 'blue')"><span class="car-text">Max Verstappen</span></div>
+      <div class="car" id="greenCar" onmousedown="startDrag(event, 'green')"><span class="car-text">Charles Leclerc</span></div>
     </div>
 
     <button onclick="startRace()">Start Race</button>
