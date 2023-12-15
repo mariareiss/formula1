@@ -30,7 +30,8 @@
         }
 
         main {
-            max-width: 800px;
+            max-width: 1200px; /* 1.5x width */
+            height: 800px; /* 2x height */
             margin: 20px auto;
             padding: 20px;
             background-color: #fff;
@@ -41,6 +42,8 @@
         canvas {
             display: block;
             margin: auto;
+            width: 100%;
+            height: 100%;
         }
     </style>
 </head>
