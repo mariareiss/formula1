@@ -10,7 +10,7 @@
     <style>
         
         body {
-            background: linear-gradient(45deg, #343a40, #dc3545); /* F1-themed gradient background */
+            background-color: #cfe8f3; /* Light pastel blue color */
             margin: 0;
             padding: 0;
             font-family: 'Arial', sans-serif;
