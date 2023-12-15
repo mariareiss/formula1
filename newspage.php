@@ -69,9 +69,9 @@ include "view-header.php";
 
         .team-logo {
             width: 100%; /* Adjusted to fill the container */
-            height: 100%; /* Adjusted to fill the container */
+            max-height: 100px; /* Limited maximum height */
             object-fit: contain; /* Maintain aspect ratio and fit within the container */
-            border: 5px solid #fff;
+            border: 5px solid #333; /* Dark border color */
             border-radius: 10px;
             overflow: hidden;
             margin-bottom: 10px; /* Add margin to create space between image and text */
