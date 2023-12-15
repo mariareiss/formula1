@@ -70,7 +70,7 @@ include "view-header.php";
         .team-logo {
             width: 100%; /* Adjusted to fill the container */
             height: 100%; /* Maintain aspect ratio */
-            object-fit: fill;
+            object-fit: cover;
             max-width: 150px; /* Set maximum width */
             max-height: 150px; /* Set maximum height */
             border: 5px solid #fff;
