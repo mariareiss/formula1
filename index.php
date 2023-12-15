@@ -120,7 +120,7 @@
             <div class="slider">
                 <div class="slide"><img src="f1logo.jpg" alt="Formula 1 Image 1"></div>
                 <div class="slide"><img src="f1.2.jpg" alt="Formula 1 Image 2"></div>
-                <div class="slide"><img src="f1.3.jpeg" alt="Formula 1 Image 3"></div>
+                <div class="slide"><img src="f1.3.jpg" alt="Formula 1 Image 3"></div>
             </div>
         </div>
 
