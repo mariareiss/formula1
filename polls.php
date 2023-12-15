@@ -39,6 +39,9 @@ include "view-header.php";
         }
 
         main {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
             max-width: 800px;
             margin: 20px auto;
             padding: 20px;
@@ -52,7 +55,6 @@ include "view-header.php";
         }
 
         .poll-container {
-            margin-bottom: 30px;
             border: 1px solid #ddd;
             border-radius: 8px;
             padding: 15px;
@@ -94,7 +96,7 @@ include "view-header.php";
         }
 
         .poll-title {
-            font-size: 24px;
+            font-size: 20px;
             margin-bottom: 10px;
         }
     </style>
@@ -107,7 +109,7 @@ include "view-header.php";
 
     <main>
         <div class="poll-container">
-            <h2 class="poll-title">Poll 1: Favorite Formula 1 Driver</h2>
+            <h2 class="poll-title">Poll 1: Favorite Driver</h2>
             <ul class="poll-options">
                 <li class="poll-option">
                     <span>Lewis Hamilton</span>
@@ -124,12 +126,17 @@ include "view-header.php";
                     <button class="vote-btn" onclick="vote('leclerc', 'driver')">Vote</button>
                     <span id="votes-leclerc">0</span>
                 </li>
+                <li class="poll-option">
+                    <span>Valtteri Bottas</span>
+                    <button class="vote-btn" onclick="vote('bottas', 'driver')">Vote</button>
+                    <span id="votes-bottas">0</span>
+                </li>
             </ul>
             <div class="results-container" id="results-driver">Total Votes: 0</div>
         </div>
 
         <div class="poll-container">
-            <h2 class="poll-title">Poll 2: Best Formula 1 Team</h2>
+            <h2 class="poll-title">Poll 2: Best Team</h2>
             <ul class="poll-options">
                 <li class="poll-option">
                     <span>Mercedes</span>
@@ -146,12 +153,17 @@ include "view-header.php";
                     <button class="vote-btn" onclick="vote('ferrari', 'team')">Vote</button>
                     <span id="votes-ferrari">0</span>
                 </li>
+                <li class="poll-option">
+                    <span>McLaren</span>
+                    <button class="vote-btn" onclick="vote('mclaren', 'team')">Vote</button>
+                    <span id="votes-mclaren">0</span>
+                </li>
             </ul>
             <div class="results-container" id="results-team">Total Votes: 0</div>
         </div>
 
         <div class="poll-container">
-            <h2 class="poll-title">Poll 3: Favorite F1 Circuit</h2>
+            <h2 class="poll-title">Poll 3: Favorite Circuit</h2>
             <ul class="poll-options">
                 <li class="poll-option">
                     <span>Monza</span>
@@ -168,8 +180,40 @@ include "view-header.php";
                     <button class="vote-btn" onclick="vote('monaco', 'circuit')">Vote</button>
                     <span id="votes-monaco">0</span>
                 </li>
+                <li class="poll-option">
+                    <span>Silverstone</span>
+                    <button class="vote-btn" onclick="vote('silverstone', 'circuit')">Vote</button>
+                    <span id="votes-silverstone">0</span>
+                </li>
             </ul>
             <div class="results-container" id="results-circuit">Total Votes: 0</div>
+        </div>
+
+        <div class="poll-container">
+            <h2 class="poll-title">Poll 4: Best Race of the Season</h2>
+            <ul class="poll-options">
+                <li class="poll-option">
+                    <span>Monaco Grand Prix</span>
+                    <button class="vote-btn" onclick="vote('monaco', 'race')">Vote</button>
+                    <span id="votes-monaco-race">0</span>
+                </li>
+                <li class="poll-option">
+                    <span>Italian Grand Prix</span>
+                    <button class="vote-btn" onclick="vote('italy', 'race')">Vote</button>
+                    <span id="votes-italy">0</span>
+                </li>
+                <li class="poll-option">
+                    <span>Brazilian Grand Prix</span>
+                    <button class="vote-btn" onclick="vote('brazil', 'race')">Vote</button>
+                    <span id="votes-brazil">0</span>
+                </li>
+                <li class="poll-option">
+                    <span>Singapore Grand Prix</span>
+                    <button class="vote-btn" onclick="vote('singapore', 'race')">Vote</button>
+                    <span id="votes-singapore">0</span>
+                </li>
+            </ul>
+            <div class="results-container" id="results-race">Total Votes: 0</div>
         </div>
 
     </main>
