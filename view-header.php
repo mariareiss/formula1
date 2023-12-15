@@ -102,9 +102,6 @@
                             <a class="nav-link <?= $pageTitle === 'Standings' ? 'active' : '' ?>" href="standings.php">Standings</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link <?= $pageTitle === 'Build your Team' ? 'active' : '' ?>" href="builder.php">Build your Team</a>
-                        </li>
-                        <li class="nav-item">
                             <a class="nav-link <?= $pageTitle === 'Game' ? 'active' : '' ?>" href="game.php">Game</a>
                         </li>
                         <li class="nav-item">
@@ -124,6 +121,9 @@
                         </li>
                         <li class="nav-item">
                             <a class="nav-link <?= $pageTitle === 'Polls' ? 'active' : '' ?>" href="polls.php">Polls</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link <?= $pageTitle === 'Build your Team' ? 'active' : '' ?>" href="builder.php">Build your Team</a>
                         </li>
                     </ul>
                 </div>
