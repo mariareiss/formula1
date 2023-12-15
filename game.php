@@ -20,7 +20,7 @@ include "view-header.php";
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            min-height: 100vh;
+            min-height: 0vh;
         }
 
         canvas {
@@ -31,9 +31,11 @@ include "view-header.php";
     </style>
 </head>
 <body>
-
+    
+    <header>
     <h1>F1 Race Simulator</h1>
-
+    </header>
+    
     <canvas id="raceCanvas" width="800" height="400"></canvas>
 
     <script>
