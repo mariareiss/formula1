@@ -125,12 +125,6 @@ include "view-header.php";
 <body>
 
   <div>
-  <?php
-    // Include view-header.php in its own container
-    echo '<div class="header-container">';
-    include "view-header.php";
-    echo '</div>';
-  ?>
 
 <h1>Formula 1 Race Simulation</h1>
 
