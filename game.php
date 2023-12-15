@@ -1,5 +1,5 @@
 <?php
-$pageTitle = "F1 Race Simulator";
+$pageTitle = "Game";
 include "view-header.php";
 ?>
 
