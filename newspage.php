@@ -35,14 +35,14 @@ include "view-header.php";
         .instructions {
             text-align: center;
             margin: 30px;
-            max-width: 800px;
+            max-width: 1600px;
         }
 
         section {
             margin: 30px;
             text-align: center;
             color: #333;
-            max-width: 800px;
+            max-width: 1600px;
         }
 
         .grid-container {
