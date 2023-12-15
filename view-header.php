@@ -16,19 +16,29 @@
         }
 
         .navbar {
-            background-color: #343a40; /* Dark background color */
-            max-width:100%;
+            background-color: #dc3545; /* F1 Red */
+            max-width: 100%;
+                        border-bottom: 2px solid #fff; /* White border under navbar */
         }
 
-        .navbar-brand,
+        .navbar-brand {
+            color: #fff; /* White text color */
+            font-weight: bold;
+        }
+
         .navbar-nav .nav-link {
             color: #fff; /* White text color */
+        }
+
+        .navbar-nav .nav-link.active {
+            color: #000; /* Black text color for active link */
+            font-weight: bold;
         }
 
         .search-container {
             text-align: center;
             margin-top: 20px;
-            max-width:100%;
+            max-width: 100%;
         }
 
         .search-container input[type=text] {
@@ -36,7 +46,7 @@
             margin: 5px 0;
             border: none;
             font-size: 17px;
-            max-width:100%;
+            max-width: 100%;
         }
 
         .search-container button {
@@ -55,7 +65,7 @@
     <div class="container">
         <nav class="navbar navbar-expand-lg">
             <div class="container-fluid">
-                <a class="navbar-brand" href="#">Project</a>
+                <a class="navbar-brand" href="#">Formula 1 Hub</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
                     aria-label="Toggle navigation">
@@ -64,40 +74,40 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="newspage.php">F1 Hub</a>
+                            <a class="nav-link <?= $pageTitle === 'F1 Hub' ? 'active' : '' ?>" href="newspage.php">F1 Hub</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="drivers.php">Drivers</a>
+                            <a class="nav-link <?= $pageTitle === 'Drivers' ? 'active' : '' ?>" href="drivers.php">Drivers</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="race.php">Races</a>
+                            <a class="nav-link <?= $pageTitle === 'Races' ? 'active' : '' ?>" href="race.php">Races</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="standings.php">Standings</a>
+                            <a class="nav-link <?= $pageTitle === 'Standings' ? 'active' : '' ?>" href="standings.php">Standings</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="builder.php">Build your Team</a>
+                            <a class="nav-link <?= $pageTitle === 'Build your Team' ? 'active' : '' ?>" href="builder.php">Build your Team</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="game.php">Game</a>
+                            <a class="nav-link <?= $pageTitle === 'Game' ? 'active' : '' ?>" href="game.php">Game</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="standings-chart.php">Standings Chart</a>
+                            <a class="nav-link <?= $pageTitle === 'Standings Chart' ? 'active' : '' ?>" href="standings-chart.php">Standings Chart</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="racemap.php">Race Map</a>
+                            <a class="nav-link <?= $pageTitle === 'Race Map' ? 'active' : '' ?>" href="racemap.php">Race Map</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="glossary.php">Glossary</a>
+                            <a class="nav-link <?= $pageTitle === 'Glossary' ? 'active' : '' ?>" href="glossary.php">Glossary</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="trivia.php">Trivia Game</a>
-                        </li>
-                         <li class="nav-item">
-                            <a class="nav-link" href="insights.php">Insights</a>
+                            <a class="nav-link <?= $pageTitle === 'Trivia Game' ? 'active' : '' ?>" href="trivia.php">Trivia Game</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="polls.php">Polls</a>
+                            <a class="nav-link <?= $pageTitle === 'Insights' ? 'active' : '' ?>" href="insights.php">Insights</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link <?= $pageTitle === 'Polls' ? 'active' : '' ?>" href="polls.php">Polls</a>
                         </li>
                     </ul>
                 </div>
@@ -108,3 +118,4 @@
 </body>
 
 </html>
+
