@@ -1,216 +1,298 @@
 <?php
-$pageTitle = "Race Simulation";
+$pageTitle = "Race Results";
 include "view-header.php";
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
-    <title>Formula 1 Race Simulation</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    <style>
-        body {
-            font-family: 'Arial', sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f8f8f8;
-            color: #333;
-        }
+  <meta charset="UTF-8">
+  <title>Formula 1 Race Simulation</title>
+  <style>
+    body {
+      background-image: url('f1-image.avif');
+      background-size: cover;
+      background-repeat: no-repeat;
+      opacity: 1.0;
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+      padding: 0;
+      color: #fff;
+    }
 
-        header {
-            text-align: center;
-            padding: 20px;
-            background-color: #001f3f; /* Dark blue color */
-            color: #fff;
-            border-bottom: 2px solid #fff;
-        }
+    h1 {
+      text-align: center;
+      margin-top: 20px;
+    }
 
-        h1 {
-            margin: 0;
-            font-size: 28px;
-        }
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+      background-color: rgba(255, 255, 255, 0.8);
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
 
-        .container {
-            max-width: 800px;
-            margin: 20px auto;
-            padding: 20px;
-            background-color: #fff;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
+    .track {
+      width: 600px;
+      height: 400px;
+      border: 1px solid #000;
+      position: relative;
+      margin: 20px auto;
+      background-color: #808080;
+      border-radius: 4px;
+      overflow: hidden;
+    }
 
-        .grid-container {
-            display: grid;
-            gap: 20px;
-            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-            justify-content: center;
-        }
+    .car {
+      width: 40px;
+      height: 20px;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      cursor: pointer;
+      border-radius: 4px;
+      transition: background-color 0.3s ease;
+      user-select: none;
+    }
 
-        .grid-item {
-            text-align: center;
-            padding: 20px;
-            background-color: #007bff;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            cursor: pointer;
-            transition: transform 0.2s ease-in-out, box-shadow 0.3s ease-in-out, background-color 0.3s ease;
-        }
+    .car:hover {
+      background-color: #ccc;
+    }
 
-        .grid-item:hover {
-            transform: scale(1.05);
-            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
-        }
+    .car-text {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 12px;
+      font-weight: bold;
+      color: #000000;
+      pointer-events: none;
+    }
 
-        .selected {
-            background-color: #0056b3; /* Darker blue color */
-        }
+    button {
+      display: block;
+      margin: 10px auto;
+      padding: 8px 16px;
+      font-size: 16px;
+      font-weight: bold;
+      color: #fff;
+      background-color: #007bff;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
 
-        button {
-            display: block;
-            margin: 20px auto;
-            padding: 12px 24px;
-            font-size: 18px;
-            font-weight: bold;
-            color: #fff;
-            background-color: #007bff;
-            border: none;
-            border-radius: 8px;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-        }
+    button:hover {
+      background-color: #0056b3;
+    }
 
-        button:hover {
-            background-color: #0056b3;
-        }
+    /* Styling for checkboxes and labels */
+    ul {
+      list-style: none;
+      padding: 0;
+    }
 
-        .simulation-section {
-            margin-top: 30px;
-        }
+    li {
+      margin-bottom: 10px;
+    }
 
-        .track {
-            width: 100%;
-            height: 400px;
-            border: 1px solid #000;
-            position: relative;
-            background-color: #808080;
-            border-radius: 4px;
-            overflow: hidden;
-        }
+    input[type="checkbox"] {
+      display: none;
+    }
 
-        .car {
-            width: 40px;
-            height: 20px;
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            cursor: pointer;
-            border-radius: 4px;
-            transition: background-color 0.3s ease;
-            user-select: none;
-        }
+    label {
+      display: inline-block;
+      padding: 8px 16px;
+      background-color: #333;
+      color: #fff;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
 
-        .car:hover {
-            background-color: #ccc;
-        }
+    input[type="checkbox"]:checked + label {
+      background-color: #0056b3;
+    }
 
-        .car-text {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            font-size: 12px;
-            font-weight: bold;
-            color: #000000;
-            pointer-events: none;
-        }
-    </style>
+    input[type="range"] {
+      width: 80%;
+      margin: 5px 0;
+    }
+  </style>
 </head>
-
 <body>
-    <header>
-        <h1>Formula 1 Race Simulation</h1>
-    </header>
 
-    <div class="container">
-        <div class="grid-container" id="driversGrid">
-            <!-- Drivers grid with driver names -->
-            <div class="grid-item" onclick="selectDriver('Lewis Hamilton')">
-                <p class="team-name">Lewis Hamilton</p>
-            </div>
+<h1>Formula 1 Race Simulation</h1>
 
-            <div class="grid-item" onclick="selectDriver('Max Verstappen')">
-                <p class="team-name">Max Verstappen</p>
-            </div>
+<div class="container">
+  <div>
+    <p>Select pilots:</p>
+    <ul id="pilots">
+      <li>
+        <input type="checkbox" id="redCheckbox" onchange="selectPilot('red', this.checked)">
+        <label for="redCheckbox">Lewis Hamilton</label>
+      </li>
+      <li>
+        <input type="checkbox" id="blueCheckbox" onchange="selectPilot('blue', this.checked)">
+        <label for="blueCheckbox">Max Verstappen</label>
+      </li>
+      <li>
+        <input type="checkbox" id="greenCheckbox" onchange="selectPilot('green', this.checked)">
+        <label for="greenCheckbox">Charles Leclerc</label>
+      </li>
+    </ul>
+  </div>
 
-            <div class="grid-item" onclick="selectDriver('Charles Leclerc')">
-                <p class="team-name">Charles Leclerc</p>
-            </div>
-        </div>
+  <div>
+    <p>Set speed for each pilot:</p>
+    <input type="range" id="speedRed" min="1" max="50" value="25" onchange="setSpeed('red', this.value)">
+    <label for="speedRed">Lewis Hamilton</label>
+    <br>
+    <input type="range" id="speedBlue" min="1" max="50" value="25" onchange="setSpeed('blue', this.value)">
+    <label for="speedBlue">Max Verstappen</label>
+    <br>
+    <input type="range" id="speedGreen" min="1" max="50" value="25" onchange="setSpeed('green', this.value)">
+    <label for="speedGreen">Charles Leclerc</label>
+    <!-- Add more speed controls for other pilots here -->
+  </div>
 
-        <button onclick="startRace()">Start Race</button>
+  <div class="track" id="raceTrack">
+    <div class="car" id="redCar" onmousedown="startDrag(event, 'red')"><span class="car-text">Lewis Hamilton</span></div>
+    <div class="car" id="blueCar" onmousedown="startDrag(event, 'blue')"><span class="car-text">Max Verstappen</span></div>
+    <div class="car" id="greenCar" onmousedown="startDrag(event, 'green')"><span class="car-text">Charles Leclerc</span></div>
+  </div>
 
-        <!-- Simulation Section -->
-        <div class="simulation-section">
-            <h2>Simulation Section</h2>
-            <div class="track" id="raceTrack">
-                <!-- Cars will be dynamically added here during simulation -->
-            </div>
-        </div>
-    </div>
+  <button onclick="startRace()">Start Race</button>
+  <button onclick="stopRace()">Stop Race</button>
+  <button onclick="restartRace()">Restart Race</button>
+</div>
 
-    <!-- Bootstrap JavaScript Bundle with Popper -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+<script>
+  let selectedPilot = '';
 
-    <script>
-        const selectedDrivers = [];
+  function selectPilot(color, isChecked) {
+    if (isChecked) {
+      selectedPilot = color;
+    } else {
+      selectedPilot = ''; // Unselect if checkbox is unchecked
+    }
+  }
 
-        function selectDriver(driverName) {
-            const driverElement = document.getElementById(driverName);
-            if (selectedDrivers.includes(driverName)) {
-                // Deselect driver
-                const index = selectedDrivers.indexOf(driverName);
-                selectedDrivers.splice(index, 1);
-                driverElement.classList.remove('selected');
-            } else {
-                // Select driver
-                selectedDrivers.push(driverName);
-                driverElement.classList.add('selected');
-            }
-        }
+  function setSpeed(color, value) {
+    pilots[color].speed = value;
+  }
 
-        function startRace() {
-            if (selectedDrivers.length === 3) {
-                // Start the race simulation with selected drivers
-                alert(`Race started with drivers: ${selectedDrivers.join(', ')}`);
-                simulateRace(selectedDrivers);
-            } else {
-                alert('Please select exactly 3 drivers to start the race.');
-            }
-        }
+  let pilots = {
+    'red': { 'name': 'Lewis Hamilton', 'speed': 25, 'intervalId': null },
+    'blue': { 'name': 'Max Verstappen', 'speed': 25, 'intervalId': null },
+    'green': { 'name': 'Charles Leclerc', 'speed': 25, 'intervalId': null }
+    // Add more pilots here
+  };
 
-        function simulateRace(drivers) {
-            // Simulate the race here
-            const raceTrack = document.getElementById('raceTrack');
-            
-            // Clear previous cars
-            raceTrack.innerHTML = '';
+  function startRace() {
+    if (!selectedPilot) {
+      alert('Please select a pilot before starting the race!');
+      return;
+    }
 
-            // Create cars for selected drivers
-            drivers.forEach((driver, index) => {
-                const car = document.createElement('div');
-                car.className = 'car';
-                car.style.left = `${index * 100}px`; // Position cars horizontally
-                car.innerHTML = `<span class="car-text">${driver}</span>`;
-                raceTrack.appendChild(car);
-            });
-        }
-    </script>
+    const raceTrack = document.getElementById('raceTrack');
+    const redCar = document.getElementById('redCar');
+    const blueCar = document.getElementById('blueCar');
+    const greenCar = document.getElementById('greenCar');
+
+    redCar.style.backgroundColor = 'red';
+    blueCar.style.backgroundColor = 'blue';
+    greenCar.style.backgroundColor = 'green';
+
+    const distance = 550;
+
+    const moveIntervalRed = setInterval(() => {
+      const currentPositionRed = parseInt(redCar.style.left, 10) || 0;
+      const newPositionRed = currentPositionRed + pilots['red'].speed / 2;
+
+      if (newPositionRed >= distance) {
+        clearInterval(moveIntervalRed);
+        redCar.style.left = `${distance}px`;
+      } else {
+        redCar.style.left = `${newPositionRed}px`;
+      }
+    }, 100);
+
+    const moveIntervalBlue = setInterval(() => {
+      const currentPositionBlue = parseInt(blueCar.style.left, 10) || 0;
+      const newPositionBlue = currentPositionBlue + pilots['blue'].speed / 2;
+
+      if (newPositionBlue >= distance) {
+        clearInterval(moveIntervalBlue);
+        blueCar.style.left = `${distance}px`;
+      } else {
+        blueCar.style.left = `${newPositionBlue}px`;
+      }
+    }, 100);
+
+    const moveIntervalGreen = setInterval(() => {
+      const currentPositionGreen = parseInt(greenCar.style.left, 10) || 0;
+      const newPositionGreen = currentPositionGreen + pilots['green'].speed / 2;
+
+      if (newPositionGreen >= distance) {
+        clearInterval(moveIntervalGreen);
+        greenCar.style.left = `${distance}px`;
+      } else {
+        greenCar.style.left = `${newPositionGreen}px`;
+      }
+    }, 100);
+
+    pilots['red'].intervalId = moveIntervalRed;
+    pilots['blue'].intervalId = moveIntervalBlue;
+    pilots['green'].intervalId = moveIntervalGreen;
+  }
+
+  function stopRace() {
+    clearInterval(pilots['red'].intervalId);
+    clearInterval(pilots['blue'].intervalId);
+    clearInterval(pilots['green'].intervalId);
+  }
+
+  function restartRace() {
+    stopRace();
+    const redCar = document.getElementById('redCar');
+    const blueCar = document.getElementById('blueCar');
+    const greenCar = document.getElementById('greenCar');
+    redCar.style.left = '0px';
+    blueCar.style.left = '0px';
+    greenCar.style.left = '0px';
+  }
+
+  let isDragging = false;
+  let offsetX = 0;
+
+  function startDrag(event, color) {
+    isDragging = true;
+    offsetX = event.clientX - parseInt(document.getElementById(color + 'Car').style.left || 0);
+    document.addEventListener('mousemove', e => moveCar(e, color));
+    document.addEventListener('mouseup', stopDrag);
+  }
+
+  function moveCar(event, color) {
+    if (isDragging) {
+      const car = document.getElementById(color + 'Car');
+      car.style.left = `${event.clientX - offsetX}px`;
+    }
+  }
+
+  function stopDrag() {
+    isDragging = false;
+    document.removeEventListener('mousemove', moveCar);
+    document.removeEventListener('mouseup',
+    stopDrag);
+  }
+</script>
+
 </body>
-
 </html>
 
 <?php
