@@ -1,11 +1,10 @@
 <?php
-$pageTitle = "Newspage";
+$pageTitle = "Race Results";
 include "view-header.php";
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -20,96 +19,88 @@ include "view-header.php";
 
         header {
             text-align: center;
-            padding: 10px;
-            max-width: 100%;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            background-color: #61a1c1; /* Light blue background color */
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle box shadow */
+            padding: 20px;
+            background-color: #343a40;
+            color: #fff;
+            border-bottom: 2px solid #fff;
         }
 
         h1 {
             margin: 0;
-            color: #fff;
-            text-align: center;
-            max-width: 100%;
-            display: flex;
-            flex-direction: column; /* Stack items vertically */
-            align-items: center;
+            font-size: 28px;
         }
 
         section {
-            margin: 50px;
+            margin: 30px;
         }
 
         .grid-container {
             display: grid;
             gap: 20px;
-            grid-template-columns: repeat(2, 1fr);
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
             justify-content: center;
         }
 
         .grid-item {
             text-align: center;
             padding: 20px;
-            background-color: #f2f2f2;
+            background-color: #fff;
             border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             cursor: pointer;
-            transition: transform 0.2s ease-in-out;
-            display: flex;
-            flex-direction: column; /* Stack items vertically */
-            align-items: center; /* Center items horizontally */
+            transition: transform 0.2s ease-in-out, box-shadow 0.3s ease-in-out;
         }
 
         .grid-item:hover {
             transform: scale(1.05);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
         }
 
         .team-logo {
-            width: 100%; /* Adjusted to fill the container */
-            height: 100%; /* Maintain aspect ratio */
+            width: 100%;
+            height: 120px;
             object-fit: cover;
-            max-width: 150px; /* Set maximum width */
-            max-height: 150px; /* Set maximum height */
-            border: 5px solid #fff;
+            border: 5px solid #333;
             border-radius: 10px;
             overflow: hidden;
-            margin-bottom: 10px; /* Add margin to create space between image and text */
+            margin-bottom: 10px;
             display: flex;
-            justify-content: center; /* Center image horizontally within the container */
-            align-items: center; /* Center image vertically within the container */
+            justify-content: center;
+            align-items: center;
         }
 
+        .team-name {
+            font-weight: bold;
+            margin: 10px 0;
+            font-size: 16px;
+        }
     </style>
     <title>Formula One News Hub</title>
 </head>
-
 <body>
     <header>
         <h1>Formula One News Hub</h1>
     </header>
-
+  
     <section id="byTeam">
         <h2>Click on a team to learn more</h2>
         <div class="grid-container">
             <!-- Team grid with team names -->
             <div class="grid-item" onclick="redirectToWebsite('https://www.mercedesamgf1.com/')">
                 <div class="team-logo"><img src="mercedes_logo.png" alt="Mercedes Logo"></div>
-                <p>Mercedes</p>
+                <p class="team-name">Mercedes</p>
             </div>
 
             <div class="grid-item" onclick="redirectToWebsite('https://www.redbullracing.com/int-en')">
                 <div class="team-logo"><img src="redbull.jpg" alt="Red Bull Logo"></div>
-                <p>Red Bull</p>
+                <p class="team-name">Red Bull</p>
             </div>
 
             <div class="grid-item" onclick="redirectToWebsite('https://www.ferrari.com/en-EN/formula1')">
                 <div class="team-logo"><img src="ferrari.jpg" alt="Ferrari Logo"></div>
-                <p>Ferrari</p>
+                <p class="team-name">Ferrari</p>
             </div>
-
+            
             <div class="grid-item" onclick="redirectToWebsite('https://www.mclaren.com/racing/')">
                 <div class="team-logo"><img src="mclaren2.png" alt="McLaren Logo"></div>
                 <p>McLaren</p>
@@ -144,6 +135,7 @@ include "view-header.php";
                 <div class="team-logo"><img src="alpha.png" alt="AlphaTauri Logo"></div>
                 <p>AlphaTauri</p>
             </div>
+
         </div>
     </section>
 
@@ -154,7 +146,6 @@ include "view-header.php";
     </script>
 
 </body>
-
 </html>
 
 <?php
